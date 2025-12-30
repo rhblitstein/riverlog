@@ -56,16 +56,20 @@ struct ActivityDetailView: View {
                 
                 // Content
                 VStack(alignment: .leading, spacing: 12) {
-                    // Date/time and section in one line with icon
-                    HStack(alignment: .top, spacing: 6) {
+                    // Date/time info
+                    Text(formattedDateTime)
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                        .padding(.top, 16)
+                    
+                    // Section with craft icon
+                    HStack(spacing: 6) {
                         Text(craftIcon(for: activity.craftType ?? ""))
-                            .font(.caption)
-                        Text(formattedDateTime + " · " + (activity.sectionName ?? ""))
-                            .font(.caption)
+                            .font(.body)
+                        Text(activity.section?.name ?? "Unknown Section")
+                            .font(.body)
                             .foregroundColor(.secondary)
-                            .fixedSize(horizontal: false, vertical: true)
                     }
-                    .padding(.top, 16)
                     
                     // Title
                     Text(activity.title ?? "Untitled")
@@ -80,10 +84,10 @@ struct ActivityDetailView: View {
                             .padding(.top, 2)
                     }
                     
-                    // Stats grid
+                    // Stats grid - individual cards
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
-                        DetailStatCell(label: "Distance", value: String(format: "%.1f mi", activity.mileage))
-                        DetailStatCell(label: "Class", value: activity.rapidClassification ?? "-")
+                        DetailStatCell(label: "Distance", value: String(format: "%.1f mi", activity.section?.mileage ?? 0))
+                        DetailStatCell(label: "Class", value: activity.section?.classRating ?? "-")
                         DetailStatCell(label: "Flow", value: String(format: "%.0f %@", activity.flowValue, activity.flowUnit ?? ""))
                         DetailStatCell(label: "Duration", value: String(format: "%.1f hr", activity.duration))
                     }

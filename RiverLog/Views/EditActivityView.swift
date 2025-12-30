@@ -5,7 +5,7 @@ struct EditActivityView: View {
     @Environment(\.dismiss) private var dismiss
     
     @StateObject private var viewModel: EditActivityViewModel
-    @State private var showingDeleteConfirmation = false
+    @State private var showingSectionPicker = false
     
     init(activity: RiverActivity) {
         _viewModel = StateObject(wrappedValue: EditActivityViewModel(activity: activity))
@@ -19,16 +19,62 @@ struct EditActivityView: View {
                     TextField("Description (optional)", text: $viewModel.activityDescription)
                 }
                 
-                Section("River Details") {
-                    TextField("Section Name", text: $viewModel.sectionName)
-                    Picker("Craft Type", selection: $viewModel.craftType) {
-                        ForEach(viewModel.craftTypes, id: \.self) { type in
-                            Text(type)
+                Section("River Section") {
+                    if let section = viewModel.selectedSection {
+                        VStack(alignment: .leading, spacing: 8) {
+                            HStack {
+                                Text("Selected Section")
+                                    .foregroundColor(.secondary)
+                                Spacer()
+                                Button("Change") {
+                                    showingSectionPicker = true
+                                }
+                                .font(.subheadline)
+                            }
+                            
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(section.riverName ?? "")
+                                    .font(.headline)
+                                Text(section.name ?? "")
+                                    .font(.subheadline)
+                                    .foregroundColor(.secondary)
+                                
+                                HStack(spacing: 12) {
+                                    Label("Class \(section.classRating ?? "")", systemImage: "drop.fill")
+                                        .font(.caption)
+                                        .foregroundColor(.blue)
+                                    
+                                    if section.mileage > 0 {
+                                        Label("\(String(format: "%.1f", section.mileage)) mi", systemImage: "arrow.left.and.right")
+                                            .font(.caption)
+                                            .foregroundColor(.secondary)
+                                    }
+                                    
+                                    if section.gradient > 0 {
+                                        Label("\(Int(section.gradient)) fpm", systemImage: "arrow.down.forward")
+                                            .font(.caption)
+                                            .foregroundColor(.secondary)
+                                    }
+                                }
+                            }
+                            .padding(.vertical, 4)
                         }
-                    }
-                    Picker("Class", selection: $viewModel.rapidClassification) {
-                        ForEach(viewModel.classifications, id: \.self) { classification in
-                            Text(classification)
+                        
+                        Picker("Craft Type", selection: $viewModel.craftType) {
+                            ForEach(viewModel.craftTypes, id: \.self) { type in
+                                Text(type)
+                            }
+                        }
+                    } else {
+                        Button(action: { showingSectionPicker = true }) {
+                            HStack {
+                                Label("Select River Section", systemImage: "map")
+                                    .foregroundColor(.blue)
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
                         }
                     }
                 }
@@ -39,11 +85,6 @@ struct EditActivityView: View {
                     HStack {
                         Text("Duration (hours)")
                         TextField("0", value: $viewModel.duration, format: .number)
-                            .keyboardType(.decimalPad)
-                    }
-                    HStack {
-                        Text("Mileage")
-                        TextField("0", value: $viewModel.mileage, format: .number)
                             .keyboardType(.decimalPad)
                     }
                 }
@@ -66,18 +107,6 @@ struct EditActivityView: View {
                 Section("Photos") {
                     PhotoPicker(selectedPhotos: $viewModel.selectedPhotos)
                 }
-                
-                Section {
-                    Button(role: .destructive, action: {
-                        showingDeleteConfirmation = true
-                    }) {
-                        HStack {
-                            Spacer()
-                            Text("Delete Activity")
-                            Spacer()
-                        }
-                    }
-                }
             }
             .navigationTitle("Edit Activity")
             .navigationBarTitleDisplayMode(.inline)
@@ -89,20 +118,14 @@ struct EditActivityView: View {
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") {
-                        viewModel.save(context: viewContext)
+                        viewModel.save(context: viewContext, section: viewModel.selectedSection)
                         dismiss()
                     }
-                    .disabled(!viewModel.isValid)
+                    .disabled(!viewModel.isValid || viewModel.selectedSection == nil)
                 }
             }
-            .alert("Delete Activity?", isPresented: $showingDeleteConfirmation) {
-                Button("Cancel", role: .cancel) {}
-                Button("Delete", role: .destructive) {
-                    viewModel.delete(context: viewContext)
-                    dismiss()
-                }
-            } message: {
-                Text("This action cannot be undone.")
+            .sheet(isPresented: $showingSectionPicker) {
+                RiverSectionPicker(selectedSection: $viewModel.selectedSection)
             }
         }
     }

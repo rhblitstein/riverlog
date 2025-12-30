@@ -22,7 +22,7 @@ struct WeeklyMileageGraph: View {
                 return date >= weekStart && date < weekEnd
             }
             
-            let totalMiles = weekActivities.reduce(0.0) { $0 + $1.mileage }
+            let totalMiles = weekActivities.reduce(0.0) { $0 + ($1.section?.mileage ?? 0) }
             data.append(totalMiles)
         }
         

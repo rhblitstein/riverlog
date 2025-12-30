@@ -1,53 +1,87 @@
 import Foundation
+import SwiftUI
 import CoreData
 import Combine
-import UIKit
 
 class AddActivityViewModel: ObservableObject {
-    // Form fields
-    @Published var title = ""
-    @Published var activityDescription = ""
-    @Published var sectionName = ""
-    @Published var craftType = "Raft"
-    @Published var date = Date()
-    @Published var launchTime = Date()
+    @Published var title: String = ""
+    @Published var activityDescription: String = ""
+    @Published var craftType: String = "Raft"
+    @Published var date: Date = Date()
+    @Published var launchTime: Date = Date()
     @Published var duration: Double = 0
-    @Published var rapidClassification = "III"
-    @Published var mileage: Double = 0
     @Published var flowValue: Double = 0
-    @Published var flowUnit = "CFS"
+    @Published var flowUnit: String = "CFS"
     @Published var selectedPhotos: [UIImage] = []
+    @Published var isFetchingFlow: Bool = false
+    @Published var flowErrorMessage: String? = nil
     
-    // Dropdown options
-    let craftTypes = ["Raft", "Kayak", "SUP", "Canoe", "Cat", "Duckie", "Packraft"]
-    let classifications = ["I", "II", "III", "IV", "V", "VI"]
+    let craftTypes = ["Raft", "Kayak", "Canoe", "SUP", "Duckie", "Cat", "Other"]
     let flowUnits = ["CFS", "Feet"]
     
-    // Validation
     var isValid: Bool {
-        !title.isEmpty && !sectionName.isEmpty && mileage > 0
+        !title.trimmingCharacters(in: .whitespaces).isEmpty
     }
     
-    // Save function
-    func save(context: NSManagedObjectContext) {
+    func fetchFlow(gaugeID: String) async {
+        print("🎯 Starting flow fetch for gauge: \(gaugeID)")
+        await MainActor.run {
+            isFetchingFlow = true
+            flowErrorMessage = nil
+        }
+        
+        do {
+            let flow = try await USGSService.fetchCurrentFlow(gaugeID: gaugeID)
+            print("💧 Got flow: \(flow)")
+            await MainActor.run {
+                self.flowValue = flow
+                self.flowUnit = "CFS"
+                self.isFetchingFlow = false
+                self.flowErrorMessage = nil
+            }
+        } catch FlowDataError.iceAffected {
+            await MainActor.run {
+                self.isFetchingFlow = false
+                self.flowErrorMessage = "Gauge is ice-affected"
+            }
+        } catch FlowDataError.seasonallyClosed {
+            await MainActor.run {
+                self.isFetchingFlow = false
+                self.flowErrorMessage = "Gauge is seasonally closed"
+            }
+        } catch FlowDataError.noData {
+            await MainActor.run {
+                self.isFetchingFlow = false
+                self.flowErrorMessage = "No flow data available"
+            }
+        } catch {
+            print("❌ Error fetching flow: \(error)")
+            await MainActor.run {
+                self.isFetchingFlow = false
+                self.flowErrorMessage = "Unable to fetch flow data"
+            }
+        }
+    }
+    
+    func save(context: NSManagedObjectContext, section: RiverSection?) {
         let activity = RiverActivity(context: context)
         activity.id = UUID()
         activity.title = title
-        activity.activityDescription = activityDescription.isEmpty ? nil : activityDescription
-        activity.sectionName = sectionName
+        activity.activityDescription = activityDescription
         activity.craftType = craftType
         activity.date = date
         activity.launchTime = launchTime
         activity.duration = duration
-        activity.rapidClassification = rapidClassification
-        activity.mileage = mileage
         activity.flowValue = flowValue
         activity.flowUnit = flowUnit
         
-        // Convert photos to Data array
+        // Associate with the selected section
+        activity.section = section
+        
+        // Save photos as JPEG data
         if !selectedPhotos.isEmpty {
             let photoDataArray = selectedPhotos.compactMap { $0.jpegData(compressionQuality: 0.8) }
-            activity.photoData = photoDataArray as NSObject
+            activity.photoData = photoDataArray as NSArray
         }
         
         do {

@@ -5,6 +5,8 @@ struct AddActivityView: View {
     @Environment(\.dismiss) private var dismiss
     
     @StateObject private var viewModel = AddActivityViewModel()
+    @State private var selectedSection: RiverSection?
+    @State private var showingSectionPicker = false
     
     var body: some View {
         NavigationView {
@@ -14,31 +16,75 @@ struct AddActivityView: View {
                     TextField("Description (optional)", text: $viewModel.activityDescription)
                 }
                 
-                Section("River Details") {
-                    TextField("Section Name", text: $viewModel.sectionName)
-                    Picker("Craft Type", selection: $viewModel.craftType) {
-                        ForEach(viewModel.craftTypes, id: \.self) { type in
-                            Text(type)
+                Section("River Section") {
+                    if let section = selectedSection {
+                        VStack(alignment: .leading, spacing: 8) {
+                            HStack {
+                                Text("Selected Section")
+                                    .foregroundColor(.secondary)
+                                Spacer()
+                                Button("Change") {
+                                    showingSectionPicker = true
+                                }
+                                .font(.subheadline)
+                            }
+                            
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(section.riverName ?? "")
+                                    .font(.headline)
+                                Text(section.name ?? "")
+                                    .font(.subheadline)
+                                    .foregroundColor(.secondary)
+                                
+                                HStack(spacing: 12) {
+                                    if let classRating = section.classRating {
+                                        Label("Class \(formatClassRating(classRating))", systemImage: "drop.fill")
+                                            .font(.caption)
+                                            .foregroundColor(.blue)
+                                    }
+                                    
+                                    if section.mileage > 0 {
+                                        Label("\(String(format: "%.1f", section.mileage)) mi", systemImage: "arrow.left.and.right")
+                                            .font(.caption)
+                                            .foregroundColor(.secondary)
+                                    }
+                                    
+                                    if section.gradient > 0 {
+                                        Label("\(Int(section.gradient)) fpm", systemImage: "arrow.down.forward")
+                                            .font(.caption)
+                                            .foregroundColor(.secondary)
+                                    }
+                                }
+                            }
+                            .padding(.vertical, 4)
                         }
-                    }
-                    Picker("Class", selection: $viewModel.rapidClassification) {
-                        ForEach(viewModel.classifications, id: \.self) { classification in
-                            Text(classification)
+                        
+                        Picker("Craft Type", selection: $viewModel.craftType) {
+                            ForEach(viewModel.craftTypes, id: \.self) { type in
+                                Text(type)
+                            }
+                        }
+                    } else {
+                        Button(action: { showingSectionPicker = true }) {
+                            HStack {
+                                Label("Select River Section", systemImage: "map")
+                                    .foregroundColor(.blue)
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
                         }
                     }
                 }
                 
                 Section("Trip Details") {
                     DatePicker("Date", selection: $viewModel.date, displayedComponents: .date)
+                        .datePickerStyle(.compact)
                     DatePicker("Launch Time", selection: $viewModel.launchTime, displayedComponents: .hourAndMinute)
                     HStack {
                         Text("Duration (hours)")
                         TextField("0", value: $viewModel.duration, format: .number)
-                            .keyboardType(.decimalPad)
-                    }
-                    HStack {
-                        Text("Mileage")
-                        TextField("0", value: $viewModel.mileage, format: .number)
                             .keyboardType(.decimalPad)
                     }
                 }
@@ -56,6 +102,29 @@ struct AddActivityView: View {
                         .pickerStyle(.segmented)
                         .frame(width: 120)
                     }
+                    
+                    // Show gauge info if section selected with USGS gauge
+                    if let section = selectedSection, let gaugeID = section.gaugeID, !gaugeID.isEmpty {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("Gauge: \(section.gaugeName ?? "")")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                            
+                            if viewModel.isFetchingFlow {
+                                HStack {
+                                    ProgressView()
+                                        .scaleEffect(0.8)
+                                    Text("Fetching flow data...")
+                                        .font(.caption)
+                                        .foregroundColor(.secondary)
+                                }
+                            } else if let errorMessage = viewModel.flowErrorMessage {
+                                Text("⚠️ \(errorMessage)")
+                                    .font(.caption)
+                                    .foregroundColor(.orange)
+                            }
+                        }
+                    }
                 }
                 
                 Section("Photos") {
@@ -72,12 +141,35 @@ struct AddActivityView: View {
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") {
-                        viewModel.save(context: viewContext)
+                        viewModel.save(context: viewContext, section: selectedSection)
                         dismiss()
                     }
-                    .disabled(!viewModel.isValid)
+                    .disabled(!viewModel.isValid || selectedSection == nil)
+                }
+            }
+            .sheet(isPresented: $showingSectionPicker) {
+                RiverSectionPicker(selectedSection: $selectedSection)
+            }
+            .onChange(of: selectedSection) { newSection in
+                // Auto-fetch flow when section is selected
+                if let section = newSection, let gaugeID = section.gaugeID, !gaugeID.isEmpty {
+                    Task {
+                        await fetchCurrentFlow(gaugeID: gaugeID)
+                    }
                 }
             }
         }
+    }
+    
+    private func formatClassRating(_ rating: String) -> String {
+        return rating
+            .replacingOccurrences(of: "to", with: "-")
+            .replacingOccurrences(of: "plus", with: "+")
+            .replacingOccurrences(of: "minus", with: "-")
+            .replacingOccurrences(of: "standout", with: "(")
+    }
+    
+    private func fetchCurrentFlow(gaugeID: String) async {
+        await viewModel.fetchFlow(gaugeID: gaugeID)
     }
 }

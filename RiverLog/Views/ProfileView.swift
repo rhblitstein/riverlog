@@ -36,7 +36,7 @@ struct ProfileView: View {
     }
     
     var thisWeekMiles: Double {
-        thisWeekActivities.reduce(0) { $0 + $1.mileage }
+        thisWeekActivities.reduce(0) { $0 + ($1.section?.mileage ?? 0) }
     }
     
     var thisWeekHours: Double {

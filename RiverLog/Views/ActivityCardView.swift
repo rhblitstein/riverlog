@@ -28,6 +28,21 @@ struct ActivityCardView: View {
         }
     }
     
+    func formatClassRating(_ rating: String) -> String {
+        var formatted = rating
+            .replacingOccurrences(of: "to", with: "-")
+            .replacingOccurrences(of: "plus", with: "+")
+            .replacingOccurrences(of: "minus", with: "-")
+            .replacingOccurrences(of: "standout", with: "(")
+        
+        // Add closing parenthesis if we added an opening one
+        if formatted.contains("(") && !formatted.contains(")") {
+            formatted += ")"
+        }
+        
+        return formatted
+    }
+    
     var photos: [UIImage] {
         if let photoDataArray = activity.photoData as? [Data] {
             return photoDataArray.compactMap { UIImage(data: $0) }
@@ -43,13 +58,20 @@ struct ActivityCardView: View {
                     .font(.system(size: 11))
                     .foregroundColor(.secondary)
                 
-                // Section name with craft icon
+                // River and section name with craft icon
                 HStack(spacing: 4) {
                     Text(craftIcon(for: activity.craftType ?? ""))
                         .font(.system(size: 12))
-                    Text(activity.sectionName ?? "")
-                        .font(.system(size: 11))
-                        .foregroundColor(.secondary)
+                    
+                    if let section = activity.section {
+                        Text("\(section.riverName ?? "") - \(section.name ?? "")")
+                            .font(.system(size: 11))
+                            .foregroundColor(.secondary)
+                    } else {
+                        Text("No section selected")
+                            .font(.system(size: 11))
+                            .foregroundColor(.secondary)
+                    }
                 }
                 
                 // Title
@@ -67,9 +89,23 @@ struct ActivityCardView: View {
                 
                 // Stats row
                 HStack(spacing: 24) {
-                    StatColumn(label: "Distance", value: String(format: "%.1f mi", activity.mileage))
-                    StatColumn(label: "Time", value: String(format: "%.1f hr", activity.duration))
-                    StatColumn(label: "Class", value: activity.rapidClassification ?? "-")
+                    if let section = activity.section, section.mileage > 0 {
+                        StatColumn(label: "Distance", value: String(format: "%.1f mi", section.mileage))
+                    } else {
+                        StatColumn(label: "Distance", value: "-")
+                    }
+                    
+                    if activity.duration > 0 {
+                        StatColumn(label: "Time", value: String(format: "%.1f hr", activity.duration))
+                    } else {
+                        StatColumn(label: "Time", value: "-")
+                    }
+                    
+                    if let section = activity.section, let classRating = section.classRating {
+                        StatColumn(label: "Class", value: formatClassRating(classRating))
+                    } else {
+                        StatColumn(label: "Class", value: "-")
+                    }
                 }
                 .padding(.top, 4)
             }
@@ -77,18 +113,29 @@ struct ActivityCardView: View {
             
             // Photo carousel
             if !photos.isEmpty {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 8) {
-                        ForEach(photos.indices, id: \.self) { index in
-                            Image(uiImage: photos[index])
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 200, height: 150)
-                                .clipped()
+                if photos.count == 1 {
+                    // Single photo - full width
+                    Image(uiImage: photos[0])
+                        .resizable()
+                        .scaledToFill()
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 200)
+                        .clipped()
+                } else {
+                    // Multiple photos - horizontal scroll
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 8) {
+                            ForEach(photos.indices, id: \.self) { index in
+                                Image(uiImage: photos[index])
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 200, height: 150)
+                                    .clipped()
+                            }
                         }
+                        .padding(.horizontal, 16)
+                        .padding(.bottom, 12)
                     }
-                    .padding(.horizontal, 16)
-                    .padding(.bottom, 12)
                 }
             }
         }
