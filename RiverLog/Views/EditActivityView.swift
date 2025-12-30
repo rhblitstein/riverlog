@@ -1,10 +1,15 @@
 import SwiftUI
 
-struct AddActivityView: View {
+struct EditActivityView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) private var dismiss
     
-    @StateObject private var viewModel = AddActivityViewModel()
+    @StateObject private var viewModel: EditActivityViewModel
+    @State private var showingDeleteConfirmation = false
+    
+    init(activity: RiverActivity) {
+        _viewModel = StateObject(wrappedValue: EditActivityViewModel(activity: activity))
+    }
     
     var body: some View {
         NavigationView {
@@ -61,8 +66,20 @@ struct AddActivityView: View {
                 Section("Photos") {
                     PhotoPicker(selectedPhotos: $viewModel.selectedPhotos)
                 }
+                
+                Section {
+                    Button(role: .destructive, action: {
+                        showingDeleteConfirmation = true
+                    }) {
+                        HStack {
+                            Spacer()
+                            Text("Delete Activity")
+                            Spacer()
+                        }
+                    }
+                }
             }
-            .navigationTitle("Add Activity")
+            .navigationTitle("Edit Activity")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
@@ -77,6 +94,15 @@ struct AddActivityView: View {
                     }
                     .disabled(!viewModel.isValid)
                 }
+            }
+            .alert("Delete Activity?", isPresented: $showingDeleteConfirmation) {
+                Button("Cancel", role: .cancel) {}
+                Button("Delete", role: .destructive) {
+                    viewModel.delete(context: viewContext)
+                    dismiss()
+                }
+            } message: {
+                Text("This action cannot be undone.")
             }
         }
     }

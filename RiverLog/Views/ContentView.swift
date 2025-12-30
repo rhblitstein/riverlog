@@ -13,28 +13,42 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(activities, id: \.id) { activity in
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text(activity.title ?? "Untitled")
-                            .font(.headline)
-                        Text("\(activity.sectionName ?? "") - \(activity.craftType ?? "")")
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
-                        if let date = activity.date {
-                            Text(date, style: .date)
-                                .font(.caption)
-                                .foregroundColor(.secondary)
+            ZStack {
+                Theme.pageBackground.ignoresSafeArea()
+                
+                VStack(spacing: 0) {
+                    // Sticky header
+                    Color(.systemBackground)
+                        .frame(height: 60)
+                        .overlay(
+                            Text("Home")
+                                .font(.title2)
+                                .fontWeight(.semibold)
+                                .foregroundColor(Theme.primaryBlue)
+                        )
+                        .shadow(color: Color.black.opacity(0.05), radius: 2, y: 2)
+                    
+                    ScrollView {
+                        VStack(spacing: 12) {
+                            ForEach(activities, id: \.id) { activity in
+                                NavigationLink(destination: ActivityDetailView(activity: activity)) {
+                                    ActivityCardView(activity: activity)
+                                }
+                                .buttonStyle(PlainButtonStyle())
+                            }
                         }
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 12)
                     }
-                    .padding(.vertical, 4)
                 }
             }
-            .navigationTitle("River Log")
+            .navigationBarHidden(true)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: addActivity) {
-                        Label("Add Activity", systemImage: "plus")
+                        Image(systemName: "plus")
+                            .font(.title3)
+                            .foregroundColor(Theme.primaryBlue)
                     }
                 }
             }

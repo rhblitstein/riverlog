@@ -1,6 +1,7 @@
 import Foundation
 import CoreData
 import Combine
+import UIKit
 
 class AddActivityViewModel: ObservableObject {
     // Form fields
@@ -15,9 +16,10 @@ class AddActivityViewModel: ObservableObject {
     @Published var mileage: Double = 0
     @Published var flowValue: Double = 0
     @Published var flowUnit = "CFS"
+    @Published var selectedPhotos: [UIImage] = []
     
     // Dropdown options
-    let craftTypes = ["Raft", "Kayak", "SUP", "Canoe", "IK", "Duckie"]
+    let craftTypes = ["Raft", "Kayak", "SUP", "Canoe", "Cat", "Duckie", "Packraft"]
     let classifications = ["I", "II", "III", "IV", "V", "VI"]
     let flowUnits = ["CFS", "Feet"]
     
@@ -41,6 +43,12 @@ class AddActivityViewModel: ObservableObject {
         activity.mileage = mileage
         activity.flowValue = flowValue
         activity.flowUnit = flowUnit
+        
+        // Convert photos to Data array
+        if !selectedPhotos.isEmpty {
+            let photoDataArray = selectedPhotos.compactMap { $0.jpegData(compressionQuality: 0.8) }
+            activity.photoData = photoDataArray as NSObject
+        }
         
         do {
             try context.save()

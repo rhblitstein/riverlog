@@ -1,10 +1,3 @@
-//
-//  RiverLogApp.swift
-//  RiverLog
-//
-//  Created by Rebecca Blitstein on 12/29/25.
-//
-
 import SwiftUI
 import CoreData
 
@@ -14,7 +7,7 @@ struct RiverLogApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
