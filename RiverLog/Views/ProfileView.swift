@@ -13,6 +13,8 @@ struct ProfileView: View {
     @State private var showingAddActivity = false
     @State private var showingGearManagement = false
     @State private var selectedCraftFilter = "All"
+    @State private var showingAccountSettings = false
+    @EnvironmentObject var authManager: AuthManager
     
     let craftTypes = ["All", "Raft", "Kayak", "SUP", "Canoe", "Cat", "Duckie", "Packraft"]
     
@@ -135,7 +137,7 @@ struct ProfileView: View {
                                             .foregroundColor(Theme.primaryBlue)
                                     }
                                     Button(action: {
-                                        showingGearManagement = true
+                                        showingAccountSettings = true
                                     }) {
                                         Image(systemName: "gearshape.fill")
                                             .font(.title3)
@@ -193,6 +195,9 @@ struct ProfileView: View {
             }
             .sheet(isPresented: $showingGearManagement) {
                 GearManagementView()
+            }
+            .sheet(isPresented: $showingAccountSettings) {
+                AccountSettingsView()
             }
         }
     }
