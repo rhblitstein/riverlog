@@ -11,6 +11,7 @@ struct ProfileView: View {
     
     @State private var selectedTab = 0
     @State private var showingAddActivity = false
+    @State private var showingGearManagement = false
     @State private var selectedCraftFilter = "All"
     
     let craftTypes = ["All", "Raft", "Kayak", "SUP", "Canoe", "Cat", "Duckie", "Packraft"]
@@ -134,9 +135,9 @@ struct ProfileView: View {
                                             .foregroundColor(Theme.primaryBlue)
                                     }
                                     Button(action: {
-                                        // Settings action
+                                        showingGearManagement = true
                                     }) {
-                                        Image(systemName: "gearshape")
+                                        Image(systemName: "gearshape.fill")
                                             .font(.title3)
                                             .foregroundColor(Theme.primaryBlue)
                                     }
@@ -189,6 +190,9 @@ struct ProfileView: View {
             .navigationBarHidden(true)
             .sheet(isPresented: $showingAddActivity) {
                 AddActivityView()
+            }
+            .sheet(isPresented: $showingGearManagement) {
+                GearManagementView()
             }
         }
     }

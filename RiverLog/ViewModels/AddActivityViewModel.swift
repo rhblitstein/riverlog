@@ -5,8 +5,14 @@ import Combine
 
 class AddActivityViewModel: ObservableObject {
     @Published var title: String = ""
-    @Published var activityDescription: String = ""
-    @Published var craftType: String = "Raft"
+    @Published var notes: String = ""
+    @Published var tripReport: String = ""
+    @Published var privateNotes: String = ""
+    @Published var tripType: TripType = .private
+    @Published var selectedGear: Gear? = nil
+    @Published var craftType: CraftType = .raft
+    @Published var lapType: LapType? = nil
+    @Published var loadSize: Int = 0
     @Published var date: Date = Date()
     @Published var launchTime: Date = Date()
     @Published var duration: Double = 0
@@ -15,12 +21,37 @@ class AddActivityViewModel: ObservableObject {
     @Published var selectedPhotos: [UIImage] = []
     @Published var isFetchingFlow: Bool = false
     @Published var flowErrorMessage: String? = nil
+    @Published var visibility: VisibilityType = .public
+    @Published var hideFlow: Bool = false
+    @Published var hideDuration: Bool = false
+    @Published var hidePhotos: Bool = false
+    @Published var hideNotes: Bool = false
     
-    let craftTypes = ["Raft", "Kayak", "Canoe", "SUP", "Duckie", "Cat", "Other"]
     let flowUnits = ["CFS", "Feet"]
     
     var isValid: Bool {
         !title.trimmingCharacters(in: .whitespaces).isEmpty
+    }
+    
+    var availableLapTypes: [LapType] {
+        if let gear = selectedGear, let gearCraftType = CraftType(rawValue: gear.craftType ?? "") {
+            return gearCraftType.availableLapTypes
+        }
+        return craftType.availableLapTypes
+    }
+    
+    // When gear is selected, auto-populate craft and lap type
+    func selectGear(_ gear: Gear?) {
+        self.selectedGear = gear
+        if let gear = gear {
+            if let gearCraftType = CraftType(rawValue: gear.craftType ?? "") {
+                self.craftType = gearCraftType
+            }
+            if let defaultLap = gear.defaultLapType, let lapType = LapType(rawValue: defaultLap) {
+                self.lapType = lapType
+            }
+            self.loadSize = Int(gear.defaultLoadSize)
+        }
     }
     
     func fetchFlow(gaugeID: String) async {
@@ -67,15 +98,26 @@ class AddActivityViewModel: ObservableObject {
         let activity = RiverActivity(context: context)
         activity.id = UUID()
         activity.title = title
-        activity.activityDescription = activityDescription
-        activity.craftType = craftType
+        activity.notes = notes
+        activity.tripReport = tripReport.isEmpty ? nil : tripReport
+        activity.privateNotes = privateNotes.isEmpty ? nil : privateNotes
+        activity.tripType = tripType.rawValue
+        activity.craftType = craftType.rawValue
+        activity.lapType = lapType?.rawValue
+        activity.loadSize = Int16(loadSize)
         activity.date = date
         activity.launchTime = launchTime
         activity.duration = duration
         activity.flowValue = flowValue
         activity.flowUnit = flowUnit
+        activity.visibility = visibility.rawValue
+        activity.hideFlow = hideFlow
+        activity.hideDuration = hideDuration
+        activity.hidePhotos = hidePhotos
+        activity.hideNotes = hideNotes
         
-        // Associate with the selected section
+        // Associate with gear and section
+        activity.gear = selectedGear
         activity.section = section
         
         // Save photos as JPEG data

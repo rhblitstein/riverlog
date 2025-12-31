@@ -17,7 +17,7 @@ struct CalendarView: View {
         case "Kayak": return "🛶"
         case "SUP": return "🏄"
         case "Canoe": return "🛶"
-        case "Cat": return "⛵"
+        case "Cat": return "😸"
         case "Duckie": return "🦆"
         case "Packraft": return "🎒"
         default: return "🌊"

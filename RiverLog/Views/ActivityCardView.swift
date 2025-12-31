@@ -21,9 +21,9 @@ struct ActivityCardView: View {
         case "Kayak": return "🛶"
         case "SUP": return "🏄"
         case "Canoe": return "🛶"
-        case "Cat": return "⛵"
+        case "Cat": return "😸"
         case "Duckie": return "🦆"
-        case "Packraft": return "🎒"
+        case "IK": return "🎒"
         default: return "🌊"
         }
     }
@@ -79,9 +79,9 @@ struct ActivityCardView: View {
                     .font(.headline)
                     .foregroundColor(.primary)
                 
-                // Description
-                if let description = activity.activityDescription, !description.isEmpty {
-                    Text(description)
+                // Notes (if not hidden)
+                if !activity.hideNotes, let notes = activity.notes, !notes.isEmpty {
+                    Text(notes)
                         .font(.system(size: 13))
                         .foregroundColor(.secondary)
                         .lineLimit(2)
@@ -95,7 +95,7 @@ struct ActivityCardView: View {
                         StatColumn(label: "Distance", value: "-")
                     }
                     
-                    if activity.duration > 0 {
+                    if !activity.hideDuration, activity.duration > 0 {
                         StatColumn(label: "Time", value: String(format: "%.1f hr", activity.duration))
                     } else {
                         StatColumn(label: "Time", value: "-")
@@ -111,8 +111,8 @@ struct ActivityCardView: View {
             }
             .padding(16)
             
-            // Photo carousel
-            if !photos.isEmpty {
+            // Photo carousel (if not hidden)
+            if !activity.hidePhotos, !photos.isEmpty {
                 if photos.count == 1 {
                     // Single photo - full width
                     Image(uiImage: photos[0])

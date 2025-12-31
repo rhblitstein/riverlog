@@ -7,13 +7,66 @@ struct AddActivityView: View {
     @StateObject private var viewModel = AddActivityViewModel()
     @State private var selectedSection: RiverSection?
     @State private var showingSectionPicker = false
+    @State private var showingGearPicker = false
+    @State private var selectedNotesTab: NotesTab = .quick
+    
+    enum NotesTab {
+        case quick, report, `private`
+    }
     
     var body: some View {
         NavigationView {
             Form {
                 Section("Activity Info") {
                     TextField("Title", text: $viewModel.title)
-                    TextField("Description (optional)", text: $viewModel.activityDescription)
+                    
+                    // Trip Type
+                    Picker("Trip Type", selection: $viewModel.tripType) {
+                        ForEach(TripType.allCases, id: \.self) { type in
+                            Text(type.displayName).tag(type)
+                        }
+                    }
+                }
+                
+                Section("Gear & Craft") {
+                    // Gear Selection
+                    Button(action: { showingGearPicker = true }) {
+                        HStack {
+                            Label(viewModel.selectedGear?.name ?? "No Gear Selected", systemImage: "figure.wave")
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                    }
+                    
+                    // Manual craft type if no gear
+                    if viewModel.selectedGear == nil {
+                        Picker("Craft Type", selection: $viewModel.craftType) {
+                            ForEach(CraftType.allCases, id: \.self) { type in
+                                Text(type.displayName).tag(type)
+                            }
+                        }
+                    }
+                    
+                    // Lap Type
+                    if !viewModel.availableLapTypes.isEmpty {
+                        Picker("Lap Type", selection: $viewModel.lapType) {
+                            Text("Select...").tag(nil as LapType?)
+                            ForEach(viewModel.availableLapTypes, id: \.self) { type in
+                                Text(type.displayName).tag(type as LapType?)
+                            }
+                        }
+                    }
+                    
+                    // Load size for paddle guide
+                    if viewModel.lapType == .paddleGuide {
+                        HStack {
+                            Text("Load Size")
+                            TextField("0", value: $viewModel.loadSize, format: .number)
+                                .keyboardType(.numberPad)
+                        }
+                    }
                 }
                 
                 Section("River Section") {
@@ -57,12 +110,6 @@ struct AddActivityView: View {
                                 }
                             }
                             .padding(.vertical, 4)
-                        }
-                        
-                        Picker("Craft Type", selection: $viewModel.craftType) {
-                            ForEach(viewModel.craftTypes, id: \.self) { type in
-                                Text(type)
-                            }
                         }
                     } else {
                         Button(action: { showingSectionPicker = true }) {
@@ -127,6 +174,53 @@ struct AddActivityView: View {
                     }
                 }
                 
+                Section {
+                    Picker("Notes Type", selection: $selectedNotesTab) {
+                        Text("Quick Notes").tag(NotesTab.quick)
+                        Text("Trip Report").tag(NotesTab.report)
+                        Text("Private Notes").tag(NotesTab.private)
+                    }
+                    .pickerStyle(.segmented)
+                    
+                    switch selectedNotesTab {
+                    case .quick:
+                        TextEditor(text: $viewModel.notes)
+                            .frame(minHeight: 100)
+                    case .report:
+                        TextEditor(text: $viewModel.tripReport)
+                            .frame(minHeight: 150)
+                    case .private:
+                        TextEditor(text: $viewModel.privateNotes)
+                            .frame(minHeight: 100)
+                    }
+                } header: {
+                    Text("Notes")
+                } footer: {
+                    switch selectedNotesTab {
+                    case .quick:
+                        Text("Quick notes about your trip (public)")
+                    case .report:
+                        Text("Detailed trip report (public)")
+                    case .private:
+                        Text("Private notes - only visible to you")
+                    }
+                }
+                
+                Section("Privacy") {
+                    Picker("Visibility", selection: $viewModel.visibility) {
+                        ForEach(VisibilityType.allCases, id: \.self) { type in
+                            Label(type.displayName, systemImage: type.icon).tag(type)
+                        }
+                    }
+                    
+                    if viewModel.visibility != .private {
+                        Toggle("Hide Flow", isOn: $viewModel.hideFlow)
+                        Toggle("Hide Duration", isOn: $viewModel.hideDuration)
+                        Toggle("Hide Photos", isOn: $viewModel.hidePhotos)
+                        Toggle("Hide Notes", isOn: $viewModel.hideNotes)
+                    }
+                }
+                
                 Section("Photos") {
                     PhotoPicker(selectedPhotos: $viewModel.selectedPhotos)
                 }
@@ -150,6 +244,11 @@ struct AddActivityView: View {
             .sheet(isPresented: $showingSectionPicker) {
                 RiverSectionPicker(selectedSection: $selectedSection)
             }
+            .sheet(isPresented: $showingGearPicker) {
+                GearPickerView(selectedGear: $viewModel.selectedGear, onSelect: { gear in
+                    viewModel.selectGear(gear)
+                })
+            }
             .onChange(of: selectedSection) { newSection in
                 // Auto-fetch flow when section is selected
                 if let section = newSection, let gaugeID = section.gaugeID, !gaugeID.isEmpty {
@@ -162,11 +261,17 @@ struct AddActivityView: View {
     }
     
     private func formatClassRating(_ rating: String) -> String {
-        return rating
+        var formatted = rating
             .replacingOccurrences(of: "to", with: "-")
             .replacingOccurrences(of: "plus", with: "+")
             .replacingOccurrences(of: "minus", with: "-")
             .replacingOccurrences(of: "standout", with: "(")
+        
+        if formatted.contains("(") && !formatted.contains(")") {
+            formatted += ")"
+        }
+        
+        return formatted
     }
     
     private func fetchCurrentFlow(gaugeID: String) async {
