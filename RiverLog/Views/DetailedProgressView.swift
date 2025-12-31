@@ -243,7 +243,19 @@ struct DetailedProgressView: View {
                     
                     // Miles by Class
                     milesByClassSection
-                    
+
+                    // Streaks
+                    streaksSection
+
+                    // Section Stats
+                    sectionStatsSection
+
+                    // River Stats
+                    riverStatsSection
+
+                    // Personal Records
+                    personalRecordsSection
+
                     // Certifications
                     certificationsSection
                 }
@@ -309,7 +321,367 @@ struct DetailedProgressView: View {
         .cornerRadius(12)
         .padding(.horizontal, 16)
     }
-    
+
+    private var streaksSection: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Streaks")
+                .font(.headline)
+
+            let swimStreaks = progressViewModel.swimStreaks(from: filteredActivities)
+            let carnageStreaks = progressViewModel.carnageStreaks(from: filteredActivities)
+            let boatingStreaks = progressViewModel.boatingStreaks(from: filteredActivities)
+
+            VStack(spacing: 12) {
+                // No-Swim Streaks
+                HStack {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("No-Swim Streak")
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                        HStack(spacing: 16) {
+                            VStack {
+                                Text("\(swimStreaks.current)")
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Theme.primaryBlue)
+                                Text("Current")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+                            VStack {
+                                Text("\(swimStreaks.longest)")
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                Text("Longest")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+                        }
+                    }
+                    Spacer()
+                    Image(systemName: "figure.pool.swim")
+                        .font(.title2)
+                        .foregroundColor(Theme.primaryBlue)
+                }
+
+                Divider()
+
+                // No-Carnage Streaks
+                HStack {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("No-Carnage Streak")
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                        HStack(spacing: 16) {
+                            VStack {
+                                Text("\(carnageStreaks.current)")
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Theme.primaryBlue)
+                                Text("Current")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+                            VStack {
+                                Text("\(carnageStreaks.longest)")
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                Text("Longest")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+                        }
+                    }
+                    Spacer()
+                    Image(systemName: "exclamationmark.triangle")
+                        .font(.title2)
+                        .foregroundColor(.orange)
+                }
+
+                Divider()
+
+                // Boating Streaks (weeks)
+                HStack {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Weekly Boating Streak")
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                        HStack(spacing: 16) {
+                            VStack {
+                                Text("\(boatingStreaks.current)")
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Theme.primaryBlue)
+                                Text("Current")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+                            VStack {
+                                Text("\(boatingStreaks.longest)")
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                Text("Longest")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+                        }
+                    }
+                    Spacer()
+                    Image(systemName: "calendar")
+                        .font(.title2)
+                        .foregroundColor(.green)
+                }
+            }
+        }
+        .padding()
+        .background(Color(.systemBackground))
+        .cornerRadius(12)
+        .padding(.horizontal, 16)
+    }
+
+    private var sectionStatsSection: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Section Stats")
+                .font(.headline)
+
+            if let mostRun = progressViewModel.mostRunSection(from: filteredActivities) {
+                HStack {
+                    Text("Most Run Section:")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                    Spacer()
+                    Text(mostRun)
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                        .foregroundColor(Theme.primaryBlue)
+                }
+                .padding(.bottom, 8)
+            }
+
+            let stats = progressViewModel.sectionStats(from: filteredActivities)
+
+            if stats.isEmpty {
+                Text("No section data for selected filters")
+                    .foregroundColor(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .center)
+            } else {
+                // Table header
+                HStack {
+                    Text("Section")
+                        .font(.caption)
+                        .fontWeight(.semibold)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Text("Trips")
+                        .font(.caption)
+                        .fontWeight(.semibold)
+                        .frame(width: 50)
+                    Text("Miles")
+                        .font(.caption)
+                        .fontWeight(.semibold)
+                        .frame(width: 50)
+                    Text("Flow Range")
+                        .font(.caption)
+                        .fontWeight(.semibold)
+                        .frame(width: 80)
+                }
+                .foregroundColor(.secondary)
+
+                ForEach(stats.prefix(10)) { stat in
+                    VStack(spacing: 4) {
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text(stat.sectionName)
+                                    .font(.caption)
+                                    .lineLimit(1)
+                                Text(stat.riverName)
+                                    .font(.caption2)
+                                    .foregroundColor(.secondary)
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
+
+                            Text("\(stat.totalTrips)")
+                                .font(.caption)
+                                .frame(width: 50)
+
+                            Text(String(format: "%.1f", stat.totalMiles))
+                                .font(.caption)
+                                .frame(width: 50)
+
+                            if let low = stat.lowestFlow, let high = stat.highestFlow {
+                                Text("\(Int(low))-\(Int(high))")
+                                    .font(.caption)
+                                    .frame(width: 80)
+                            } else {
+                                Text("-")
+                                    .font(.caption)
+                                    .frame(width: 80)
+                            }
+                        }
+                        Divider()
+                    }
+                }
+            }
+        }
+        .padding()
+        .background(Color(.systemBackground))
+        .cornerRadius(12)
+        .padding(.horizontal, 16)
+    }
+
+    private var riverStatsSection: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("River Stats")
+                .font(.headline)
+
+            let topRivers = progressViewModel.topRivers(from: filteredActivities, count: 5)
+
+            if topRivers.isEmpty {
+                Text("No river data for selected filters")
+                    .foregroundColor(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .center)
+            } else {
+                Text("Top 5 Rivers by Trips")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+
+                ForEach(topRivers) { river in
+                    VStack(spacing: 8) {
+                        HStack {
+                            Text(river.riverName)
+                                .font(.subheadline)
+                                .fontWeight(.medium)
+                            Spacer()
+                            Text("\(river.totalTrips) trips")
+                                .font(.caption)
+                                .foregroundColor(Theme.primaryBlue)
+                        }
+
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text("Total: \(String(format: "%.1f", river.totalMiles)) mi")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+                            Spacer()
+                            VStack(alignment: .trailing) {
+                                Text("Commercial: \(river.commercialTrips)")
+                                    .font(.caption2)
+                                    .foregroundColor(.secondary)
+                                Text("Private: \(river.privateTrips)")
+                                    .font(.caption2)
+                                    .foregroundColor(.secondary)
+                            }
+                        }
+
+                        Divider()
+                    }
+                }
+            }
+        }
+        .padding()
+        .background(Color(.systemBackground))
+        .cornerRadius(12)
+        .padding(.horizontal, 16)
+    }
+
+    private var personalRecordsSection: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Personal Records")
+                .font(.headline)
+
+            let records = progressViewModel.personalRecords(from: filteredActivities)
+
+            VStack(spacing: 12) {
+                // Hardest Class
+                if let hardest = records.hardestClass {
+                    HStack {
+                        Label("Hardest Class", systemImage: "star.fill")
+                            .font(.subheadline)
+                        Spacer()
+                        Text("Class \(formatClassRating(hardest))")
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                            .foregroundColor(Theme.primaryBlue)
+                    }
+                }
+
+                Divider()
+
+                // Average Classes
+                HStack {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Avg Class (Private)")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                        Text(records.averageClassPrivate ?? "-")
+                            .font(.subheadline)
+                            .fontWeight(.medium)
+                    }
+                    Spacer()
+                    VStack(alignment: .trailing, spacing: 4) {
+                        Text("Avg Class (Commercial)")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                        Text(records.averageClassCommercial ?? "-")
+                            .font(.subheadline)
+                            .fontWeight(.medium)
+                    }
+                }
+
+                Divider()
+
+                // Longest Trip
+                if let longest = records.longestTrip {
+                    HStack {
+                        Label("Longest Trip", systemImage: "clock.fill")
+                            .font(.subheadline)
+                        Spacer()
+                        VStack(alignment: .trailing) {
+                            Text(String(format: "%.1f hrs", longest.duration))
+                                .font(.subheadline)
+                                .fontWeight(.semibold)
+                                .foregroundColor(Theme.primaryBlue)
+                            Text(longest.title)
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                    }
+                }
+
+                Divider()
+
+                // Total Elevation Loss
+                HStack {
+                    Label("Total Elevation Loss", systemImage: "arrow.down.forward")
+                        .font(.subheadline)
+                    Spacer()
+                    Text(String(format: "%.0f ft", records.totalElevationLoss))
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                        .foregroundColor(Theme.primaryBlue)
+                }
+            }
+        }
+        .padding()
+        .background(Color(.systemBackground))
+        .cornerRadius(12)
+        .padding(.horizontal, 16)
+    }
+
+    private func formatClassRating(_ rating: String) -> String {
+        var formatted = rating
+            .replacingOccurrences(of: "to", with: "-")
+            .replacingOccurrences(of: "plus", with: "+")
+            .replacingOccurrences(of: "minus", with: "-")
+            .replacingOccurrences(of: "standout", with: "(")
+
+        if formatted.contains("(") && !formatted.contains(")") {
+            formatted += ")"
+        }
+
+        return formatted
+    }
+
     private var certificationsSection: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text("Colorado Guide Certifications")

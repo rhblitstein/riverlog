@@ -135,7 +135,16 @@ struct AddActivityView: View {
                             .keyboardType(.decimalPad)
                     }
                 }
-                
+
+                Section {
+                    Toggle("Had a Swim", isOn: $viewModel.didSwim)
+                    Toggle("Had Carnage", isOn: $viewModel.hadCarnage)
+                } header: {
+                    Text("Trip Outcome")
+                } footer: {
+                    Text("Track swims and carnage for your streak statistics")
+                }
+
                 Section("Flow") {
                     HStack {
                         Text("Flow")

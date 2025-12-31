@@ -26,7 +26,9 @@ class EditActivityViewModel: ObservableObject {
     @Published var hideDuration: Bool = false
     @Published var hidePhotos: Bool = false
     @Published var hideNotes: Bool = false
-    
+    @Published var didSwim: Bool = false
+    @Published var hadCarnage: Bool = false
+
     let flowUnits = ["CFS", "Feet"]
     
     private var activity: RiverActivity
@@ -64,7 +66,9 @@ class EditActivityViewModel: ObservableObject {
         self.hideDuration = activity.hideDuration
         self.hidePhotos = activity.hidePhotos
         self.hideNotes = activity.hideNotes
-        
+        self.didSwim = activity.didSwim
+        self.hadCarnage = activity.hadCarnage
+
         // Load existing photos
         if let photoDataArray = activity.photoData as? [Data] {
             self.selectedPhotos = photoDataArray.compactMap { UIImage(data: $0) }
@@ -104,7 +108,9 @@ class EditActivityViewModel: ObservableObject {
         activity.hideDuration = hideDuration
         activity.hidePhotos = hidePhotos
         activity.hideNotes = hideNotes
-        
+        activity.didSwim = didSwim
+        activity.hadCarnage = hadCarnage
+
         // Update relationships
         activity.gear = selectedGear
         activity.section = section

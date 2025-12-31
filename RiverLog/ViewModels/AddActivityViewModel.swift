@@ -27,7 +27,9 @@ class AddActivityViewModel: ObservableObject {
     @Published var hideDuration: Bool = false
     @Published var hidePhotos: Bool = false
     @Published var hideNotes: Bool = false
-    
+    @Published var didSwim: Bool = false
+    @Published var hadCarnage: Bool = false
+
     let flowUnits = ["CFS", "Feet"]
     
     var isValid: Bool {
@@ -117,7 +119,9 @@ class AddActivityViewModel: ObservableObject {
         activity.hideDuration = hideDuration
         activity.hidePhotos = hidePhotos
         activity.hideNotes = hideNotes
-        
+        activity.didSwim = didSwim
+        activity.hadCarnage = hadCarnage
+
         // Associate with gear and section
         activity.gear = selectedGear
         activity.section = section

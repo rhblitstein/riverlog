@@ -39,6 +39,8 @@ class FirestoreService: ObservableObject {
             "hideDuration": activity.hideDuration,
             "hidePhotos": activity.hidePhotos,
             "hideNotes": activity.hideNotes,
+            "didSwim": activity.didSwim,
+            "hadCarnage": activity.hadCarnage,
             "userId": userId,
             "lastSynced": Timestamp(date: Date()),
             // Section data (denormalized for easier querying)
@@ -149,7 +151,9 @@ class FirestoreService: ObservableObject {
                 activity.hideDuration = data["hideDuration"] as? Bool ?? false
                 activity.hidePhotos = data["hidePhotos"] as? Bool ?? false
                 activity.hideNotes = data["hideNotes"] as? Bool ?? false
-                
+                activity.didSwim = data["didSwim"] as? Bool ?? false
+                activity.hadCarnage = data["hadCarnage"] as? Bool ?? false
+
                 if let timestamp = data["lastSynced"] as? Timestamp {
                     activity.lastSynced = timestamp.dateValue()
                 }

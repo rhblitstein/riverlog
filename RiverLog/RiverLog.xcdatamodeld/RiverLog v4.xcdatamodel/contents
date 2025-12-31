@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="24512" systemVersion="25C56" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Gear" representedClassName="Gear" syncable="YES" codeGenerationType="class">
+        <attribute name="brand" optional="YES" attributeType="String"/>
+        <attribute name="craftType" attributeType="String"/>
+        <attribute name="defaultLapType" optional="YES" attributeType="String"/>
+        <attribute name="defaultLoadSize" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="firestoreId" optional="YES" attributeType="String"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="lastSynced" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="length" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="model" optional="YES" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="retired" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <relationship name="activities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RiverActivity" inverseName="gear" inverseEntity="RiverActivity"/>
+    </entity>
+    <entity name="RiverActivity" representedClassName="RiverActivity" syncable="YES" codeGenerationType="class">
+        <attribute name="craftType" optional="YES" attributeType="String"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="didSwim" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="duration" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="firestoreId" optional="YES" attributeType="String" defaultValueString="&quot;&quot;"/>
+        <attribute name="flowUnit" attributeType="String"/>
+        <attribute name="flowValue" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="hadCarnage" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="hideDuration" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="hideFlow" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="hideNotes" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="hidePhotos" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="lapType" optional="YES" attributeType="String"/>
+        <attribute name="lastSynced" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="launchTime" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="loadSize" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="photoData" optional="YES" attributeType="Transformable"/>
+        <attribute name="privateNotes" optional="YES" attributeType="String"/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="tripReport" optional="YES" attributeType="String"/>
+        <attribute name="tripType" attributeType="String" defaultValueString="Private"/>
+        <attribute name="userId" optional="YES" attributeType="String" defaultValueString="&quot;&quot;"/>
+        <attribute name="visibility" attributeType="String" defaultValueString="Public"/>
+        <relationship name="gear" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Gear" inverseName="activities" inverseEntity="Gear"/>
+        <relationship name="section" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RiverSection" inverseName="activities" inverseEntity="RiverSection"/>
+    </entity>
+    <entity name="RiverSection" representedClassName="RiverSection" syncable="YES" codeGenerationType="class">
+        <attribute name="awURL" optional="YES" attributeType="String"/>
+        <attribute name="classRating" attributeType="String"/>
+        <attribute name="gaugeID" optional="YES" attributeType="String"/>
+        <attribute name="gaugeName" optional="YES" attributeType="String"/>
+        <attribute name="gradient" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="gradientUnit" attributeType="String"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="mileage" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="putInName" optional="YES" attributeType="String"/>
+        <attribute name="riverName" attributeType="String"/>
+        <attribute name="state" attributeType="String"/>
+        <attribute name="takeOutName" optional="YES" attributeType="String"/>
+        <relationship name="activities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RiverActivity" inverseName="section" inverseEntity="RiverActivity"/>
+    </entity>
+</model>
