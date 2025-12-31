@@ -191,4 +191,101 @@ class FirestoreService: ObservableObject {
         // We'll implement photo storage later - for now just skip
         // This would use Firebase Storage to upload images
     }
+    
+    // MARK: - Sync Gear to Firestore
+    func syncGearToFirestore(gear: Gear, context: NSManagedObjectContext) async throws {
+        guard let userId = Auth.auth().currentUser?.uid else {
+            throw NSError(domain: "FirestoreService", code: 401, userInfo: [NSLocalizedDescriptionKey: "User not authenticated"])
+        }
+        
+        let gearData: [String: Any] = [
+            "name": gear.name ?? "",
+            "craftType": gear.craftType ?? "",
+            "brand": gear.brand ?? "",
+            "model": gear.model ?? "",
+            "length": gear.length,
+            "defaultLapType": gear.defaultLapType ?? "",
+            "defaultLoadSize": gear.defaultLoadSize,
+            "retired": gear.retired,
+            "userId": userId,
+            "lastSynced": Timestamp(date: Date())
+        ]
+        
+        let docRef: DocumentReference
+        
+        if let firestoreId = gear.firestoreId, !firestoreId.isEmpty {
+            // Update existing document
+            docRef = db.collection("users").document(userId).collection("gear").document(firestoreId)
+            try await docRef.setData(gearData, merge: true)
+        } else {
+            // Create new document
+            docRef = db.collection("users").document(userId).collection("gear").document()
+            try await docRef.setData(gearData)
+            
+            // Save Firestore ID back to Core Data
+            await MainActor.run {
+                gear.firestoreId = docRef.documentID
+                gear.lastSynced = Date()
+                try? context.save()
+            }
+        }
+    }
+
+    // MARK: - Fetch Gear from Firestore
+    func fetchGearFromFirestore(context: NSManagedObjectContext) async throws {
+        guard let userId = Auth.auth().currentUser?.uid else { return }
+        
+        let snapshot = try await db.collection("users")
+            .document(userId)
+            .collection("gear")
+            .getDocuments()
+        
+        await MainActor.run {
+            for document in snapshot.documents {
+                let data = document.data()
+                
+                // Check if gear already exists in Core Data
+                let fetchRequest: NSFetchRequest<Gear> = Gear.fetchRequest()
+                fetchRequest.predicate = NSPredicate(format: "firestoreId == %@", document.documentID)
+                
+                let existingGear = try? context.fetch(fetchRequest)
+                let gear: Gear
+                
+                if let existing = existingGear?.first {
+                    gear = existing
+                } else {
+                    gear = Gear(context: context)
+                    gear.id = UUID()
+                    gear.firestoreId = document.documentID
+                }
+                
+                // Update gear from Firestore data
+                gear.name = data["name"] as? String
+                gear.craftType = data["craftType"] as? String
+                gear.brand = data["brand"] as? String
+                gear.model = data["model"] as? String
+                gear.length = data["length"] as? Double ?? 0
+                gear.defaultLapType = data["defaultLapType"] as? String
+                gear.defaultLoadSize = Int16(data["defaultLoadSize"] as? Int ?? 0)
+                gear.retired = data["retired"] as? Bool ?? false
+                
+                if let timestamp = data["lastSynced"] as? Timestamp {
+                    gear.lastSynced = timestamp.dateValue()
+                }
+            }
+            
+            try? context.save()
+        }
+    }
+
+    // MARK: - Delete Gear from Firestore
+    func deleteGearFromFirestore(firestoreId: String) async throws {
+        guard let userId = Auth.auth().currentUser?.uid else { return }
+        
+        try await db.collection("users")
+            .document(userId)
+            .collection("gear")
+            .document(firestoreId)
+            .delete()
+    }
 }

@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import CoreData
 import Combine
+import FirebaseAuth
 
 class EditActivityViewModel: ObservableObject {
     @Published var title: String = ""
@@ -84,6 +85,7 @@ class EditActivityViewModel: ObservableObject {
     }
     
     func save(context: NSManagedObjectContext, section: RiverSection?) {
+        activity.userId = Auth.auth().currentUser?.uid ?? ""
         activity.title = title
         activity.notes = notes
         activity.tripReport = tripReport.isEmpty ? nil : tripReport
@@ -117,6 +119,12 @@ class EditActivityViewModel: ObservableObject {
         
         do {
             try context.save()
+            
+            // Sync to Firestore
+            Task {
+                let firestoreService = FirestoreService()
+                try? await firestoreService.syncActivityToFirestore(activity: activity, context: context)
+            }
         } catch {
             print("Error updating activity: \(error)")
         }

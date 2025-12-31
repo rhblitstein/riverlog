@@ -9,6 +9,7 @@ struct GearDetailView: View {
     
     @State private var showingEditSheet = false
     @State private var showingRetireAlert = false
+    @State private var showingDeleteAlert = false
     
     // Fetch activities that used this gear
     @FetchRequest private var activities: FetchedResults<RiverActivity>
@@ -133,6 +134,9 @@ struct GearDetailView: View {
                     Button(action: { showingRetireAlert = true }) {
                         Label(gear.retired ? "Unretire" : "Retire", systemImage: "pause.circle")
                     }
+                    Button(role: .destructive, action: { showingDeleteAlert = true }) {
+                        Label("Delete", systemImage: "trash")
+                    }
                 } label: {
                     Image(systemName: "ellipsis.circle")
                 }
@@ -140,6 +144,14 @@ struct GearDetailView: View {
         }
         .sheet(isPresented: $showingEditSheet) {
             EditGearView(gear: gear)
+        }
+        .alert("Delete Gear", isPresented: $showingDeleteAlert) {
+            Button("Cancel", role: .cancel) { }
+            Button("Delete", role: .destructive) {
+                deleteGear()
+            }
+        } message: {
+            Text("Are you sure you want to delete this gear? This cannot be undone.")
         }
         .alert(gear.retired ? "Unretire Gear?" : "Retire Gear?", isPresented: $showingRetireAlert) {
             Button("Cancel", role: .cancel) { }
@@ -160,4 +172,27 @@ struct GearDetailView: View {
             print("Error retiring gear: \(error)")
         }
     }
+    
+    private func deleteGear() {
+        let firestoreId = gear.firestoreId  // Save before deleting
+        
+        viewContext.delete(gear)
+        
+        do {
+            try viewContext.save()
+            
+            // Delete from Firestore
+            if let firestoreId = firestoreId, !firestoreId.isEmpty {
+                Task {
+                    let firestoreService = FirestoreService()
+                    try? await firestoreService.deleteGearFromFirestore(firestoreId: firestoreId)
+                }
+            }
+            
+            dismiss()
+        } catch {
+            print("Error deleting gear: \(error)")
+        }
+    }
+    
 }

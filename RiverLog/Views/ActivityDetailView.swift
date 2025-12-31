@@ -359,10 +359,21 @@ struct ActivityDetailView: View {
     }
     
     private func deleteActivity() {
+        let firestoreId = activity.firestoreId  // Save before deleting
+        
         viewContext.delete(activity)
         
         do {
             try viewContext.save()
+            
+            // Delete from Firestore
+            if let firestoreId = firestoreId, !firestoreId.isEmpty {
+                Task {
+                    let firestoreService = FirestoreService()
+                    try? await firestoreService.deleteActivityFromFirestore(firestoreId: firestoreId)
+                }
+            }
+            
             dismiss()
         } catch {
             print("Error deleting activity: \(error)")

@@ -50,6 +50,7 @@ class AuthManager: ObservableObject {
         let context = PersistenceController.shared.container.viewContext
         let firestoreService = FirestoreService()
         try await firestoreService.fetchActivitiesFromFirestore(context: context)
+        try await firestoreService.fetchGearFromFirestore(context: context)
     }
     
     // MARK: - Sign Out

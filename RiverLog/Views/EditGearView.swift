@@ -102,9 +102,21 @@ struct EditGearView: View {
         
         do {
             try viewContext.save()
+            
+            // Sync to Firestore
+            Task {
+                do {
+                    let firestoreService = FirestoreService()
+                    try await firestoreService.syncGearToFirestore(gear: gear, context: viewContext)
+                    print("✅ Synced gear update to Firestore: \(name)")
+                } catch {
+                    print("❌ Error syncing gear to Firestore: \(error)")
+                }
+            }
+            
             dismiss()
         } catch {
-            print("Error updating gear: \(error)")
+            print("❌ Error updating gear: \(error)")
         }
     }
 }

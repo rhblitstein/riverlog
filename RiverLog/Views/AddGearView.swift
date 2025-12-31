@@ -1,5 +1,6 @@
 import SwiftUI
 import CoreData
+import FirebaseAuth
 
 struct AddGearView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -70,9 +71,31 @@ struct AddGearView: View {
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") {
-                        saveGear()
+                        let newGear = Gear(context: viewContext)
+                        newGear.id = UUID()
+                        newGear.name = name
+                        newGear.craftType = craftType.rawValue
+                        newGear.brand = brand.isEmpty ? nil : brand
+                        newGear.model = model.isEmpty ? nil : model
+                        newGear.length = Double(length) ?? 0
+                        newGear.defaultLapType = defaultLapType?.rawValue
+                        newGear.defaultLoadSize = Int16(defaultLoadSize)
+                        newGear.retired = false
+                        
+                        do {
+                            try viewContext.save()
+                            
+                            // Sync to Firestore
+                            Task {
+                                let firestoreService = FirestoreService()
+                                try? await firestoreService.syncGearToFirestore(gear: newGear, context: viewContext)
+                            }
+                            
+                            dismiss()
+                        } catch {
+                            print("Error saving gear: \(error)")
+                        }
                     }
-                    .disabled(!isValid)
                 }
             }
         }
