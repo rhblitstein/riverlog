@@ -17,7 +17,7 @@ struct SignInView: View {
                 VStack(spacing: 8) {
                     Text("🚣")
                         .font(.system(size: 60))
-                    Text("RiverLog")
+                    Text("The River Log")
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(Theme.primaryBlue)

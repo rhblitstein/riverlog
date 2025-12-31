@@ -1,6 +1,7 @@
 import Foundation
 import FirebaseAuth
 import Combine
+import CoreData
 
 class AuthManager: ObservableObject {
     @Published var user: User?
@@ -44,6 +45,11 @@ class AuthManager: ObservableObject {
         await MainActor.run {
             self.user = result.user
         }
+        
+        // Sync activities from Firestore
+        let context = PersistenceController.shared.container.viewContext
+        let firestoreService = FirestoreService()
+        try await firestoreService.fetchActivitiesFromFirestore(context: context)
     }
     
     // MARK: - Sign Out

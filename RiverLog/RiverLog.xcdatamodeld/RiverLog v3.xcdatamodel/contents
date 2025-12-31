@@ -16,7 +16,7 @@
         <attribute name="craftType" optional="YES" attributeType="String"/>
         <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="duration" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="firestoreId" optional="YES" attributeType="String"/>
+        <attribute name="firestoreId" optional="YES" attributeType="String" defaultValueString="&quot;&quot;"/>
         <attribute name="flowUnit" attributeType="String"/>
         <attribute name="flowValue" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="hideDuration" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -34,7 +34,7 @@
         <attribute name="title" attributeType="String"/>
         <attribute name="tripReport" optional="YES" attributeType="String"/>
         <attribute name="tripType" attributeType="String" defaultValueString="Private"/>
-        <attribute name="userId" attributeType="String"/>
+        <attribute name="userId" optional="YES" attributeType="String" defaultValueString="&quot;&quot;"/>
         <attribute name="visibility" attributeType="String" defaultValueString="Public"/>
         <relationship name="gear" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Gear" inverseName="activities" inverseEntity="Gear"/>
         <relationship name="section" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RiverSection" inverseName="activities" inverseEntity="RiverSection"/>
