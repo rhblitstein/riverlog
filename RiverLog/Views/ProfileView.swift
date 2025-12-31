@@ -261,9 +261,7 @@ struct ProfileView: View {
             }
             
             // See more progress button
-            Button(action: {
-                // Navigate to detailed progress
-            }) {
+            NavigationLink(destination: DetailedProgressView()) {
                 Text("See more of your progress")
                     .font(.headline)
                     .foregroundColor(.white)
