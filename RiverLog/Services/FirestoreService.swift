@@ -49,7 +49,13 @@ class FirestoreService: ObservableObject {
             "riverName": activity.section?.riverName ?? "",
             // Gear data
             "gearId": activity.gear?.id?.uuidString ?? "",
-            "gearName": activity.gear?.name ?? ""
+            "gearName": activity.gear?.name ?? "",
+            // GPS data
+            "hasGPSData": activity.hasGPSData,
+            "totalDistance": activity.totalDistance,
+            "averageSpeed": activity.averageSpeed,
+            "elevationGain": activity.elevationGain,
+            "elevationLoss": activity.elevationLoss
         ]
         
         let docRef: DocumentReference
@@ -153,6 +159,11 @@ class FirestoreService: ObservableObject {
                 activity.hideNotes = data["hideNotes"] as? Bool ?? false
                 activity.didSwim = data["didSwim"] as? Bool ?? false
                 activity.hadCarnage = data["hadCarnage"] as? Bool ?? false
+                activity.hasGPSData = data["hasGPSData"] as? Bool ?? false
+                activity.totalDistance = data["totalDistance"] as? Double ?? 0
+                activity.averageSpeed = data["averageSpeed"] as? Double ?? 0
+                activity.elevationGain = data["elevationGain"] as? Double ?? 0
+                activity.elevationLoss = data["elevationLoss"] as? Double ?? 0
 
                 if let timestamp = data["lastSynced"] as? Timestamp {
                     activity.lastSynced = timestamp.dateValue()
@@ -285,11 +296,113 @@ class FirestoreService: ObservableObject {
     // MARK: - Delete Gear from Firestore
     func deleteGearFromFirestore(firestoreId: String) async throws {
         guard let userId = Auth.auth().currentUser?.uid else { return }
-        
+
         try await db.collection("users")
             .document(userId)
             .collection("gear")
             .document(firestoreId)
             .delete()
+    }
+
+    // MARK: - Sync GPS Points to Firestore
+    func syncGPSPointsToFirestore(activity: RiverActivity, context: NSManagedObjectContext) async throws {
+        guard let userId = Auth.auth().currentUser?.uid,
+              let firestoreId = activity.firestoreId,
+              !firestoreId.isEmpty else { return }
+
+        // Fetch GPS points from Core Data
+        let fetchRequest: NSFetchRequest<GPSPoint> = GPSPoint.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "activity == %@", activity)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \GPSPoint.timestamp, ascending: true)]
+
+        let points = try context.fetch(fetchRequest)
+        guard !points.isEmpty else { return }
+
+        let gpsCollection = db.collection("users")
+            .document(userId)
+            .collection("activities")
+            .document(firestoreId)
+            .collection("gpsPoints")
+
+        // Delete existing points first
+        let existingPoints = try await gpsCollection.getDocuments()
+        for doc in existingPoints.documents {
+            try await doc.reference.delete()
+        }
+
+        // Add new points in batches (Firestore batch limit is 500)
+        let batchSize = 400
+        for startIndex in stride(from: 0, to: points.count, by: batchSize) {
+            let endIndex = min(startIndex + batchSize, points.count)
+            let batch = db.batch()
+
+            for i in startIndex..<endIndex {
+                let point = points[i]
+                let pointData: [String: Any] = [
+                    "latitude": point.latitude,
+                    "longitude": point.longitude,
+                    "altitude": point.altitude,
+                    "timestamp": Timestamp(date: point.timestamp ?? Date()),
+                    "speed": point.speed,
+                    "accuracy": point.accuracy,
+                    "heading": point.heading,
+                    "isPaused": point.isPaused
+                ]
+                let docRef = gpsCollection.document()
+                batch.setData(pointData, forDocument: docRef)
+            }
+
+            try await batch.commit()
+        }
+    }
+
+    // MARK: - Fetch GPS Points from Firestore
+    func fetchGPSPointsFromFirestore(activity: RiverActivity, context: NSManagedObjectContext) async throws {
+        guard let userId = Auth.auth().currentUser?.uid,
+              let firestoreId = activity.firestoreId,
+              !firestoreId.isEmpty,
+              activity.hasGPSData else { return }
+
+        let snapshot = try await db.collection("users")
+            .document(userId)
+            .collection("activities")
+            .document(firestoreId)
+            .collection("gpsPoints")
+            .order(by: "timestamp")
+            .getDocuments()
+
+        await MainActor.run {
+            // Delete existing local GPS points for this activity
+            let existingFetch: NSFetchRequest<GPSPoint> = GPSPoint.fetchRequest()
+            existingFetch.predicate = NSPredicate(format: "activity == %@", activity)
+            if let existingPoints = try? context.fetch(existingFetch) {
+                for point in existingPoints {
+                    context.delete(point)
+                }
+            }
+
+            // Create new GPS points from Firestore
+            for document in snapshot.documents {
+                let data = document.data()
+
+                let point = GPSPoint(context: context)
+                point.id = UUID()
+                point.latitude = data["latitude"] as? Double ?? 0
+                point.longitude = data["longitude"] as? Double ?? 0
+                point.altitude = data["altitude"] as? Double ?? 0
+                point.speed = data["speed"] as? Double ?? 0
+                point.accuracy = data["accuracy"] as? Double ?? 0
+                point.heading = data["heading"] as? Double ?? 0
+                point.isPaused = data["isPaused"] as? Bool ?? false
+
+                if let timestamp = data["timestamp"] as? Timestamp {
+                    point.timestamp = timestamp.dateValue()
+                }
+
+                point.activity = activity
+            }
+
+            try? context.save()
+        }
     }
 }

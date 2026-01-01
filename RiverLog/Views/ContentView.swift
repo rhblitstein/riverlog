@@ -5,19 +5,19 @@ import FirebaseAuth
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var authManager: AuthManager
-    
+
     @FetchRequest(
         entity: RiverActivity.entity(),
         sortDescriptors: [NSSortDescriptor(keyPath: \RiverActivity.date, ascending: false)]
     ) private var activities: FetchedResults<RiverActivity>
-    
+
     @State private var showingAddActivity = false
-    
+
     var body: some View {
         NavigationView {
             ZStack {
                 Theme.pageBackground.ignoresSafeArea()
-                
+
                 VStack(spacing: 0) {
                     // Sticky header
                     Color(.systemBackground)
@@ -29,7 +29,7 @@ struct ContentView: View {
                                 .foregroundColor(Theme.primaryBlue)
                         )
                         .shadow(color: Color.black.opacity(0.05), radius: 2, y: 2)
-                    
+
                     ScrollView {
                         VStack(spacing: 12) {
                             // Filter activities by current user

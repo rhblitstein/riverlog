@@ -1,17 +1,43 @@
 import SwiftUI
+import CoreLocation
 
 struct AddActivityView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) private var dismiss
-    
-    @StateObject private var viewModel = AddActivityViewModel()
+
+    @StateObject private var viewModel: AddActivityViewModel
     @State private var selectedSection: RiverSection?
     @State private var showingSectionPicker = false
     @State private var showingGearPicker = false
     @State private var selectedNotesTab: NotesTab = .quick
-    
+
+    // GPS data from live tracking
+    private let gpsLocations: [CLLocation]?
+    private let gpsDuration: Double?
+    private let gpsDistance: Double?
+
     enum NotesTab {
         case quick, report, `private`
+    }
+
+    init(gpsLocations: [CLLocation]? = nil, gpsDuration: Double? = nil, gpsDistance: Double? = nil) {
+        self.gpsLocations = gpsLocations
+        self.gpsDuration = gpsDuration
+        self.gpsDistance = gpsDistance
+
+        // Initialize view model with GPS data
+        let vm = AddActivityViewModel()
+        if let duration = gpsDuration {
+            vm.duration = duration / 3600.0  // Convert seconds to hours
+        }
+        if let distance = gpsDistance {
+            vm.gpsDistance = distance
+        }
+        if let locations = gpsLocations, !locations.isEmpty {
+            vm.hasGPSData = true
+            vm.gpsLocations = locations
+        }
+        _viewModel = StateObject(wrappedValue: vm)
     }
     
     var body: some View {
@@ -19,7 +45,7 @@ struct AddActivityView: View {
             Form {
                 Section("Activity Info") {
                     TextField("Title", text: $viewModel.title)
-                    
+
                     // Trip Type
                     Picker("Trip Type", selection: $viewModel.tripType) {
                         ForEach(TripType.allCases, id: \.self) { type in
@@ -27,7 +53,45 @@ struct AddActivityView: View {
                         }
                     }
                 }
-                
+
+                // GPS Route Preview (only if we have GPS data)
+                if viewModel.hasGPSData, let locations = gpsLocations, !locations.isEmpty {
+                    Section("Recorded Route") {
+                        let coordinates = locations.map { $0.coordinate }
+                        SimpleRouteMapView(coordinates: coordinates)
+                            .frame(height: 180)
+                            .listRowInsets(EdgeInsets())
+
+                        // GPS Stats
+                        HStack(spacing: 20) {
+                            VStack(alignment: .leading) {
+                                Text("Distance")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                                Text(String(format: "%.2f mi", viewModel.gpsDistance))
+                                    .font(.headline)
+                            }
+
+                            VStack(alignment: .leading) {
+                                Text("Duration")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                                Text(formatDuration(viewModel.duration * 3600))
+                                    .font(.headline)
+                            }
+
+                            VStack(alignment: .leading) {
+                                Text("Points")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                                Text("\(locations.count)")
+                                    .font(.headline)
+                            }
+                        }
+                        .padding(.vertical, 8)
+                    }
+                }
+
                 Section("Gear & Craft") {
                     // Gear Selection
                     Button(action: { showingGearPicker = true }) {
@@ -285,5 +349,16 @@ struct AddActivityView: View {
     
     private func fetchCurrentFlow(gaugeID: String) async {
         await viewModel.fetchFlow(gaugeID: gaugeID)
+    }
+
+    private func formatDuration(_ seconds: Double) -> String {
+        let hours = Int(seconds) / 3600
+        let minutes = (Int(seconds) % 3600) / 60
+
+        if hours > 0 {
+            return String(format: "%dh %02dm", hours, minutes)
+        } else {
+            return String(format: "%dm", minutes)
+        }
     }
 }

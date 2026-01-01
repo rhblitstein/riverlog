@@ -3,6 +3,7 @@ import SwiftUI
 import CoreData
 import Combine
 import FirebaseAuth
+import CoreLocation
 
 class AddActivityViewModel: ObservableObject {
     @Published var title: String = ""
@@ -30,6 +31,12 @@ class AddActivityViewModel: ObservableObject {
     @Published var didSwim: Bool = false
     @Published var hadCarnage: Bool = false
 
+    // GPS data
+    @Published var hasGPSData: Bool = false
+    @Published var gpsLocations: [CLLocation] = []
+    @Published var gpsDistance: Double = 0  // in miles
+
+    private let gpsDataService = GPSDataService()
     let flowUnits = ["CFS", "Feet"]
     
     var isValid: Bool {
@@ -125,20 +132,35 @@ class AddActivityViewModel: ObservableObject {
         // Associate with gear and section
         activity.gear = selectedGear
         activity.section = section
-        
+
         // Save photos as JPEG data
         if !selectedPhotos.isEmpty {
             let photoDataArray = selectedPhotos.compactMap { $0.jpegData(compressionQuality: 0.8) }
             activity.photoData = photoDataArray as NSArray
         }
-        
+
+        // Save GPS data if available
+        if hasGPSData && !gpsLocations.isEmpty {
+            gpsDataService.saveGPSPoints(locations: gpsLocations, to: activity, context: context)
+
+            // Use GPS distance if no section selected (section would have its own mileage)
+            if section == nil {
+                activity.totalDistance = gpsDistance * 1609.34  // Convert miles to meters for storage
+            }
+        }
+
         do {
             try context.save()
-            
+
             // Sync to Firestore
             Task {
                 let firestoreService = FirestoreService()
                 try? await firestoreService.syncActivityToFirestore(activity: activity, context: context)
+
+                // Also sync GPS points if available
+                if self.hasGPSData && !self.gpsLocations.isEmpty {
+                    try? await firestoreService.syncGPSPointsToFirestore(activity: activity, context: context)
+                }
             }
         } catch {
             print("Error saving activity: \(error)")

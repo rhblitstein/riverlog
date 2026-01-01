@@ -278,7 +278,69 @@ struct ActivityDetailView: View {
                             )
                         }
                     }
-                    
+
+                    // GPS Route Map (if activity has GPS data)
+                    if activity.hasGPSData {
+                        VStack(alignment: .leading, spacing: 12) {
+                            Text("Route")
+                                .font(.headline)
+
+                            RouteMapView(activity: activity)
+
+                            // GPS Stats
+                            if activity.totalDistance > 0 || activity.elevationGain > 0 {
+                                HStack(spacing: 16) {
+                                    if activity.totalDistance > 0 {
+                                        HStack(spacing: 6) {
+                                            Image(systemName: "location.fill")
+                                                .foregroundColor(.green)
+                                            VStack(alignment: .leading, spacing: 2) {
+                                                Text("GPS Distance")
+                                                    .font(.caption)
+                                                    .foregroundColor(.secondary)
+                                                Text(String(format: "%.2f mi", activity.totalDistance / 1609.34))
+                                                    .font(.subheadline)
+                                                    .fontWeight(.medium)
+                                            }
+                                        }
+                                    }
+
+                                    if activity.elevationGain > 0 {
+                                        HStack(spacing: 6) {
+                                            Image(systemName: "arrow.up.right")
+                                                .foregroundColor(.orange)
+                                            VStack(alignment: .leading, spacing: 2) {
+                                                Text("Elev. Gain")
+                                                    .font(.caption)
+                                                    .foregroundColor(.secondary)
+                                                Text(String(format: "%.0f ft", activity.elevationGain * 3.281))
+                                                    .font(.subheadline)
+                                                    .fontWeight(.medium)
+                                            }
+                                        }
+                                    }
+
+                                    if activity.elevationLoss > 0 {
+                                        HStack(spacing: 6) {
+                                            Image(systemName: "arrow.down.right")
+                                                .foregroundColor(.blue)
+                                            VStack(alignment: .leading, spacing: 2) {
+                                                Text("Elev. Loss")
+                                                    .font(.caption)
+                                                    .foregroundColor(.secondary)
+                                                Text(String(format: "%.0f ft", activity.elevationLoss * 3.281))
+                                                    .font(.subheadline)
+                                                    .fontWeight(.medium)
+                                            }
+                                        }
+                                    }
+                                }
+                                .padding(.top, 8)
+                            }
+                        }
+                        .padding(.top, 8)
+                    }
+
                     // Visibility fine print at bottom
                     HStack(spacing: 4) {
                         Image(systemName: visibilityIcon)
@@ -289,7 +351,7 @@ struct ActivityDetailView: View {
                             .foregroundColor(.secondary)
                     }
                     .padding(.top, 8)
-                    
+
                     // Additional Photos (if more than 1)
                     if !activity.hidePhotos, photos.count > 1 {
                         VStack(alignment: .leading, spacing: 12) {

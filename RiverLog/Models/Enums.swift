@@ -40,6 +40,27 @@ enum CraftType: String, CaseIterable {
             return [.solo]
         }
     }
+
+    var emoji: String {
+        switch self {
+        case .raft:
+            return "🚣"
+        case .cat:
+            return "🐱"
+        case .kayak:
+            return "🛶"
+        case .canoe:
+            return "🛶"
+        case .sup:
+            return "🏄"
+        case .duckie:
+            return "🦆"
+        case .ik:
+            return "🛶"
+        case .custom:
+            return "🌊"
+        }
+    }
 }
 
 enum LapType: String, CaseIterable {
