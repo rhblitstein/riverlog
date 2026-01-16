@@ -6,6 +6,10 @@ ifneq (,$(wildcard ./.env))
     export
 endif
 
+## seed: Seed rivers and sections data
+seed:
+	go run scripts/seed_rivers.go
+	
 ## run: Run the application
 run:
 	go run cmd/api/main.go

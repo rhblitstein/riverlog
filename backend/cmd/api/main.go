@@ -10,6 +10,7 @@ import (
 	chimiddleware "github.com/go-chi/chi/v5/middleware"
 	"github.com/rhblitstein/riverlog/internal/database"
 	"github.com/rhblitstein/riverlog/internal/middleware"
+	"github.com/rhblitstein/riverlog/internal/river"
 	"github.com/rhblitstein/riverlog/internal/trip"
 	"github.com/rhblitstein/riverlog/internal/user"
 )
@@ -41,6 +42,8 @@ func main() {
 	// Initialize repositories
 	userRepo := user.NewRepository(db.DB)
 	tripRepo := trip.NewRepository(db.DB)
+	riverRepo := river.NewRepository(db.DB)
+	riverHandler := river.NewHandler(riverRepo)
 
 	// Initialize handlers
 	userHandler := user.NewHandler(userRepo)
@@ -66,6 +69,9 @@ func main() {
 		// Public routes
 		r.Post("/auth/register", userHandler.Register)
 		r.Post("/auth/login", userHandler.Login)
+
+		r.Get("/rivers", riverHandler.ListRivers)
+		r.Get("/sections", riverHandler.ListSections)
 
 		// Protected routes
 		r.Group(func(r chi.Router) {

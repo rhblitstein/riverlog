@@ -1,7 +1,7 @@
 struct Config {
-    #if DEBUG
+    // Update this to your backend URL
+    // Simulator: http://localhost:8080
+    // Device: http://YOUR_COMPUTER_IP:8080
     static let apiBaseURL = "http://localhost:8080/api/v1"
-    #else
-    static let apiBaseURL = "https://your-production-url.com/api/v1"
-    #endif
+    static let keychainService = "com.riverlog.app"
 }

@@ -8,88 +8,74 @@ struct TripFormView: View {
     
     var body: some View {
         NavigationStack {
-            Form {
-                Section("Trip Details") {
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("River Name *")
-                            .font(.subheadline)
-                            .fontWeight(.medium)
-                        TextField("Colorado River", text: $viewModel.riverName)
-                            .textInputAutocapitalization(.words)
-                    }
-                    
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("Section Name *")
-                            .font(.subheadline)
-                            .fontWeight(.medium)
-                        TextField("Shoshone", text: $viewModel.sectionName)
-                            .textInputAutocapitalization(.words)
-                    }
-                    
-                    DatePicker("Date", selection: $viewModel.tripDate, displayedComponents: .date)
-                }
-                
-                Section("Run Details") {
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("Difficulty")
-                            .font(.subheadline)
-                            .fontWeight(.medium)
-                        TextField("e.g., III, IV+", text: $viewModel.difficulty)
-                    }
-                    
+            List {
+                NavigationLink {
+                    SectionPickerView(
+                        sections: viewModel.sections,
+                        selectedSection: $viewModel.selectedSection,
+                        searchText: $viewModel.searchText,
+                        isLoading: viewModel.isLoadingSections,
+                        onSearch: {
+                            Task {
+                                await viewModel.loadSections()
+                            }
+                        }
+                    )
+                } label: {
                     HStack {
-                        VStack(alignment: .leading, spacing: 8) {
-                            Text("Flow")
-                                .font(.subheadline)
-                                .fontWeight(.medium)
-                            TextField("650", text: $viewModel.flow)
-                                .keyboardType(.numberPad)
+                        Text("Section")
+                        Spacer()
+                        if let section = viewModel.selectedSection {
+                            Text(section.displayName)
+                                .foregroundColor(.secondary)
+                                .lineLimit(1)
+                        } else {
+                            Text("Select...")
+                                .foregroundColor(.secondary)
                         }
-                        
-                        Picker("Unit", selection: $viewModel.flowUnit) {
-                            Text("CFS").tag("cfs")
-                            Text("Feet").tag("feet")
-                        }
-                        .pickerStyle(.segmented)
-                        .frame(width: 120)
                     }
-                    
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("Craft Type")
-                            .font(.subheadline)
-                            .fontWeight(.medium)
-                        TextField("kayak, raft, etc.", text: $viewModel.craftType)
-                            .textInputAutocapitalization(.never)
+                }
+                .onChange(of: viewModel.selectedSection) { _, newSection in
+                    if let rating = newSection?.classRating, viewModel.difficulty.isEmpty {
+                        viewModel.difficulty = formatClassRating(rating)
                     }
-                    
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("Duration (minutes)")
-                            .font(.subheadline)
-                            .fontWeight(.medium)
-                        TextField("120", text: $viewModel.durationMinutes)
-                            .keyboardType(.numberPad)
-                    }
-                    
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("Mileage")
-                            .font(.subheadline)
-                            .fontWeight(.medium)
-                        TextField("3.5", text: $viewModel.mileage)
-                            .keyboardType(.decimalPad)
+                    if let mileage = newSection?.mileage, viewModel.mileage.isEmpty {
+                        viewModel.mileage = String(format: "%.1f", mileage)
                     }
                 }
                 
-                Section("Notes") {
-                    TextEditor(text: $viewModel.notes)
-                        .frame(minHeight: 100)
+                DatePicker("Date", selection: $viewModel.tripDate, displayedComponents: .date)
+                
+                TextField("Difficulty (e.g., III, IV+)", text: $viewModel.difficulty)
+                
+                HStack {
+                    TextField("Flow", text: $viewModel.flow)
+                        .keyboardType(.numberPad)
+                    
+                    Picker("", selection: $viewModel.flowUnit) {
+                        Text("CFS").tag("cfs")
+                        Text("Feet").tag("feet")
+                    }
+                    .pickerStyle(.segmented)
+                    .frame(width: 120)
                 }
+                
+                TextField("Craft Type", text: $viewModel.craftType)
+                    .textInputAutocapitalization(.never)
+                
+                TextField("Duration (minutes)", text: $viewModel.durationMinutes)
+                    .keyboardType(.numberPad)
+                
+                TextField("Mileage", text: $viewModel.mileage)
+                    .keyboardType(.decimalPad)
+                
+                TextEditor(text: $viewModel.notes)
+                    .frame(minHeight: 100)
                 
                 if let error = viewModel.errorMessage {
-                    Section {
-                        Text(error)
-                            .font(.caption)
-                            .foregroundColor(.red)
-                    }
+                    Text(error)
+                        .font(.caption)
+                        .foregroundColor(.red)
                 }
             }
             .navigationTitle(viewModel.isEditing ? "Edit Trip" : "Log New Trip")
@@ -110,14 +96,124 @@ struct TripFormView: View {
                             }
                         }
                     }
-                    .disabled(viewModel.isLoading)
+                    .disabled(viewModel.isLoading || viewModel.selectedSection == nil)
                 }
             }
-            .onAppear {
+            .task {
+                await viewModel.loadSections()
+                
                 if let trip = tripToEdit {
-                    viewModel.loadTrip(trip)
+                    await viewModel.loadTrip(trip)
                 }
             }
         }
+    }
+}
+
+struct SectionPickerView: View {
+    let sections: [Section]
+    @Binding var selectedSection: Section?
+    @Binding var searchText: String
+    let isLoading: Bool
+    let onSearch: () -> Void
+    
+    @Environment(\.dismiss) private var dismiss
+    
+    var filteredSections: [Section] {
+        if searchText.isEmpty {
+            return sections
+        }
+        return sections.filter { section in
+            section.riverName.localizedCaseInsensitiveContains(searchText) ||
+            section.name.localizedCaseInsensitiveContains(searchText)
+        }
+    }
+    
+    var body: some View {
+        VStack(spacing: 0) {
+            // Search bar at top
+            HStack {
+                Image(systemName: "magnifyingglass")
+                    .foregroundColor(.secondary)
+                TextField("Search rivers or sections", text: $searchText)
+                    .textFieldStyle(.plain)
+                if !searchText.isEmpty {
+                    Button {
+                        searchText = ""
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .foregroundColor(.secondary)
+                    }
+                }
+            }
+            .padding()
+            .background(Color(.systemGray6))
+            .onChange(of: searchText) { _, _ in
+                onSearch()
+            }
+            
+            List {
+                if isLoading {
+                    HStack {
+                        Spacer()
+                        ProgressView()
+                        Spacer()
+                    }
+                } else {
+                    ForEach(filteredSections) { section in
+                        Button {
+                            selectedSection = section
+                            dismiss()
+                        } label: {
+                            HStack {
+                                VStack(alignment: .leading, spacing: 4) {
+                                    Text(section.riverName)
+                                        .font(.headline)
+                                        .foregroundColor(.primary)
+                                    
+                                    Text(section.name)
+                                        .font(.subheadline)
+                                        .foregroundColor(.secondary)
+                                    
+                                    HStack {
+                                        Text(section.state)
+                                            .font(.caption)
+                                            .foregroundColor(.secondary)
+                                        
+                                        if let rating = section.classRating {
+                                            Text("•")
+                                                .foregroundColor(.secondary)
+                                            Text(formatClassRating(rating))
+                                                .font(.caption)
+                                                .foregroundColor(.secondary)
+                                        }
+                                        
+                                        if let mileage = section.mileage {
+                                            Text("•")
+                                                .foregroundColor(.secondary)
+                                            Text(String(format: "%.1f mi", mileage))
+                                                .font(.caption)
+                                                .foregroundColor(.secondary)
+                                        }
+                                    }
+                                }
+                                
+                                Spacer()
+                                
+                                if selectedSection?.id == section.id {
+                                    Image(systemName: "checkmark")
+                                        .foregroundColor(.blue)
+                                }
+                            }
+                            .contentShape(Rectangle())
+                        }
+                        .buttonStyle(.plain)
+                    }
+                }
+            }
+            .listStyle(.plain)
+        }
+        .navigationTitle("Select Section")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }

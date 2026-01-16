@@ -7,9 +7,11 @@ import (
 type Trip struct {
 	ID              int       `json:"id"`
 	UserID          int       `json:"user_id"`
-	RiverName       string    `json:"river_name"`
-	SectionName     string    `json:"section_name"`
-	TripDate        string    `json:"trip_date"` // YYYY-MM-DD format
+	SectionID       int       `json:"section_id"`
+	RiverName       string    `json:"river_name"`   // From join
+	SectionName     string    `json:"section_name"` // From join
+	State           string    `json:"state"`        // From join
+	TripDate        string    `json:"trip_date"`
 	Difficulty      *string   `json:"difficulty,omitempty"`
 	Flow            *int      `json:"flow,omitempty"`
 	FlowUnit        *string   `json:"flow_unit,omitempty"`
@@ -22,8 +24,7 @@ type Trip struct {
 }
 
 type CreateTripRequest struct {
-	RiverName       string   `json:"river_name"`
-	SectionName     string   `json:"section_name"`
+	SectionID       int      `json:"section_id"`
 	TripDate        string   `json:"trip_date"`
 	Difficulty      *string  `json:"difficulty,omitempty"`
 	Flow            *int     `json:"flow,omitempty"`
@@ -35,8 +36,7 @@ type CreateTripRequest struct {
 }
 
 type UpdateTripRequest struct {
-	RiverName       *string  `json:"river_name,omitempty"`
-	SectionName     *string  `json:"section_name,omitempty"`
+	SectionID       *int     `json:"section_id,omitempty"`
 	TripDate        *string  `json:"trip_date,omitempty"`
 	Difficulty      *string  `json:"difficulty,omitempty"`
 	Flow            *int     `json:"flow,omitempty"`

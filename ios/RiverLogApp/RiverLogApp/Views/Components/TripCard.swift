@@ -71,7 +71,6 @@ struct TripCard: View {
         guard let date = trip.formattedDate else { return trip.tripDate }
         
         let calendar = Calendar.current
-        let now = Date()
         
         if calendar.isDateInToday(date) {
             let formatter = DateFormatter()

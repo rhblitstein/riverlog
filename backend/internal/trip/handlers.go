@@ -2,6 +2,7 @@ package trip
 
 import (
 	"encoding/json"
+	"log"
 	"net/http"
 	"strconv"
 
@@ -20,36 +21,33 @@ func NewHandler(repo *Repository) *Handler {
 func (h *Handler) List(w http.ResponseWriter, r *http.Request) {
 	userID := r.Context().Value("userID").(int)
 
-	// Parse query params
-	limitStr := r.URL.Query().Get("limit")
-	offsetStr := r.URL.Query().Get("offset")
-	sort := r.URL.Query().Get("sort")
-
+	// Parse query parameters
 	limit := 20
-	if limitStr != "" {
-		if l, err := strconv.Atoi(limitStr); err == nil {
-			limit = l
-		}
-	}
-
 	offset := 0
-	if offsetStr != "" {
-		if o, err := strconv.Atoi(offsetStr); err == nil {
-			offset = o
+	sortBy := "trip_date"
+	sortOrder := "desc"
+
+	if l := r.URL.Query().Get("limit"); l != "" {
+		if parsed, err := strconv.Atoi(l); err == nil && parsed > 0 {
+			limit = parsed
 		}
 	}
 
-	if sort == "" {
-		sort = "date_desc"
+	if o := r.URL.Query().Get("offset"); o != "" {
+		if parsed, err := strconv.Atoi(o); err == nil && parsed >= 0 {
+			offset = parsed
+		}
 	}
 
-	params := ListTripsParams{
-		Limit:  limit,
-		Offset: offset,
-		Sort:   sort,
+	if sb := r.URL.Query().Get("sort_by"); sb != "" {
+		sortBy = sb
 	}
 
-	trips, total, err := h.repo.List(userID, params)
+	if so := r.URL.Query().Get("sort_order"); so != "" {
+		sortOrder = so
+	}
+
+	trips, total, err := h.repo.List(userID, limit, offset, sortBy, sortOrder)
 	if err != nil {
 		respondError(w, http.StatusInternalServerError, "Error fetching trips")
 		return
@@ -68,17 +66,15 @@ func (h *Handler) List(w http.ResponseWriter, r *http.Request) {
 // Get retrieves a specific trip
 func (h *Handler) Get(w http.ResponseWriter, r *http.Request) {
 	userID := r.Context().Value("userID").(int)
-	tripIDStr := chi.URLParam(r, "id")
-
-	tripID, err := strconv.Atoi(tripIDStr)
+	tripID, err := strconv.Atoi(chi.URLParam(r, "id"))
 	if err != nil {
 		respondError(w, http.StatusBadRequest, "Invalid trip ID")
 		return
 	}
 
-	trip, err := h.repo.GetByID(userID, tripID)
+	trip, err := h.repo.GetByID(tripID, userID)
 	if err != nil {
-		if err == ErrTripNotFound {
+		if err.Error() == "trip not found" {
 			respondError(w, http.StatusNotFound, "Trip not found")
 			return
 		}
@@ -97,34 +93,34 @@ func (h *Handler) Create(w http.ResponseWriter, r *http.Request) {
 
 	var req CreateTripRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		log.Printf("Failed to decode request body: %v", err)
 		respondError(w, http.StatusBadRequest, "Invalid request body")
 		return
 	}
 
 	// Validate required fields
-	if req.RiverName == "" || req.SectionName == "" || req.TripDate == "" {
-		respondError(w, http.StatusBadRequest, "River name, section name, and trip date are required")
+	if req.SectionID == 0 || req.TripDate == "" {
+		log.Printf("Missing required fields: section_id=%d, trip_date=%s", req.SectionID, req.TripDate)
+		respondError(w, http.StatusBadRequest, "section_id and trip_date are required")
 		return
 	}
 
 	trip, err := h.repo.Create(userID, req)
 	if err != nil {
+		log.Printf("Failed to create trip: %v", err)
 		respondError(w, http.StatusInternalServerError, "Error creating trip")
 		return
 	}
 
 	respondJSON(w, http.StatusCreated, map[string]interface{}{
-		"data":    trip,
-		"message": "Trip created successfully",
+		"data": trip,
 	})
 }
 
 // Update updates an existing trip
 func (h *Handler) Update(w http.ResponseWriter, r *http.Request) {
 	userID := r.Context().Value("userID").(int)
-	tripIDStr := chi.URLParam(r, "id")
-
-	tripID, err := strconv.Atoi(tripIDStr)
+	tripID, err := strconv.Atoi(chi.URLParam(r, "id"))
 	if err != nil {
 		respondError(w, http.StatusBadRequest, "Invalid trip ID")
 		return
@@ -136,9 +132,9 @@ func (h *Handler) Update(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	trip, err := h.repo.Update(userID, tripID, req)
+	trip, err := h.repo.Update(tripID, userID, req)
 	if err != nil {
-		if err == ErrTripNotFound {
+		if err.Error() == "trip not found" {
 			respondError(w, http.StatusNotFound, "Trip not found")
 			return
 		}
@@ -154,17 +150,15 @@ func (h *Handler) Update(w http.ResponseWriter, r *http.Request) {
 // Delete deletes a trip
 func (h *Handler) Delete(w http.ResponseWriter, r *http.Request) {
 	userID := r.Context().Value("userID").(int)
-	tripIDStr := chi.URLParam(r, "id")
-
-	tripID, err := strconv.Atoi(tripIDStr)
+	tripID, err := strconv.Atoi(chi.URLParam(r, "id"))
 	if err != nil {
 		respondError(w, http.StatusBadRequest, "Invalid trip ID")
 		return
 	}
 
-	err = h.repo.Delete(userID, tripID)
+	err = h.repo.Delete(tripID, userID)
 	if err != nil {
-		if err == ErrTripNotFound {
+		if err.Error() == "trip not found" {
 			respondError(w, http.StatusNotFound, "Trip not found")
 			return
 		}

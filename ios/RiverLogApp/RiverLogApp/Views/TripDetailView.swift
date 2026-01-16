@@ -101,18 +101,21 @@ struct TripDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                HStack(spacing: 16) {
+                Menu {
                     Button {
                         showingEditSheet = true
                     } label: {
-                        Text("Edit")
+                        Label("Edit", systemImage: "pencil")
                     }
                     
                     Button(role: .destructive) {
                         showingDeleteAlert = true
                     } label: {
-                        Text("Delete")
+                        Label("Delete", systemImage: "trash")
                     }
+                } label: {
+                    Image(systemName: "ellipsis.circle")
+                        .font(.title2)
                 }
             }
         }

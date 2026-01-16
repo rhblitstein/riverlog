@@ -34,6 +34,49 @@ class APIService {
         return response.data
     }
     
+    // MARK: - Rivers
+
+    func getRivers(token: String, state: String? = nil, search: String? = nil) async throws -> [River] {
+        var endpoint = "/rivers?"
+        var params: [String] = []
+        
+        if let state = state {
+            params.append("state=\(state)")
+        }
+        if let search = search {
+            params.append("search=\(search)")
+        }
+        params.append("limit=1000") // Get all rivers
+        
+        endpoint += params.joined(separator: "&")
+        
+        let response: APIResponse<RiversResponse> = try await get(endpoint: endpoint, token: token)
+        return response.data.rivers ?? []
+    }
+
+    // MARK: - Sections
+
+    func getSections(token: String, riverId: Int? = nil, state: String? = nil, search: String? = nil) async throws -> [Section] {
+        var endpoint = "/sections?"
+        var params: [String] = []
+        
+        if let riverId = riverId {
+            params.append("river_id=\(riverId)")
+        }
+        if let state = state {
+            params.append("state=\(state)")
+        }
+        if let search = search {
+            params.append("search=\(search)")
+        }
+        params.append("limit=1000") // Get all sections
+        
+        endpoint += params.joined(separator: "&")
+        
+        let response: APIResponse<SectionsResponse> = try await get(endpoint: endpoint, token: token)
+        return response.data.sections ?? []
+    }
+    
     // MARK: - Trips
     
     func getTrips(token: String) async throws -> [Trip] {

@@ -3,8 +3,11 @@ import Combine
 
 @MainActor
 class TripFormViewModel: ObservableObject {
-    @Published var riverName = ""
-    @Published var sectionName = ""
+    @Published var selectedSection: Section?
+    @Published var sections: [Section] = []
+    @Published var searchText = ""
+    @Published var isLoadingSections = false
+    
     @Published var tripDate = Date()
     @Published var difficulty = ""
     @Published var flow = ""
@@ -23,15 +26,38 @@ class TripFormViewModel: ObservableObject {
     var existingTrip: Trip?
     var isEditing: Bool { existingTrip != nil }
     
-    func loadTrip(_ trip: Trip) {
+    func loadSections() async {
+        guard let token = authService.token else { return }
+        
+        isLoadingSections = true
+        
+        do {
+            sections = try await apiService.getSections(token: token, search: searchText.isEmpty ? nil : searchText)
+        } catch {
+            errorMessage = "Failed to load sections"
+        }
+        
+        isLoadingSections = false
+    }
+    
+    func loadTrip(_ trip: Trip) async {
+        guard let token = authService.token else { return }
+        
         existingTrip = trip
-        riverName = trip.riverName
-        sectionName = trip.sectionName
+        
+        // Fetch the full section data
+        do {
+            let allSections = try await apiService.getSections(token: token)
+            selectedSection = allSections.first { $0.id == trip.sectionId }
+        } catch {
+            errorMessage = "Failed to load section data"
+        }
         
         // Parse date
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
-        if let date = formatter.date(from: trip.tripDate) {
+        if let dateString = trip.tripDate.split(separator: "T").first,
+           let date = formatter.date(from: String(dateString)) {
             tripDate = date
         }
         
@@ -45,8 +71,8 @@ class TripFormViewModel: ObservableObject {
     }
     
     func saveTrip() async -> Bool {
-        guard !riverName.isEmpty, !sectionName.isEmpty else {
-            errorMessage = "River name and section are required"
+        guard let section = selectedSection else {
+            errorMessage = "Please select a section"
             return false
         }
         
@@ -64,8 +90,7 @@ class TripFormViewModel: ObservableObject {
         let dateString = formatter.string(from: tripDate)
         
         let request = CreateTripRequest(
-            riverName: riverName,
-            sectionName: sectionName,
+            sectionId: section.id,
             tripDate: dateString,
             difficulty: difficulty.isEmpty ? nil : difficulty,
             flow: Int(flow),

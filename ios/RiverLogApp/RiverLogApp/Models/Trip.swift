@@ -3,8 +3,10 @@ import Foundation
 struct Trip: Codable, Identifiable {
     let id: Int
     let userId: Int
+    let sectionId: Int
     let riverName: String
     let sectionName: String
+    let state: String
     let tripDate: String // YYYY-MM-DD
     let difficulty: String?
     let flow: Int?
@@ -19,8 +21,10 @@ struct Trip: Codable, Identifiable {
     enum CodingKeys: String, CodingKey {
         case id
         case userId = "user_id"
+        case sectionId = "section_id"
         case riverName = "river_name"
         case sectionName = "section_name"
+        case state
         case tripDate = "trip_date"
         case difficulty, flow
         case flowUnit = "flow_unit"
@@ -38,8 +42,7 @@ struct Trip: Codable, Identifiable {
 }
 
 struct CreateTripRequest: Codable {
-    let riverName: String
-    let sectionName: String
+    let sectionId: Int
     let tripDate: String
     let difficulty: String?
     let flow: Int?
@@ -50,8 +53,7 @@ struct CreateTripRequest: Codable {
     let notes: String?
     
     enum CodingKeys: String, CodingKey {
-        case riverName = "river_name"
-        case sectionName = "section_name"
+        case sectionId = "section_id"
         case tripDate = "trip_date"
         case difficulty, flow
         case flowUnit = "flow_unit"

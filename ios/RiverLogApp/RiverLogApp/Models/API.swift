@@ -14,6 +14,16 @@ struct TripsResponse: Codable {
     let offset: Int?
 }
 
+struct SectionsResponse: Codable {
+    let sections: [Section]?
+    let total: Int?
+}
+
+struct RiversResponse: Codable {
+    let rivers: [River]?
+    let total: Int?
+}
+
 // MARK: - Errors
 
 enum APIError: Error {
