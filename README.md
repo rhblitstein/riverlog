@@ -1,37 +1,39 @@
 # RiverLog
 
-A whitewater activity tracking application for logging and analyzing paddling trips.
+A native iOS whitewater activity tracking application for logging and analyzing paddling trips.
 
 ## Features
 
-- 🚣 Log whitewater trips with details (river, section, date, flow, difficulty)
-- 📊 View and manage your paddling history
+- 🚣 Native iOS app for logging trips on the go
+- 📊 View paddling history and statistics
 - 🔐 Secure authentication with JWT
-- 📱 Clean, responsive interface
+- 📱 Clean, mobile-first interface
+- 💾 Cloud storage via Go backend API
 
 ## Tech Stack
 
-**Backend:**
+**Backend (API):**
 - Go 1.21+
 - PostgreSQL
 - Chi router
 - JWT authentication
 
-**Frontend:**
-- React 18
-- Vite
-- Tailwind CSS
-- React Router
+**iOS App:**
+- Swift 5.9+
+- SwiftUI
+- iOS 16.0+
+- URLSession with async/await
 
 ## Quick Start
 
 ### Prerequisites
 
 - Go 1.21+
-- Node.js 18+
 - PostgreSQL 15+
+- Xcode 15+
+- iOS device or simulator (iOS 16+)
 
-### Installation
+### Backend Setup
 
 1. Clone the repo
 ```bash
@@ -54,14 +56,15 @@ make migrate-up
 make run
 ```
 
-4. Start the frontend (in a new terminal)
-```bash
-cd frontend
-npm install
-npm run dev
-```
+The API will be available at `http://localhost:8080`
 
-5. Open http://localhost:5173
+4. Build the iOS app
+```bash
+cd ios
+open RiverLog.xcodeproj
+# Update API base URL in Config.swift if needed
+# Build and run on simulator or device
+```
 
 ## Documentation
 
@@ -77,11 +80,10 @@ make run        # Start server
 make test       # Run tests
 make migrate-up # Run migrations
 
-# Frontend
-cd frontend
-npm run dev     # Start dev server
-npm test        # Run tests
-npm run build   # Build for production
+# iOS App
+cd ios
+open RiverLog.xcodeproj
+# Build and run in Xcode
 ```
 
 ## Project Status
@@ -89,9 +91,11 @@ npm run build   # Build for production
 🚧 **In Active Development** - MVP phase
 
 Current focus:
-- [ ] User authentication
-- [ ] Trip CRUD operations
-- [ ] Basic UI for trip logging and viewing
+- [x] Backend API with authentication
+- [x] Trip CRUD operations
+- [ ] iOS app UI
+- [ ] Login/registration flow
+- [ ] Trip list and creation
 
 ## Contributing
 

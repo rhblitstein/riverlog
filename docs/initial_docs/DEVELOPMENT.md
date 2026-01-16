@@ -3,8 +3,9 @@
 ## Prerequisites
 
 - Go 1.21 or higher
-- Node.js 18 or higher
 - PostgreSQL 15 or higher
+- Xcode 15 or higher
+- iOS 16.0+ (device or simulator)
 - Git
 
 ## Initial Setup
@@ -30,8 +31,8 @@ cd backend
 cp .env.example .env
 
 # Edit .env with your database credentials
-# DATABASE_URL=postgres://username:password@localhost:5432/riverlog_dev
-# JWT_SECRET=your-super-secret-key-change-this
+# DATABASE_URL=postgres://username:password@localhost:5432/riverlog_dev?sslmode=disable
+# JWT_SECRET=your-super-secret-key-change-this-min-32-chars
 # PORT=8080
 
 # Install dependencies
@@ -46,24 +47,19 @@ make run
 
 The API will be available at `http://localhost:8080`
 
-### 4. Frontend Setup
+### 4. iOS App Setup
 ```bash
-cd frontend
+cd ios
 
-# Install dependencies
-npm install
+# Open project in Xcode
+open RiverLog.xcodeproj
 
-# Copy environment template
-cp .env.example .env
+# Update Config.swift with your API base URL
+# For simulator: http://localhost:8080
+# For device: http://YOUR_COMPUTER_IP:8080
 
-# Edit .env if needed (default should work)
-# VITE_API_BASE_URL=http://localhost:8080
-
-# Start development server
-npm run dev
+# Build and run
 ```
-
-The frontend will be available at `http://localhost:5173`
 
 ## Development Workflow
 
@@ -91,23 +87,17 @@ make lint
 make fmt
 ```
 
-### Frontend Commands
-```bash
-# Start dev server
-npm run dev
+### iOS Development
 
-# Run tests
-npm test
+**Running on Simulator:**
+- The API URL should be `http://localhost:8080`
+- Simulator can access localhost directly
 
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-
-# Lint
-npm run lint
-```
+**Running on Physical Device:**
+- Find your computer's local IP: `ifconfig | grep inet`
+- Update Config.swift to use `http://YOUR_IP:8080`
+- Ensure your phone and computer are on the same network
+- Backend must be running
 
 ## Project Structure
 
@@ -116,25 +106,25 @@ npm run lint
 backend/
 ├── cmd/api/                 # Application entry point
 ├── internal/
-│   ├── auth/               # Authentication logic
-│   ├── trip/               # Trip business logic
-│   ├── user/               # User business logic
+│   ├── auth/               # Authentication logic (JWT, password hashing)
+│   ├── trip/               # Trip business logic and handlers
+│   ├── user/               # User business logic and handlers
 │   ├── database/           # Database connection and queries
-│   └── middleware/         # HTTP middleware
+│   └── middleware/         # HTTP middleware (auth, CORS, logging)
 ├── migrations/             # Database migrations
 └── Makefile               # Development commands
 ```
 
-### Frontend
+### iOS App
 ```
-frontend/
-├── src/
-│   ├── components/        # Reusable components
-│   ├── pages/            # Page components
-│   ├── context/          # React context (auth, etc)
-│   ├── api/              # API client functions
-│   └── App.jsx           # Root component
-└── public/               # Static assets
+ios/
+├── RiverLog/
+│   ├── Models/            # Data models (User, Trip, etc.)
+│   ├── Views/             # SwiftUI views
+│   ├── Services/          # API client, auth service, keychain
+│   ├── ViewModels/        # View models for MVVM
+│   └── Utils/             # Helper utilities
+└── RiverLog.xcodeproj
 ```
 
 ## Database Migrations
@@ -177,14 +167,11 @@ go test -cover ./...
 go test ./internal/auth
 ```
 
-### Frontend Tests
-```bash
-cd frontend
-npm test
+### iOS Tests
 
-# With coverage
-npm test -- --coverage
-```
+Run tests in Xcode:
+- `Cmd + U` to run all tests
+- Or use the Test Navigator
 
 ## Code Style
 
@@ -195,19 +182,20 @@ npm test -- --coverage
 - Use `golangci-lint` for linting
 - Write tests for all business logic
 
-### JavaScript/React
+### Swift
 
-- Use ES6+ features
-- Functional components with hooks
-- Prettier for formatting
-- ESLint for linting
+- Follow Swift API Design Guidelines
+- Use SwiftLint for linting
+- Prefer SwiftUI over UIKit
+- Use async/await for networking
+- MVVM architecture
 
 ## Environment Variables
 
 ### Backend (.env)
 ```bash
 # Database
-DATABASE_URL=postgres://user:pass@localhost:5432/riverlog_dev
+DATABASE_URL=postgres://user:pass@localhost:5432/riverlog_dev?sslmode=disable
 
 # JWT
 JWT_SECRET=your-super-secret-key-min-32-chars
@@ -220,9 +208,25 @@ ENV=development
 LOG_LEVEL=info
 ```
 
-### Frontend (.env)
+## API Testing
+
+You can test the API with curl:
 ```bash
-VITE_API_BASE_URL=http://localhost:8080
+# Register
+curl -X POST http://localhost:8080/api/v1/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{"email":"test@example.com","password":"password123"}'
+
+# Login
+curl -X POST http://localhost:8080/api/v1/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"email":"test@example.com","password":"password123"}'
+
+# Create trip (replace TOKEN with JWT from login)
+curl -X POST http://localhost:8080/api/v1/trips \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer TOKEN" \
+  -d '{"river_name":"Colorado River","section_name":"Shoshone","trip_date":"2026-01-13"}'
 ```
 
 ## Common Issues
@@ -242,14 +246,22 @@ make migrate-version
 make migrate-force version=XXX
 ```
 
-### CORS Issues
+### iOS App Can't Connect to API
 
-Ensure backend CORS middleware allows `http://localhost:5173` in development.
+**On Simulator:**
+- Ensure backend is running on `localhost:8080`
+- Check Console for network errors
+
+**On Physical Device:**
+- Use your computer's IP address, not localhost
+- Ensure both devices are on same network
+- Check firewall isn't blocking port 8080
 
 ### JWT Token Invalid
 
 - Ensure `JWT_SECRET` is set in backend `.env`
 - Token expires after 24 hours - login again
+- Check token is being stored in Keychain properly
 
 ## Git Workflow
 
@@ -261,7 +273,15 @@ Ensure backend CORS middleware allows `http://localhost:5173` in development.
 
 ## Deployment
 
-TBD - Will add deployment instructions once we choose a platform.
+### Backend Deployment
+
+TBD - Will add deployment instructions once we choose a platform (Railway, Fly.io, etc.)
+
+### iOS App Distribution
+
+- TestFlight for beta testing
+- App Store for production release
+- Enterprise distribution if needed
 
 ## Getting Help
 
