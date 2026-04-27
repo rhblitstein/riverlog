@@ -5,43 +5,41 @@ struct MainTabView: View {
     @State private var selectedTab = 0
     @State private var showingLiveTracking = false
 
-    init() {
-        let appearance = UITabBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = UIColor.systemBackground
-        appearance.shadowColor = UIColor.separator
-
-        UITabBar.appearance().layer.cornerRadius = 0
-        UITabBar.appearance().layer.masksToBounds = false
-
-        UITabBar.appearance().standardAppearance = appearance
-        UITabBar.appearance().scrollEdgeAppearance = appearance
-    }
-
     var body: some View {
-        TabView(selection: $selectedTab) {
-            ContentView()
-                .tabItem {
-                    Label("Home", systemImage: "house.fill")
+        GeometryReader { geo in
+            VStack(spacing: 0) {
+                // Content area
+                Group {
+                    switch selectedTab {
+                    case 0:
+                        ContentView()
+                    case 1:
+                        SectionsTab()
+                    case 3:
+                        GroupsTab()
+                    case 4:
+                        ProfileView()
+                    default:
+                        ContentView()
+                    }
                 }
-                .tag(0)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
 
-            Color.clear
-                .tabItem {
-                    Image(systemName: isRecording ? "stop.circle.fill" : "record.circle")
-                    Text("Record")
+                // Custom rectangular tab bar — edge to edge, no pill
+                Divider()
+                HStack(spacing: 0) {
+                    tabButton(icon: "house.fill", label: "Home", tag: 0, bottomInset: geo.safeAreaInsets.bottom)
+                    tabButton(icon: "map", label: "Sections", tag: 1, bottomInset: geo.safeAreaInsets.bottom)
+                    tabButton(icon: isRecording ? "stop.circle.fill" : "record.circle", label: "Record", tag: 2, bottomInset: geo.safeAreaInsets.bottom)
+                    tabButton(icon: "person.3", label: "Groups", tag: 3, bottomInset: geo.safeAreaInsets.bottom)
+                    tabButton(icon: "person.fill", label: "You", tag: 4, bottomInset: geo.safeAreaInsets.bottom)
                 }
-                .tag(1)
-
-            ProfileView()
-                .tabItem {
-                    Label("You", systemImage: "person.fill")
-                }
-                .tag(2)
+                .background(Color.white)
+            }
+            .ignoresSafeArea(.container, edges: .bottom)
         }
-        .accentColor(Theme.primaryBlue)
         .onChange(of: selectedTab) { _, newValue in
-            if newValue == 1 {
+            if newValue == 2 {
                 showingLiveTracking = true
                 selectedTab = 0
             }
@@ -49,6 +47,30 @@ struct MainTabView: View {
         .fullScreenCover(isPresented: $showingLiveTracking) {
             LiveTrackingView()
         }
+    }
+
+    private func tabButton(icon: String, label: String, tag: Int, bottomInset: CGFloat) -> some View {
+        Button {
+            selectedTab = tag
+        } label: {
+            VStack(spacing: 3) {
+                Image(systemName: icon)
+                    .font(.system(size: 18))
+                    .frame(height: 20)
+                Text(label)
+                    .font(.system(size: 10, weight: .medium))
+                Spacer().frame(height: max(bottomInset - 14, 0))
+            }
+            .padding(.top, 8)
+            .frame(maxWidth: .infinity)
+            .foregroundColor(selectedTab == tag ? Theme.primaryBlue : .black)
+            .background(
+                selectedTab == tag
+                    ? Theme.primaryBlue.opacity(0.12)
+                    : Color.white
+            )
+        }
+        .buttonStyle(.plain)
     }
 
     private var isRecording: Bool {

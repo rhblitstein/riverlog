@@ -7,7 +7,22 @@ import Combine
 class FirestoreService: ObservableObject {
     private let db = Firestore.firestore()
     @Published var isSyncing = false
-    
+
+    // MARK: - User Profile
+
+    func saveUserProfile(_ profile: [String: Any]) async throws {
+        guard let userId = Auth.auth().currentUser?.uid else {
+            throw NSError(domain: "FirestoreService", code: 401, userInfo: [NSLocalizedDescriptionKey: "User not authenticated"])
+        }
+        try await db.collection("users").document(userId).setData(["profile": profile], merge: true)
+    }
+
+    func fetchUserProfile() async throws -> [String: Any]? {
+        guard let userId = Auth.auth().currentUser?.uid else { return nil }
+        let doc = try await db.collection("users").document(userId).getDocument()
+        return doc.data()?["profile"] as? [String: Any]
+    }
+
     // MARK: - Sync Activity to Firestore
     func syncActivityToFirestore(activity: RiverActivity, context: NSManagedObjectContext) async throws {
         guard let userId = Auth.auth().currentUser?.uid else {

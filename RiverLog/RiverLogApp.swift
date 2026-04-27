@@ -10,7 +10,7 @@ struct RiverLogApp: App {
     init() {
         // Import river sections on first launch
         RiverSectionImporter.importSections(context: persistenceController.container.viewContext)
-        
+
         FirebaseApp.configure()
     }
     
