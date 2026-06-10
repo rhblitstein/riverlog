@@ -12,7 +12,11 @@
     "takeOutName": "Highway 14",
     "gaugeName": "LA POUDRE PASS CREEK BELOW LONG DRAW RESERVOIR",
     "gaugeID": "LAPLODCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/365"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/365",
+    "putInLatitude": 40.507282137124605,
+    "putInLongitude": -105.76824307960015,
+    "takeOutLatitude": 40.6340635264141,
+    "takeOutLongitude": -105.80734922868442
   },
   {
     "id": "11113",
@@ -27,7 +31,11 @@
     "takeOutName": "Old Creede Fish Hatchery",
     "gaugeName": "RIO GRANDE AT THIRTY MILE BRIDGE NEAR CREEDE",
     "gaugeID": "RIOMILCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11113"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11113",
+    "putInLatitude": 37.77462202126882,
+    "putInLongitude": -107.1406880676861,
+    "takeOutLatitude": 37.81679824385874,
+    "takeOutLongitude": -106.9152454184801
   },
   {
     "id": "357",
@@ -42,7 +50,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "ARKANSAS RIVER BELOW GRANITE, CO",
     "gaugeID": "07087050",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/357"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/357",
+    "putInLatitude": 38.92305712,
+    "putInLongitude": -106.17107102,
+    "takeOutLatitude": 38.84755175,
+    "takeOutLongitude": -106.12242196
   },
   {
     "id": "11314",
@@ -57,7 +69,11 @@
     "takeOutName": "",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11314"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11314",
+    "putInLatitude": 40.502214,
+    "putInLongitude": -107.513648,
+    "takeOutLatitude": 40.499301,
+    "takeOutLongitude": -107.557655
   },
   {
     "id": "11318",
@@ -72,7 +88,11 @@
     "takeOutName": "",
     "gaugeName": "ROARING FORK RIVER BLW MAROON CREEK NR ASPEN, CO",
     "gaugeID": "09076300",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11318"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11318",
+    "putInLatitude": 39.342413,
+    "putInLongitude": -107.006837,
+    "takeOutLatitude": 39.36652,
+    "takeOutLongitude": -107.03429
   },
   {
     "id": "2665",
@@ -87,7 +107,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2665"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2665",
+    "putInLatitude": 39.573744,
+    "putInLongitude": -107.25287,
+    "takeOutLatitude": 39.56019,
+    "takeOutLongitude": -107.250737
   },
   {
     "id": "435",
@@ -102,7 +126,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "YAMPA RIVER AT STEAMBOAT SPRINGS, CO",
     "gaugeID": "09239500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/435"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/435",
+    "putInLatitude": 40.4747652032724,
+    "putInLongitude": -106.83041389531039,
+    "takeOutLatitude": 40.49305848518756,
+    "takeOutLongitude": -106.85001131865948
   },
   {
     "id": "11319",
@@ -117,7 +145,11 @@
     "takeOutName": "Black Bridge Take-out",
     "gaugeName": "ROARING FORK RIVER NEAR EMMA, CO",
     "gaugeID": "09081000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11319"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11319",
+    "putInLatitude": 39.414636,
+    "putInLongitude": -107.222253,
+    "takeOutLatitude": 39.479457,
+    "takeOutLongitude": -107.286799
   },
   {
     "id": "11162",
@@ -132,7 +164,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "CASCADE CR ABV CASCADE CR DIVERSION NR ROCKWOOD CO",
     "gaugeID": "09359080",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11162"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11162",
+    "putInLatitude": 37.63008,
+    "putInLongitude": -107.792422,
+    "takeOutLatitude": 37.48945,
+    "takeOutLongitude": -107.792336
   },
   {
     "id": "2901",
@@ -147,7 +183,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2901"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2901",
+    "putInLatitude": 40.057742,
+    "putInLongitude": -106.674026,
+    "takeOutLatitude": 39.946881,
+    "takeOutLongitude": -106.729404
   },
   {
     "id": "424",
@@ -162,7 +202,11 @@
     "takeOutName": "Take Out at the South Platte Hotel",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/424"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/424",
+    "putInLatitude": 39.256938,
+    "putInLongitude": -105.223303,
+    "takeOutLatitude": 39.408122,
+    "takeOutLongitude": -105.170532
   },
   {
     "id": "11127",
@@ -177,7 +221,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11127"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11127",
+    "putInLatitude": 40.18593,
+    "putInLongitude": -105.33599,
+    "takeOutLatitude": 40.19712,
+    "takeOutLongitude": -105.32799
   },
   {
     "id": "4349",
@@ -192,7 +240,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "ARKANSAS RIVER AT PARKDALE, CO.",
     "gaugeID": "07094500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4349"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4349",
+    "putInLatitude": 38.472564,
+    "putInLongitude": -105.865544,
+    "takeOutLatitude": 38.393461,
+    "takeOutLongitude": -105.625109
   },
   {
     "id": "2883",
@@ -207,7 +259,11 @@
     "takeOutName": "take out",
     "gaugeName": "SOUTH BOULDER CREEK BELOW GROSS RESERVOIR",
     "gaugeID": "BOCBGRCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2883"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2883",
+    "putInLatitude": 39.938982,
+    "putInLongitude": -105.345348,
+    "takeOutLatitude": 39.930504,
+    "takeOutLongitude": -105.292043
   },
   {
     "id": "379",
@@ -222,7 +278,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "COLORADO RIVER NEAR KREMMLING, CO",
     "gaugeID": "09058000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/379"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/379",
+    "putInLatitude": 39.989158,
+    "putInLongitude": -106.509053,
+    "takeOutLatitude": 39.857457,
+    "takeOutLongitude": -106.646854
   },
   {
     "id": "5428",
@@ -237,7 +297,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "COLORADO RIVER NEAR DOTSERO, CO",
     "gaugeID": "09070500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/5428"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/5428",
+    "putInLatitude": 39.559993,
+    "putInLongitude": -107.251013,
+    "takeOutLatitude": 39.550851,
+    "takeOutLongitude": -107.334042
   },
   {
     "id": "4347",
@@ -252,7 +316,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "ARKANSAS RIVER NEAR NATHROP, CO",
     "gaugeID": "07091200",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4347"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4347",
+    "putInLatitude": 38.847001,
+    "putInLongitude": -106.121998,
+    "takeOutLatitude": 38.766595,
+    "takeOutLongitude": -106.094341
   },
   {
     "id": "378",
@@ -267,7 +335,11 @@
     "takeOutName": "Pumphouse Campground",
     "gaugeName": "COLORADO RIVER NEAR KREMMLING, CO",
     "gaugeID": "09058000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/378"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/378",
+    "putInLatitude": 40.042141,
+    "putInLongitude": -106.395786,
+    "takeOutLatitude": 39.98338,
+    "takeOutLongitude": -106.514733
   },
   {
     "id": "3206",
@@ -282,7 +354,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "SOUTH PLATTE RIVER AT FORT LUPTON, CO.",
     "gaugeID": "06721000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3206"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3206",
+    "putInLatitude": 39.987172,
+    "putInLongitude": -104.832229,
+    "takeOutLatitude": 40.080175,
+    "takeOutLongitude": -104.82143
   },
   {
     "id": "3360",
@@ -297,7 +373,11 @@
     "takeOutName": "Cheese Grater",
     "gaugeName": "MIDDLE BOULDER CREEK AT NEDERLAND, CO.",
     "gaugeID": "BOCMIDCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3360"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3360",
+    "putInLatitude": 39.9703350712914,
+    "putInLongitude": -105.60454347985427,
+    "takeOutLatitude": 39.95402907131671,
+    "takeOutLongitude": -105.60269207985715
   },
   {
     "id": "347",
@@ -312,7 +392,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "ANIMAS RIVER AT TALL TIMBER RESORT ABOVE TACOMA,CO",
     "gaugeID": "09359500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/347"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/347",
+    "putInLatitude": 37.524448,
+    "putInLongitude": -107.782299,
+    "takeOutLatitude": 37.499064,
+    "takeOutLongitude": -107.789249
   },
   {
     "id": "425",
@@ -327,7 +411,11 @@
     "takeOutName": "2nd and Last Take Out - Exit Bike Path - Trestle Wave",
     "gaugeName": "SOUTH PLATTE RIVER AT DENVER",
     "gaugeID": "PLADENCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/425"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/425",
+    "putInLatitude": 39.75413138707297,
+    "putInLongitude": -105.00916813191623,
+    "takeOutLatitude": 39.762704112948484,
+    "takeOutLongitude": -104.99611608761019
   },
   {
     "id": "4689",
@@ -357,7 +445,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "CLEAR CREEK ABOVE CLEAR CREEK RESERVOIR, CO.",
     "gaugeID": "CCACCRCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3110"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3110",
+    "putInLatitude": 38.983909,
+    "putInLongitude": -106.440441,
+    "takeOutLatitude": 39.00792,
+    "takeOutLongitude": -106.323771
   },
   {
     "id": "5180",
@@ -372,7 +464,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "UNCOMPAHGRE RIVER NEAR RIDGWAY, CO.",
     "gaugeID": "09146200",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/5180"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/5180",
+    "putInLatitude": 38.15199144278083,
+    "putInLongitude": -107.75202329702918,
+    "takeOutLatitude": 38.19105997623144,
+    "takeOutLongitude": -107.74780304163077
   },
   {
     "id": "417",
@@ -387,7 +483,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "ROARING FORK RIVER BLW MAROON CREEK NR ASPEN, CO",
     "gaugeID": "09076300",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/417"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/417",
+    "putInLatitude": 39.211069959607094,
+    "putInLongitude": -106.84021777556245,
+    "takeOutLatitude": 39.256759689156596,
+    "takeOutLongitude": -106.88206002752634
   },
   {
     "id": "11181",
@@ -402,7 +502,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "Middle Boulder Creek (CO) at Nederland",
     "gaugeID": "mbnc2",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11181"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11181",
+    "putInLatitude": 39.981303967542175,
+    "putInLongitude": -105.45405159461032,
+    "takeOutLatitude": 39.990230009997816,
+    "takeOutLongitude": -105.42246223617252
   },
   {
     "id": "4112",
@@ -417,7 +521,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "WEST FORK CLEAR CREEK ABV MOUTH NR EMPIRE, CO",
     "gaugeID": "06716100",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4112"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4112",
+    "putInLatitude": 39.765179204943195,
+    "putInLongitude": -105.81887861285492,
+    "takeOutLatitude": 39.76859369247356,
+    "takeOutLongitude": -105.81614955183328
   },
   {
     "id": "4256",
@@ -432,7 +540,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "CLEAR CR. ABV. GEORGETOWN LAKE NR GEORGETOWN, CO",
     "gaugeID": "CLEGLKCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4256"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4256",
+    "putInLatitude": 39.69682340710597,
+    "putInLongitude": -105.72178299319003,
+    "takeOutLatitude": 39.700936054755985,
+    "takeOutLongitude": -105.70633571986626
   },
   {
     "id": "11123",
@@ -447,7 +559,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11123"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11123",
+    "putInLatitude": 40.155035186718095,
+    "putInLongitude": -105.09160238877004,
+    "takeOutLatitude": 40.17461529598152,
+    "takeOutLongitude": -104.98357951263232
   },
   {
     "id": "1737",
@@ -462,7 +578,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "CRYSTAL RIVER ABV AVALANCHE CRK, NEAR REDSTONE, CO",
     "gaugeID": "09081600",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/1737"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/1737",
+    "putInLatitude": 39.17987710493057,
+    "putInLongitude": -107.2400383439682,
+    "takeOutLatitude": 39.23162324516079,
+    "takeOutLongitude": -107.22724166873985
   },
   {
     "id": "434",
@@ -477,7 +597,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/434"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/434",
+    "putInLatitude": 40.212367099040705,
+    "putInLongitude": -106.05268118957532,
+    "takeOutLatitude": 40.1532593549445,
+    "takeOutLongitude": -105.97675982537837
   },
   {
     "id": "11116",
@@ -492,7 +616,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "RIO GRANDE NEAR DEL NORTE, CO",
     "gaugeID": "RIODELCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11116"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11116",
+    "putInLatitude": 37.676271438335824,
+    "putInLongitude": -106.65415010961351,
+    "takeOutLatitude": 37.68544285881629,
+    "takeOutLongitude": -106.35130034263744
   },
   {
     "id": "11125",
@@ -507,7 +635,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "RIO GRANDE AT ALAMOSA",
     "gaugeID": "RIOALACO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11125"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11125",
+    "putInLatitude": 37.46539893215901,
+    "putInLongitude": -105.85145910260721,
+    "takeOutLatitude": 37.30675360875915,
+    "takeOutLongitude": -105.7384078129798
   },
   {
     "id": "1615",
@@ -522,7 +654,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/1615"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/1615",
+    "putInLatitude": 39.07311460372967,
+    "putInLongitude": -107.08817550855404,
+    "takeOutLatitude": 39.06581923919161,
+    "takeOutLongitude": -107.09395155615523
   },
   {
     "id": "5427",
@@ -537,7 +673,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/5427"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/5427",
+    "putInLatitude": 39.85732694801247,
+    "putInLongitude": -106.640503485316,
+    "takeOutLatitude": 39.87341714655559,
+    "takeOutLongitude": -106.88760214817322
   },
   {
     "id": "414",
@@ -552,7 +692,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/414"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/414",
+    "putInLatitude": 37.162810275649235,
+    "putInLongitude": -106.9444642111078,
+    "takeOutLatitude": 37.12107546813002,
+    "takeOutLongitude": -107.04341751981264
   },
   {
     "id": "4776",
@@ -567,7 +711,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "FISH CR AT UPPER STA NR STEAMBOAT SPRINGS, CO",
     "gaugeID": "09238900",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4776"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4776",
+    "putInLatitude": 40.48150684471188,
+    "putInLongitude": -106.77156072087902,
+    "takeOutLatitude": 40.473738702820405,
+    "takeOutLongitude": -106.7913018255041
   },
   {
     "id": "385",
@@ -582,7 +730,11 @@
     "takeOutName": "Mountain Sheep Point Recreation Site Take Out",
     "gaugeName": "DOLORES RIVER BELOW MCPHEE RESERVOIR",
     "gaugeID": "DOLBMCCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/385"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/385",
+    "putInLatitude": 37.65634461348649,
+    "putInLongitude": -108.73571789892158,
+    "takeOutLatitude": 37.795366950234005,
+    "takeOutLongitude": -108.82601352060152
   },
   {
     "id": "10564",
@@ -597,7 +749,11 @@
     "takeOutName": "Take Out -  Whitewater ",
     "gaugeName": "GUNNISON RIVER NEAR GRAND JUNCTION, CO.",
     "gaugeID": "09152500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10564"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10564",
+    "putInLatitude": 38.753798,
+    "putInLongitude": -108.078853,
+    "takeOutLatitude": 38.971299,
+    "takeOutLongitude": -108.454997
   },
   {
     "id": "4268",
@@ -612,7 +768,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "LEFT HAND CREEK NEAR BOULDER, CO.",
     "gaugeID": "LEFCRECO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4268"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4268",
+    "putInLatitude": 40.102,
+    "putInLongitude": -105.341997,
+    "takeOutLatitude": 40.110269,
+    "takeOutLongitude": -105.307168
   },
   {
     "id": "4265",
@@ -627,7 +787,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4265"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4265",
+    "putInLatitude": 39.2720128057087,
+    "putInLongitude": -107.85065847636787,
+    "takeOutLatitude": 39.241260672423095,
+    "takeOutLongitude": -107.963500976562
   },
   {
     "id": "433",
@@ -642,7 +806,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "WILLIAMS FORK NEAR PARSHALL, CO",
     "gaugeID": "09037500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/433"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/433",
+    "putInLatitude": 39.90000646968273,
+    "putInLongitude": -106.09536884650075,
+    "takeOutLatitude": 40.000387566448836,
+    "takeOutLongitude": -106.17976050888852
   },
   {
     "id": "11122",
@@ -657,7 +825,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11122"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11122",
+    "putInLatitude": 40.200551821340376,
+    "putInLongitude": -105.3225956671749,
+    "takeOutLatitude": 40.22067011751398,
+    "takeOutLongitude": -105.263641220392
   },
   {
     "id": "11126",
@@ -672,7 +844,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "SAINT VRAIN CREEK AT LYONS, CO",
     "gaugeID": "SVCLYOCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11126"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11126",
+    "putInLatitude": 40.22067827090286,
+    "putInLongitude": -105.26367041371668,
+    "takeOutLatitude": 40.216156270909835,
+    "takeOutLongitude": -105.25968888038955
   },
   {
     "id": "382",
@@ -687,7 +863,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "CONEJOS RIVER BELOW PLATORO RESERVOIR, CO.",
     "gaugeID": "CONPLACO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/382"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/382",
+    "putInLatitude": 37.30823463739256,
+    "putInLongitude": -106.47844235454109,
+    "takeOutLatitude": 37.23500074087755,
+    "takeOutLongitude": -106.47187303163852
   },
   {
     "id": "4049",
@@ -702,7 +882,11 @@
     "takeOutName": "The Takeout",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4049"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4049",
+    "putInLatitude": 40.21784040932446,
+    "putInLongitude": -105.52280390915196,
+    "takeOutLatitude": 40.216310950734375,
+    "takeOutLongitude": -105.36793494423856
   },
   {
     "id": "358",
@@ -717,7 +901,11 @@
     "takeOutName": "Stone Bridge",
     "gaugeName": "ARKANSAS RIVER NEAR NATHROP, CO",
     "gaugeID": "07091200",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/358"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/358",
+    "putInLatitude": 38.766595,
+    "putInLongitude": -106.094342,
+    "takeOutLatitude": 38.611886,
+    "takeOutLongitude": -106.062881
   },
   {
     "id": "6769",
@@ -732,7 +920,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "ARKANSAS RIVER NEAR NATHROP, CO",
     "gaugeID": "07091200",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/6769"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/6769",
+    "putInLatitude": 38.53725512943185,
+    "putInLongitude": -105.98979830100845,
+    "takeOutLatitude": 38.472891273615744,
+    "takeOutLongitude": -105.8660246794484
   },
   {
     "id": "429",
@@ -747,7 +939,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "UNCOMPAHGRE RIVER NEAR OURAY, CO",
     "gaugeID": "09146020",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/429"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/429",
+    "putInLatitude": 38.02365,
+    "putInLongitude": -107.674522,
+    "takeOutLatitude": 38.081473,
+    "takeOutLongitude": -107.704039
   },
   {
     "id": "3375",
@@ -762,7 +958,11 @@
     "takeOutName": "Oh Be Grateful",
     "gaugeName": "SLATE R AB BAXTER GL @HWY 135 NR CRESTED BUTTE, CO",
     "gaugeID": "385106106571000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3375"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3375",
+    "putInLatitude": 38.907817,
+    "putInLongitude": -107.045479,
+    "takeOutLatitude": 38.910939,
+    "takeOutLongitude": -107.031682
   },
   {
     "id": "395",
@@ -777,7 +977,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "FRASER RIVER AT TABERNASH, CO",
     "gaugeID": "09027100",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/395"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/395",
+    "putInLatitude": 39.998999,
+    "putInLongitude": -105.842815,
+    "takeOutLatitude": 40.081521,
+    "takeOutLongitude": -105.928995
   },
   {
     "id": "4261",
@@ -792,7 +996,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "COLORADO RIVER NEAR CAMEO, CO.",
     "gaugeID": "09095500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4261"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4261",
+    "putInLatitude": 39.19453518795876,
+    "putInLongitude": -108.26496826074562,
+    "takeOutLatitude": 39.19594366406551,
+    "takeOutLongitude": -108.28001967492723
   },
   {
     "id": "396",
@@ -807,7 +1015,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "FRYINGPAN RIVER NEAR RUEDI, CO.",
     "gaugeID": "09080400",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/396"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/396",
+    "putInLatitude": 39.376588488294665,
+    "putInLongitude": -106.94186162154583,
+    "takeOutLatitude": 39.36765991199278,
+    "takeOutLongitude": -107.03269230886244
   },
   {
     "id": "384",
@@ -822,7 +1034,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "DOLORES RIVER BELOW RICO, CO.",
     "gaugeID": "09165000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/384"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/384",
+    "putInLatitude": 37.698200546903905,
+    "putInLongitude": -108.03080560882616,
+    "takeOutLatitude": 37.57067856242219,
+    "takeOutLongitude": -108.36729595236456
   },
   {
     "id": "1796",
@@ -837,7 +1053,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "WEST FORK CLEAR CREEK ABV MOUTH NR EMPIRE, CO",
     "gaugeID": "06716100",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/1796"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/1796",
+    "putInLatitude": 39.77103032514199,
+    "putInLongitude": -105.85715093233847,
+    "takeOutLatitude": 39.75814691105228,
+    "takeOutLongitude": -105.65700532155724
   },
   {
     "id": "11120",
@@ -852,7 +1072,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "CONEJOS RIVER NEAR MOGOTE, CO.",
     "gaugeID": "CONMOGCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11120"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11120",
+    "putInLatitude": 37.128119075703125,
+    "putInLongitude": -106.35718081201935,
+    "takeOutLatitude": 37.06292984062198,
+    "takeOutLongitude": -106.23563226476598
   },
   {
     "id": "2288",
@@ -867,7 +1091,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "ROARING FORK RIVER AB DIFFICULT C NR ASPEN, CO.",
     "gaugeID": "09073300",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2288"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2288",
+    "putInLatitude": 39.11901230888347,
+    "putInLongitude": -106.72304046172417,
+    "takeOutLatitude": 39.1430047100224,
+    "takeOutLongitude": -106.77583933141734
   },
   {
     "id": "3548",
@@ -882,7 +1110,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3548"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3548",
+    "putInLatitude": 38.02055144702361,
+    "putInLongitude": -107.4014627081695,
+    "takeOutLatitude": 38.023111242552666,
+    "takeOutLongitude": -107.32382405384581
   },
   {
     "id": "10895",
@@ -897,7 +1129,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "SAN MIGUEL RIVER AT URAVAN, CO.",
     "gaugeID": "09177000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10895"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10895",
+    "putInLatitude": 38.221612396670494,
+    "putInLongitude": -108.57158202606841,
+    "takeOutLatitude": 38.37960599846618,
+    "takeOutLongitude": -108.80399695395533
   },
   {
     "id": "1480",
@@ -912,7 +1148,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "ELK RIVER AT CLARK, CO.",
     "gaugeID": "09241000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/1480"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/1480",
+    "putInLatitude": 40.77034240338298,
+    "putInLongitude": -106.77414641137216,
+    "takeOutLatitude": 40.758293644845075,
+    "takeOutLongitude": -106.80051969717114
   },
   {
     "id": "4264",
@@ -927,7 +1167,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "PLATEAU CREEK NEAR CAMEO, CO",
     "gaugeID": "09105000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4264"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4264",
+    "putInLatitude": 39.18878215274849,
+    "putInLongitude": -108.08192762223787,
+    "takeOutLatitude": 39.183584079432315,
+    "takeOutLongitude": -108.280787471859
   },
   {
     "id": "386",
@@ -942,7 +1186,11 @@
     "takeOutName": "Slick Rock Take Out",
     "gaugeName": "DOLORES RIVER NEAR SLICK ROCK, CO",
     "gaugeID": "09168730",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/386"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/386",
+    "putInLatitude": 37.795388,
+    "putInLongitude": -108.826021,
+    "takeOutLatitude": 38.030192,
+    "takeOutLongitude": -108.884999
   },
   {
     "id": "3378",
@@ -957,7 +1205,11 @@
     "takeOutName": "Rip Your Head Off",
     "gaugeName": "SLATE R AB BAXTER GL @HWY 135 NR CRESTED BUTTE, CO",
     "gaugeID": "385106106571000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3378"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3378",
+    "putInLatitude": 38.952502434611,
+    "putInLongitude": -107.07201212858355,
+    "takeOutLatitude": 38.94760269740124,
+    "takeOutLongitude": -107.06198025335654
   },
   {
     "id": "393",
@@ -972,7 +1224,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/393"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/393",
+    "putInLatitude": 40.58576927033613,
+    "putInLongitude": -106.90021681117645,
+    "takeOutLatitude": 40.56579020370049,
+    "takeOutLongitude": -106.88972947785942
   },
   {
     "id": "402",
@@ -987,7 +1243,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "GUNNISON RIVER BELOW GUNNISON TUNNEL, CO",
     "gaugeID": "09128000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/402"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/402",
+    "putInLatitude": 38.622402,
+    "putInLongitude": -107.831078,
+    "takeOutLatitude": 38.78299,
+    "takeOutLongitude": -107.837184
   },
   {
     "id": "356",
@@ -1002,7 +1262,11 @@
     "takeOutName": "Railroad Bridge Take out",
     "gaugeName": "ARKANSAS RIVER BELOW GRANITE, CO",
     "gaugeID": "07087050",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/356"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/356",
+    "putInLatitude": 39.00056,
+    "putInLongitude": -106.224071,
+    "takeOutLatitude": 38.923547,
+    "takeOutLongitude": -106.170677
   },
   {
     "id": "407",
@@ -1017,7 +1281,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "NAVAJO RIVER AT BANDED PEAK RANCH NEAR CHROMO",
     "gaugeID": "NAVBANCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/407"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/407",
+    "putInLatitude": 37.03627509277718,
+    "putInLongitude": -106.84047178724093,
+    "takeOutLatitude": 37.02393714983717,
+    "takeOutLongitude": -107.15804538271112
   },
   {
     "id": "4260",
@@ -1032,7 +1300,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "COLORADO RIVER NEAR DOTSERO, CO",
     "gaugeID": "09070500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4260"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4260",
+    "putInLatitude": 39.569006,
+    "putInLongitude": -107.228043,
+    "takeOutLatitude": 39.559996,
+    "takeOutLongitude": -107.251037
   },
   {
     "id": "361",
@@ -1047,7 +1319,11 @@
     "takeOutName": "",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/361"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/361",
+    "putInLatitude": 40.432552,
+    "putInLongitude": -105.336405,
+    "takeOutLatitude": 40.415438,
+    "takeOutLongitude": -105.252416
   },
   {
     "id": "375",
@@ -1062,7 +1338,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/375"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/375",
+    "putInLatitude": 38.28987770390285,
+    "putInLongitude": -107.11351081812171,
+    "takeOutLatitude": 38.46496627362802,
+    "takeOutLongitude": -107.30928501054149
   },
   {
     "id": "364",
@@ -1077,7 +1357,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "BOULDER CREEK NEAR ORODELL, CO.",
     "gaugeID": "BOCOROCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/364"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/364",
+    "putInLatitude": 40.005795,
+    "putInLongitude": -105.339,
+    "takeOutLatitude": 40.013087,
+    "takeOutLongitude": -105.296996
   },
   {
     "id": "405",
@@ -1092,7 +1376,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "LAKE FORK AT GATEVIEW, CO.",
     "gaugeID": "09124500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/405"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/405",
+    "putInLatitude": 38.32385263680554,
+    "putInLongitude": -107.22710587120044,
+    "takeOutLatitude": 38.38491880443255,
+    "takeOutLongitude": -107.24396475451276
   },
   {
     "id": "11105",
@@ -1107,7 +1395,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "SLATE R AB BAXTER GL @HWY 135 NR CRESTED BUTTE, CO",
     "gaugeID": "385106106571000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11105"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11105",
+    "putInLatitude": 38.85211759398776,
+    "putInLongitude": -106.95325904715628,
+    "takeOutLatitude": 38.806120323028736,
+    "takeOutLongitude": -106.88598445294248
   },
   {
     "id": "4777",
@@ -1122,7 +1414,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "FISH CR AT UPPER STA NR STEAMBOAT SPRINGS, CO",
     "gaugeID": "09238900",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4777"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4777",
+    "putInLatitude": 40.47378251843445,
+    "putInLongitude": -106.79103325891472,
+    "takeOutLatitude": 40.46650916401292,
+    "takeOutLongitude": -106.82594819388163
   },
   {
     "id": "547",
@@ -1137,7 +1433,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/547"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/547",
+    "putInLatitude": 37.61806541393578,
+    "putInLongitude": -107.6780068073893,
+    "takeOutLatitude": 37.62750947492793,
+    "takeOutLongitude": -107.69783367660506
   },
   {
     "id": "431",
@@ -1152,7 +1452,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "NORTH FORK WHITE RIVER AT BUFORD, CO",
     "gaugeID": "09303000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/431"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/431",
+    "putInLatitude": 40.0543050874222,
+    "putInLongitude": -107.31784571198543,
+    "takeOutLatitude": 39.97297006158351,
+    "takeOutLongitude": -107.63777035239104
   },
   {
     "id": "10524",
@@ -1167,7 +1471,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "WILLOW CREEK BELOW STEAMBOAT LAKE",
     "gaugeID": "WILBSLCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10524"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10524",
+    "putInLatitude": 40.76975207005057,
+    "putInLongitude": -106.9190490111472,
+    "takeOutLatitude": 40.73089341960475,
+    "takeOutLongitude": -106.87734229403344
   },
   {
     "id": "10522",
@@ -1182,7 +1490,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "YAMPA RIVER ABOVE ELKHEAD CREEK NEAR HAYDEN, CO",
     "gaugeID": "09244490",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10522"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10522",
+    "putInLatitude": 40.49333071593765,
+    "putInLongitude": -106.8508344645541,
+    "takeOutLatitude": 40.48872680391721,
+    "takeOutLongitude": -107.15933749694025
   },
   {
     "id": "418",
@@ -1197,7 +1509,11 @@
     "takeOutName": "Two Rivers Take-Out",
     "gaugeName": "ROARING FORK RIVER AT GLENWOOD SPRINGS, CO.",
     "gaugeID": "09085000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/418"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/418",
+    "putInLatitude": 39.479963,
+    "putInLongitude": -107.287151,
+    "takeOutLatitude": 39.549577,
+    "takeOutLongitude": -107.330526
   },
   {
     "id": "6341",
@@ -1212,7 +1528,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/6341"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/6341",
+    "putInLatitude": 37.72098067478288,
+    "putInLongitude": -107.62891061004535,
+    "takeOutLatitude": 37.721866395853034,
+    "takeOutLongitude": -107.653913463056
   },
   {
     "id": "3414",
@@ -1227,7 +1547,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "LIME CREEK NEAR THOMASVILLE, CO",
     "gaugeID": "09079450",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3414"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3414",
+    "putInLatitude": 37.72335526388874,
+    "putInLongitude": -107.74822890078549,
+    "takeOutLatitude": 37.68421876133485,
+    "takeOutLongitude": -107.75038909463967
   },
   {
     "id": "3633",
@@ -1242,7 +1566,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3633"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3633",
+    "putInLatitude": 37.457570208525055,
+    "putInLongitude": -106.88265201120373,
+    "takeOutLatitude": 37.44901460853834,
+    "takeOutLongitude": -106.88337561120261
   },
   {
     "id": "4257",
@@ -1257,7 +1585,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "CLEAR CREEK NEAR LAWSON, CO",
     "gaugeID": "06716500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4257"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4257",
+    "putInLatitude": 39.746198,
+    "putInLongitude": -105.436344,
+    "takeOutLatitude": 39.736459,
+    "takeOutLongitude": -105.371327
   },
   {
     "id": "2819",
@@ -1272,7 +1604,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "CLEAR CREEK NEAR LAWSON, CO",
     "gaugeID": "06716500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2819"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2819",
+    "putInLatitude": 39.763129,
+    "putInLongitude": -105.637781,
+    "takeOutLatitude": 39.742802,
+    "takeOutLongitude": -105.509476
   },
   {
     "id": "373",
@@ -1287,7 +1623,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "N FK CACHE LA POUDRE R BLW HALLIGAN RES NR VA DALE",
     "gaugeID": "06751150",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/373"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/373",
+    "putInLatitude": 40.902375,
+    "putInLongitude": -105.467378,
+    "takeOutLatitude": 40.885459,
+    "takeOutLongitude": -105.36796
   },
   {
     "id": "377",
@@ -1302,7 +1642,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "COLORADO RIVER AT WINDY GAP, NEAR GRANBY, CO.",
     "gaugeID": "09034250",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/377"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/377",
+    "putInLatitude": 40.074076,
+    "putInLongitude": -106.107262,
+    "takeOutLatitude": 40.051164,
+    "takeOutLongitude": -106.131582
   },
   {
     "id": "374",
@@ -1317,7 +1661,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/374"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/374",
+    "putInLatitude": 40.625513,
+    "putInLongitude": -105.528055,
+    "takeOutLatitude": 40.687858,
+    "takeOutLongitude": -105.449043
   },
   {
     "id": "410",
@@ -1332,7 +1680,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "PIEDRA RIVER NEAR ARBOLES, CO.",
     "gaugeID": "09349800",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/410"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/410",
+    "putInLatitude": 37.352973411957976,
+    "putInLongitude": -107.32465845168541,
+    "takeOutLatitude": 37.24246682272685,
+    "takeOutLongitude": -107.34183154122559
   },
   {
     "id": "4549",
@@ -1347,7 +1699,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4549"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4549",
+    "putInLatitude": 37.47187934276194,
+    "putInLongitude": -106.92899665434207,
+    "takeOutLatitude": 37.44986219085471,
+    "takeOutLongitude": -106.911120181105
   },
   {
     "id": "413",
@@ -1362,7 +1718,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "PURGATOIRE RIVER AT ROCK CROSSING NR TIMPAS, CO.",
     "gaugeID": "07126485",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/413"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/413",
+    "putInLatitude": 37.286619,
+    "putInLongitude": -104.317475,
+    "takeOutLatitude": 37.762511,
+    "takeOutLongitude": -103.430743
   },
   {
     "id": "412",
@@ -1377,7 +1737,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "PINEY RIVER NEAR STATE BRIDGE, CO",
     "gaugeID": "09059500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/412"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/412",
+    "putInLatitude": 39.7103007660474,
+    "putInLongitude": -106.42188671412178,
+    "takeOutLatitude": 39.85752839500908,
+    "takeOutLongitude": -106.64953227980524
   },
   {
     "id": "10523",
@@ -1392,7 +1756,11 @@
     "takeOutName": "Take Out for Juniper Canyon - Maybell Bridge River Access",
     "gaugeName": "YAMPA RIVER BELOW CRAIG, CO.",
     "gaugeID": "09247600",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10523"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10523",
+    "putInLatitude": 40.479893,
+    "putInLongitude": -107.614055,
+    "takeOutLatitude": 40.501341,
+    "takeOutLongitude": -108.033739
   },
   {
     "id": "380",
@@ -1407,7 +1775,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "COLORADO RIVER NEAR DOTSERO, CO",
     "gaugeID": "09070500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/380"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/380",
+    "putInLatitude": 39.587419788138995,
+    "putInLongitude": -107.19395993481376,
+    "takeOutLatitude": 39.56990512350527,
+    "takeOutLongitude": -107.22614696931302
   },
   {
     "id": "2524",
@@ -1422,7 +1794,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "GRAPE CREEK BELOW DEWEESE RESERVOIR",
     "gaugeID": "GRABDWCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2524"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2524",
+    "putInLatitude": 38.32034008069138,
+    "putInLongitude": -105.34653434806238,
+    "takeOutLatitude": 38.43051924897228,
+    "takeOutLongitude": -105.2686263923891
   },
   {
     "id": "10677",
@@ -1437,7 +1813,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "SAN MIGUEL RIVER NEAR PLACERVILLE, CO",
     "gaugeID": "09172500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10677"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10677",
+    "putInLatitude": 37.949063,
+    "putInLongitude": -107.87198,
+    "takeOutLatitude": 37.947012,
+    "takeOutLongitude": -107.920019
   },
   {
     "id": "2464",
@@ -1452,7 +1832,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "NORTH PLATTE RIVER NEAR NORTHGATE, CO",
     "gaugeID": "06620000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2464"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2464",
+    "putInLatitude": 40.978731,
+    "putInLongitude": -106.345586,
+    "takeOutLatitude": 41.198269,
+    "takeOutLongitude": -106.548634
   },
   {
     "id": "11291",
@@ -1467,7 +1851,11 @@
     "takeOutName": "",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11291"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11291",
+    "putInLatitude": 39.830648,
+    "putInLongitude": -104.948183,
+    "takeOutLatitude": 39.885154,
+    "takeOutLongitude": -104.902262
   },
   {
     "id": "2835",
@@ -1482,7 +1870,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "SOUTH PLATTE RIVER ABOVE CHEESMAN LAKE, CO.",
     "gaugeID": "06700000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2835"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2835",
+    "putInLatitude": 39.013571,
+    "putInLongitude": -105.363034,
+    "takeOutLatitude": 39.219835,
+    "takeOutLongitude": -105.278113
   },
   {
     "id": "4258",
@@ -1497,7 +1889,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "CLEAR CREEK ABV WEST FORK CLEAR CREEK NR EMPIRE CO",
     "gaugeID": "06715000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4258"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4258",
+    "putInLatitude": 39.68040784449142,
+    "putInLongitude": -105.89596347656466,
+    "takeOutLatitude": 39.696831369262675,
+    "takeOutLongitude": -105.72199428724045
   },
   {
     "id": "4350",
@@ -1512,7 +1908,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "SOUTH SAINT VRAIN NEAR WARD",
     "gaugeID": "SSVWARCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4350"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4350",
+    "putInLatitude": 40.123357037136756,
+    "putInLongitude": -105.44495440518638,
+    "takeOutLatitude": 40.16777588944646,
+    "takeOutLongitude": -105.39355013075603
   },
   {
     "id": "6606",
@@ -1527,7 +1927,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "SNAKE RIVER NEAR MONTEZUMA, CO",
     "gaugeID": "09047500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/6606"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/6606",
+    "putInLatitude": 39.60510840088594,
+    "putInLongitude": -105.91493975656056,
+    "takeOutLatitude": 39.60298453940108,
+    "takeOutLongitude": -106.01308994582438
   },
   {
     "id": "10682",
@@ -1542,7 +1946,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10682"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10682",
+    "putInLatitude": 39.569409500651204,
+    "putInLongitude": -107.52604126544104,
+    "takeOutLatitude": 39.19453518795876,
+    "takeOutLongitude": -108.26496826074562
   },
   {
     "id": "4263",
@@ -1557,7 +1965,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "SOUTH PLATTE RIVER BELOW UNION AVE, AT ENGLEWOOD,C",
     "gaugeID": "06710247",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4263"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4263",
+    "putInLatitude": 39.631901,
+    "putInLongitude": -105.014691,
+    "takeOutLatitude": 39.633193,
+    "takeOutLongitude": -105.01598
   },
   {
     "id": "409",
@@ -1572,7 +1984,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "PIEDRA RIVER NEAR ARBOLES, CO.",
     "gaugeID": "09349800",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/409"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/409",
+    "putInLatitude": 37.428945,
+    "putInLongitude": -107.192977,
+    "takeOutLatitude": 37.353494,
+    "takeOutLongitude": -107.324079
   },
   {
     "id": "11179",
@@ -1587,7 +2003,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "CLEAR CREEK AT GOLDEN, CO",
     "gaugeID": "06719505",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11179"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11179",
+    "putInLatitude": 39.75338271,
+    "putInLongitude": -105.23061294,
+    "takeOutLatitude": 39.75710489,
+    "takeOutLongitude": -105.22168893
   },
   {
     "id": "11178",
@@ -1602,7 +2022,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "CLEAR CREEK AT GOLDEN, CO",
     "gaugeID": "06719505",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11178"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11178",
+    "putInLatitude": 39.742112,
+    "putInLongitude": -105.25355,
+    "takeOutLatitude": 39.754138,
+    "takeOutLongitude": -105.228211
   },
   {
     "id": "432",
@@ -1617,7 +2041,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/432"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/432",
+    "putInLatitude": 39.90430409042455,
+    "putInLongitude": -107.54000024866372,
+    "takeOutLatitude": 39.972509427724184,
+    "takeOutLongitude": -107.6377766678794
   },
   {
     "id": "392",
@@ -1632,7 +2060,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "ELK RIVER NEAR MILNER, CO.",
     "gaugeID": "09242500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/392"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/392",
+    "putInLatitude": 40.77005532166622,
+    "putInLongitude": -106.77336072923045,
+    "takeOutLatitude": 40.71728654985637,
+    "takeOutLongitude": -106.9140251288141
   },
   {
     "id": "11104",
@@ -1647,7 +2079,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "SLATE R AB BAXTER GL @HWY 135 NR CRESTED BUTTE, CO",
     "gaugeID": "385106106571000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11104"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11104",
+    "putInLatitude": 38.910274,
+    "putInLongitude": -107.030024,
+    "takeOutLatitude": 38.852526,
+    "takeOutLongitude": -106.953245
   },
   {
     "id": "10999",
@@ -1662,7 +2098,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10999"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10999",
+    "putInLatitude": 40.18120810697907,
+    "putInLongitude": -107.12517867079453,
+    "takeOutLatitude": 40.24287569738346,
+    "takeOutLongitude": -107.08686649621207
   },
   {
     "id": "11118",
@@ -1677,7 +2117,11 @@
     "takeOutName": "Lobato Bridge",
     "gaugeName": "RIO GRANDE ABOVE TRINCHERA CREEK NEAR LA SAUSES",
     "gaugeID": "RIOTRICO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11118"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11118",
+    "putInLatitude": 37.30768,
+    "putInLongitude": -105.737946,
+    "takeOutLatitude": 37.078429,
+    "takeOutLongitude": -105.756693
   },
   {
     "id": "11119",
@@ -1692,7 +2136,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "RIO GRANDE NEAR LOBATOS",
     "gaugeID": "RIOLOBCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11119"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11119",
+    "putInLatitude": 37.078436,
+    "putInLongitude": -105.756686,
+    "takeOutLatitude": 36.86342,
+    "takeOutLongitude": -105.706417
   },
   {
     "id": "5430",
@@ -1707,7 +2155,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "COLORADO RIVER AT CATAMOUNT BRIDGE, CO",
     "gaugeID": "09060799",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/5430"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/5430",
+    "putInLatitude": 39.873718,
+    "putInLongitude": -106.891208,
+    "takeOutLatitude": 39.649161,
+    "takeOutLongitude": -107.063595
   },
   {
     "id": "363",
@@ -1722,7 +2174,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "BLUE RIVER BELOW GREEN MOUNTAIN RESERVOIR, CO",
     "gaugeID": "09057500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/363"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/363",
+    "putInLatitude": 39.878577,
+    "putInLongitude": -106.333444,
+    "takeOutLatitude": 39.92302,
+    "takeOutLongitude": -106.347687
   },
   {
     "id": "2105",
@@ -1737,7 +2193,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "CRYSTAL RIVER ABV AVALANCHE CRK, NEAR REDSTONE, CO",
     "gaugeID": "09081600",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2105"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2105",
+    "putInLatitude": 39.068897887582004,
+    "putInLongitude": -107.1909904331929,
+    "takeOutLatitude": 39.1804384143173,
+    "takeOutLongitude": -107.24089168392359
   },
   {
     "id": "423",
@@ -1752,7 +2212,11 @@
     "takeOutName": "Vetical Blender",
     "gaugeName": "SOUTH PLATTE RIVER AT SOUTH PLATTE",
     "gaugeID": "PLASPLCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/423"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/423",
+    "putInLatitude": 39.408364,
+    "putInLongitude": -105.172929,
+    "takeOutLatitude": 39.416425,
+    "takeOutLongitude": -105.15084
   },
   {
     "id": "419",
@@ -1767,7 +2231,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/419"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/419",
+    "putInLatitude": 37.38320721408954,
+    "putInLongitude": -106.85707715807725,
+    "takeOutLatitude": 37.335380036466894,
+    "takeOutLongitude": -106.93706726632597
   },
   {
     "id": "416",
@@ -1782,7 +2250,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "RIO GRANDE AT WAGON WHEEL GAP",
     "gaugeID": "RIOWAGCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/416"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/416",
+    "putInLatitude": 37.768468074709176,
+    "putInLongitude": -106.79727901133624,
+    "takeOutLatitude": 37.676237081069274,
+    "takeOutLongitude": -106.65400273965817
   },
   {
     "id": "11199",
@@ -1797,7 +2269,11 @@
     "takeOutName": "Railroad Trestle Take-Out",
     "gaugeName": "CACHE LA POUDRE RIVER AT FORT COLLINS, CO",
     "gaugeID": "06752260",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11199"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11199",
+    "putInLatitude": 40.602957,
+    "putInLongitude": -105.095669,
+    "takeOutLatitude": 40.594605,
+    "takeOutLongitude": -105.073871
   },
   {
     "id": "6569",
@@ -1812,7 +2288,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "MINERAL CREEK AT SILVERTON, CO",
     "gaugeID": "09359010",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/6569"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/6569",
+    "putInLatitude": 37.820092,
+    "putInLongitude": -107.718958,
+    "takeOutLatitude": 37.803729,
+    "takeOutLongitude": -107.673433
   },
   {
     "id": "391",
@@ -1827,7 +2307,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "EAGLE R BLW WASTEWATER TREATMENT PLANT AT AVON, CO",
     "gaugeID": "09067020",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/391"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/391",
+    "putInLatitude": 39.617844794119705,
+    "putInLongitude": -106.46042291124141,
+    "takeOutLatitude": 39.64517967476413,
+    "takeOutLongitude": -106.59138320574782
   },
   {
     "id": "4384",
@@ -1842,7 +2326,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4384"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4384",
+    "putInLatitude": 39.06675520602727,
+    "putInLongitude": -107.1771964774132,
+    "takeOutLatitude": 39.067879406025554,
+    "takeOutLongitude": -107.17802927741191
   },
   {
     "id": "11627",
@@ -1857,7 +2345,11 @@
     "takeOutName": "Highway 65 Take-out",
     "gaugeName": "GUNNISON RIVER BELOW GUNNISON TUNNEL, CO",
     "gaugeID": "09128000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11627"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11627",
+    "putInLatitude": 38.782934,
+    "putInLongitude": -107.837235,
+    "takeOutLatitude": 38.772788,
+    "takeOutLongitude": -108.002765
   },
   {
     "id": "430",
@@ -1872,7 +2364,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "WHITE RIVER BELOW BOISE CREEK, NEAR RANGELY, CO.",
     "gaugeID": "09306290",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/430"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/430",
+    "putInLatitude": 40.093127,
+    "putInLongitude": -108.816278,
+    "takeOutLatitude": 39.979053,
+    "takeOutLongitude": -109.177988
   },
   {
     "id": "3787",
@@ -1887,7 +2383,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "SOUTH PLATTE RIVER NEAR LAKE GEORGE, CO.",
     "gaugeID": "PLAGEOCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3787"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3787",
+    "putInLatitude": 38.905221,
+    "putInLongitude": -105.473955,
+    "takeOutLatitude": 38.971439,
+    "takeOutLongitude": -105.364519
   },
   {
     "id": "1883",
@@ -1902,7 +2402,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "WHITE RIVER BELOW MEEKER, CO",
     "gaugeID": "09304800",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/1883"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/1883",
+    "putInLatitude": 40.090944,
+    "putInLongitude": -108.789987,
+    "takeOutLatitude": 40.062067,
+    "takeOutLongitude": -109.679009
   },
   {
     "id": "387",
@@ -1917,7 +2421,11 @@
     "takeOutName": "Bedrock Take Out",
     "gaugeName": "DOLORES RIVER NEAR BEDROCK, CO.",
     "gaugeID": "09171100",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/387"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/387",
+    "putInLatitude": 38.031649,
+    "putInLongitude": -108.885175,
+    "takeOutLatitude": 38.304753,
+    "takeOutLongitude": -108.894303
   },
   {
     "id": "1852",
@@ -1932,7 +2440,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "GREEN RIVER NEAR GREENDALE, UT",
     "gaugeID": "09234500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/1852"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/1852",
+    "putInLatitude": 40.909039,
+    "putInLongitude": -109.422515,
+    "takeOutLatitude": 40.727089,
+    "takeOutLongitude": -108.888565
   },
   {
     "id": "2547",
@@ -1947,7 +2459,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2547"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2547",
+    "putInLatitude": 39.75497227162572,
+    "putInLongitude": -107.10099601086478,
+    "takeOutLatitude": 39.72234762168757,
+    "takeOutLongitude": -107.04008843620055
   },
   {
     "id": "11135",
@@ -1962,7 +2478,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "EAGLE RIVER BELOW MILK CREEK NEAR WOLCOTT, CO",
     "gaugeID": "394220106431500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11135"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11135",
+    "putInLatitude": 39.65506577554531,
+    "putInLongitude": -106.8328150631752,
+    "takeOutLatitude": 39.64995737040578,
+    "takeOutLongitude": -106.95247643519065
   },
   {
     "id": "11136",
@@ -1977,7 +2497,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "EAGLE RIVER BELOW GYPSUM, CO.",
     "gaugeID": "09070000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11136"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11136",
+    "putInLatitude": 39.649038658623454,
+    "putInLongitude": -106.95225279135506,
+    "takeOutLatitude": 39.64376896416113,
+    "takeOutLongitude": -107.07307917373326
   },
   {
     "id": "1463",
@@ -1992,7 +2516,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "ROARING FORK RIVER NEAR EMMA, CO",
     "gaugeID": "09081000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/1463"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/1463",
+    "putInLatitude": 39.36842577661748,
+    "putInLongitude": -107.0471508669633,
+    "takeOutLatitude": 39.414722307717724,
+    "takeOutLongitude": -107.22350972999783
   },
   {
     "id": "4306",
@@ -2007,7 +2535,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "GORE CREEK ABV RED SANDSTONE CREEK AT VAIL, CO",
     "gaugeID": "09066325",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4306"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4306",
+    "putInLatitude": 39.625569503343335,
+    "putInLongitude": -106.22598375092484,
+    "takeOutLatitude": 39.62778404003138,
+    "takeOutLongitude": -106.27200209746665
   },
   {
     "id": "11058",
@@ -2022,7 +2554,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "DOLORES RIVER AT DOLORES, CO.",
     "gaugeID": "09166500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11058"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11058",
+    "putInLatitude": 37.589211,
+    "putInLongitude": -108.356856,
+    "takeOutLatitude": 37.468903,
+    "takeOutLongitude": -108.509499
   },
   {
     "id": "10520",
@@ -2037,7 +2573,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "COLORADO RIVER NEAR COLORADO-UTAH STATE LINE",
     "gaugeID": "09163500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10520"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10520",
+    "putInLatitude": 39.09828518472347,
+    "putInLongitude": -108.35518384820556,
+    "takeOutLatitude": 39.17332055113135,
+    "takeOutLongitude": -108.80758650188277
   },
   {
     "id": "11137",
@@ -2052,7 +2592,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "GORE CREEK AT MOUTH NEAR MINTURN, CO",
     "gaugeID": "09066510",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11137"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11137",
+    "putInLatitude": 39.64094398234345,
+    "putInLongitude": -106.37828101487038,
+    "takeOutLatitude": 39.61029921117256,
+    "takeOutLongitude": -106.45347562528504
   },
   {
     "id": "3171",
@@ -2067,7 +2611,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "SAN JUAN RIVER AT PAGOSA SPRINGS, CO",
     "gaugeID": "09342500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3171"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3171",
+    "putInLatitude": 37.28657887545717,
+    "putInLongitude": -106.98051347771849,
+    "takeOutLatitude": 37.2668016586464,
+    "takeOutLongitude": -107.0078094394975
   },
   {
     "id": "11564",
@@ -2082,7 +2630,11 @@
     "takeOutName": "",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11564"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11564",
+    "putInLatitude": 39.741839,
+    "putInLongitude": -105.391002,
+    "takeOutLatitude": 39.734723,
+    "takeOutLongitude": -105.365509
   },
   {
     "id": "10678",
@@ -2097,7 +2649,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "SAN MIGUEL RIVER NEAR PLACERVILLE, CO",
     "gaugeID": "09172500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10678"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10678",
+    "putInLatitude": 38.030917,
+    "putInLongitude": -108.112915,
+    "takeOutLatitude": 38.125571,
+    "takeOutLongitude": -108.207978
   },
   {
     "id": "11563",
@@ -2112,7 +2668,11 @@
     "takeOutName": "",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11563"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11563",
+    "putInLatitude": 39.742458,
+    "putInLongitude": -105.507982,
+    "takeOutLatitude": 39.745441,
+    "takeOutLongitude": -105.434991
   },
   {
     "id": "3367",
@@ -2127,7 +2687,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "SAN MIGUEL RIVER NEAR PLACERVILLE, CO",
     "gaugeID": "09172500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3367"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3367",
+    "putInLatitude": 37.947007363638185,
+    "putInLongitude": -107.9199983788292,
+    "takeOutLatitude": 37.9668985610165,
+    "takeOutLongitude": -107.97100063104749
   },
   {
     "id": "2882",
@@ -2142,7 +2706,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "EAGLE RIVER BELOW MILK CREEK NEAR WOLCOTT, CO",
     "gaugeID": "394220106431500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2882"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2882",
+    "putInLatitude": 39.653973,
+    "putInLongitude": -106.626985,
+    "takeOutLatitude": 39.655561,
+    "takeOutLongitude": -106.832698
   },
   {
     "id": "401",
@@ -2157,7 +2725,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "GUNNISON RIVER BELOW GUNNISON TUNNEL, CO",
     "gaugeID": "09128000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/401"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/401",
+    "putInLatitude": 38.528222,
+    "putInLongitude": -107.649064,
+    "takeOutLatitude": 38.622136,
+    "takeOutLongitude": -107.830882
   },
   {
     "id": "2823",
@@ -2172,7 +2744,11 @@
     "takeOutName": "Morrison City Park",
     "gaugeName": "BEAR CREEK AT MORRISON",
     "gaugeID": "BCRMORCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2823"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2823",
+    "putInLatitude": 39.658019,
+    "putInLongitude": -105.286561,
+    "takeOutLatitude": 39.653197,
+    "takeOutLongitude": -105.1789
   },
   {
     "id": "4555",
@@ -2187,7 +2763,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4555"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4555",
+    "putInLatitude": 37.936106930722296,
+    "putInLongitude": -107.46101242724876,
+    "takeOutLatitude": 37.902299598070925,
+    "takeOutLongitude": -107.4269424887245
   },
   {
     "id": "2822",
@@ -2202,7 +2782,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "NORTH FORK CACHE LA POUDRE RIVER AT LIVERMORE, CO",
     "gaugeID": "06751490",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2822"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2822",
+    "putInLatitude": 40.787553,
+    "putInLongitude": -105.252636,
+    "takeOutLatitude": 40.705671,
+    "takeOutLongitude": -105.236843
   },
   {
     "id": "6560",
@@ -2217,7 +2801,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "ANIMAS RIVER AT SILVERTON, CO.",
     "gaugeID": "09358000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/6560"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/6560",
+    "putInLatitude": 37.83519384910303,
+    "putInLongitude": -107.5986274204271,
+    "takeOutLatitude": 37.80098980799199,
+    "takeOutLongitude": -107.66882120998343
   },
   {
     "id": "383",
@@ -2232,7 +2820,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "CRYSTAL RIVER ABV AVALANCHE CRK, NEAR REDSTONE, CO",
     "gaugeID": "09081600",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/383"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/383",
+    "putInLatitude": 39.213936805798824,
+    "putInLongitude": -107.22614081067053,
+    "takeOutLatitude": 39.24672267241459,
+    "takeOutLongitude": -107.2342872106579
   },
   {
     "id": "4235",
@@ -2247,7 +2839,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "LIME CREEK NEAR THOMASVILLE, CO",
     "gaugeID": "09079450",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4235"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4235",
+    "putInLatitude": 37.662701600583134,
+    "putInLongitude": -107.75600361871184,
+    "takeOutLatitude": 37.63203708495484,
+    "takeOutLongitude": -107.7918001877487
   },
   {
     "id": "11124",
@@ -2262,7 +2858,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "CONEJOS RIVER BELOW PLATORO RESERVOIR, CO.",
     "gaugeID": "CONPLACO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11124"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11124",
+    "putInLatitude": 37.235001,
+    "putInLongitude": -106.471873,
+    "takeOutLatitude": 37.128135,
+    "takeOutLongitude": -106.357221
   },
   {
     "id": "10679",
@@ -2277,7 +2877,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "UNCOMPAHGRE RIVER AT COLONA, CO",
     "gaugeID": "09147500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10679"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10679",
+    "putInLatitude": 38.287803,
+    "putInLongitude": -107.763057,
+    "takeOutLatitude": 38.48697,
+    "takeOutLongitude": -107.896959
   },
   {
     "id": "359",
@@ -2292,7 +2896,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "ARKANSAS RIVER AT PARKDALE, CO.",
     "gaugeID": "07094500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/359"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/359",
+    "putInLatitude": 38.393576,
+    "putInLongitude": -105.624081,
+    "takeOutLatitude": 38.486729,
+    "takeOutLongitude": -105.389963
   },
   {
     "id": "437",
@@ -2307,7 +2915,11 @@
     "takeOutName": "Echo Park Access",
     "gaugeName": "YAMPA RIVER AT DEERLODGE PARK, CO",
     "gaugeID": "09260050",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/437"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/437",
+    "putInLatitude": 40.450187,
+    "putInLongitude": -108.522938,
+    "takeOutLatitude": 40.526377,
+    "takeOutLongitude": -108.984527
   },
   {
     "id": "1853",
@@ -2322,7 +2934,11 @@
     "takeOutName": "Split Mountain Boat Ramp",
     "gaugeName": "GREEN RIVER NEAR JENSEN, UT",
     "gaugeID": "09261000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/1853"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/1853",
+    "putInLatitude": 40.521573,
+    "putInLongitude": -108.990907,
+    "takeOutLatitude": 40.445641,
+    "takeOutLongitude": -109.252199
   },
   {
     "id": "420",
@@ -2337,7 +2953,11 @@
     "takeOutName": "Yamaguchi Park Takeout",
     "gaugeName": "SAN JUAN RIVER AT PAGOSA SPRINGS, CO",
     "gaugeID": "09342500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/420"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/420",
+    "putInLatitude": 37.270663,
+    "putInLongitude": -106.998923,
+    "takeOutLatitude": 37.022671,
+    "takeOutLongitude": -107.211744
   },
   {
     "id": "403",
@@ -2352,7 +2972,11 @@
     "takeOutName": "Hermosa take-out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/403"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/403",
+    "putInLatitude": 37.626499,
+    "putInLongitude": -107.923819,
+    "takeOutLatitude": 37.413519,
+    "takeOutLongitude": -107.835074
   },
   {
     "id": "400",
@@ -2367,7 +2991,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "GUNNISON RIVER NEAR GUNNISON, CO.",
     "gaugeID": "09114500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/400"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/400",
+    "putInLatitude": 38.663588,
+    "putInLongitude": -106.847144,
+    "takeOutLatitude": 38.488003,
+    "takeOutLongitude": -107.03781
   },
   {
     "id": "11060",
@@ -2382,7 +3010,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "TAYLOR RIVER AT TAYLOR PARK, CO.",
     "gaugeID": "09107000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11060"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11060",
+    "putInLatitude": 38.92464469773361,
+    "putInLongitude": -106.60105921880674,
+    "takeOutLatitude": 38.89473317373496,
+    "takeOutLongitude": -106.57257690040092
   },
   {
     "id": "3097",
@@ -2397,7 +3029,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3097"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3097",
+    "putInLatitude": 38.86235,
+    "putInLongitude": -107.163616,
+    "takeOutLatitude": 38.95511,
+    "takeOutLongitude": -107.269977
   },
   {
     "id": "399",
@@ -2412,7 +3048,11 @@
     "takeOutName": "Echo Park",
     "gaugeName": "GREEN RIVER NEAR GREENDALE, UT",
     "gaugeID": "09234500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/399"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/399",
+    "putInLatitude": 40.72709,
+    "putInLongitude": -108.888564,
+    "takeOutLatitude": 40.521534,
+    "takeOutLongitude": -108.990815
   },
   {
     "id": "436",
@@ -2427,7 +3067,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "YAMPA RIVER NEAR MAYBELL, CO",
     "gaugeID": "09251000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/436"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/436",
+    "putInLatitude": 40.486289,
+    "putInLongitude": -108.324316,
+    "takeOutLatitude": 40.453517,
+    "takeOutLongitude": -108.381953
   },
   {
     "id": "11184",
@@ -2442,7 +3086,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11184"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11184",
+    "putInLatitude": 40.415784,
+    "putInLongitude": -105.246851,
+    "takeOutLatitude": 40.421799,
+    "takeOutLongitude": -105.226348
   },
   {
     "id": "11183",
@@ -2457,7 +3105,11 @@
     "takeOutName": "Take Out at the fishing pier",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11183"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11183",
+    "putInLatitude": 40.394837,
+    "putInLongitude": -105.424341,
+    "takeOutLatitude": 40.409649,
+    "takeOutLongitude": -105.390293
   },
   {
     "id": "352",
@@ -2472,7 +3124,11 @@
     "takeOutName": "Highway 550. State Line Bridge ",
     "gaugeName": "ANIMAS RIVER AT DURANGO, CO",
     "gaugeID": "09361500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/352"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/352",
+    "putInLatitude": 37.2359,
+    "putInLongitude": -107.867043,
+    "takeOutLatitude": 36.999235,
+    "takeOutLongitude": -107.86601
   },
   {
     "id": "2138",
@@ -2487,7 +3143,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "ROARING FORK RIVER BLW MAROON CREEK NR ASPEN, CO",
     "gaugeID": "09076300",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2138"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2138",
+    "putInLatitude": 39.25725445401522,
+    "putInLongitude": -106.88226043026741,
+    "takeOutLatitude": 39.29818231816808,
+    "takeOutLongitude": -106.92201054408629
   },
   {
     "id": "3328",
@@ -2502,7 +3162,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3328"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3328",
+    "putInLatitude": 37.515235,
+    "putInLongitude": -107.74646,
+    "takeOutLatitude": 37.52194,
+    "takeOutLongitude": -107.783137
   },
   {
     "id": "4050",
@@ -2517,7 +3181,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "NORTH SAINT VRAIN CREEK BELOW BUTTONROCK  (RALPH PRICE) RESERVOIR",
     "gaugeID": "NSVBBRCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4050"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4050",
+    "putInLatitude": 40.229537,
+    "putInLongitude": -105.338006,
+    "takeOutLatitude": 40.236717,
+    "takeOutLongitude": -105.319068
   },
   {
     "id": "4546",
@@ -2532,7 +3200,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4546"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4546",
+    "putInLatitude": 37.371177,
+    "putInLongitude": -106.640375,
+    "takeOutLatitude": 37.377194,
+    "takeOutLongitude": -106.572944
   },
   {
     "id": "11624",
@@ -2547,7 +3219,11 @@
     "takeOutName": "Hotchkiss Take-Out",
     "gaugeName": "NORTH FORK GUNNISON RIVER BELOW PAONIA, CO",
     "gaugeID": "09134100",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11624"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11624",
+    "putInLatitude": 38.874873,
+    "putInLongitude": -107.596594,
+    "takeOutLatitude": 38.795021,
+    "takeOutLongitude": -107.712128
   },
   {
     "id": "2884",
@@ -2562,7 +3238,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "NORTH SAINT VRAIN CREEK BELOW BUTTONROCK  (RALPH PRICE) RESERVOIR",
     "gaugeID": "NSVBBRCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2884"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2884",
+    "putInLatitude": 40.236545,
+    "putInLongitude": -105.3222,
+    "takeOutLatitude": 40.248001,
+    "takeOutLongitude": -105.28972
   },
   {
     "id": "2881",
@@ -2577,7 +3257,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "BOULDER CREEK AT NORTH 75TH ST. NEAR BOULDER, CO",
     "gaugeID": "06730200",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2881"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2881",
+    "putInLatitude": 40.012044,
+    "putInLongitude": -105.302747,
+    "takeOutLatitude": 40.011174,
+    "takeOutLongitude": -105.251829
   },
   {
     "id": "11450",
@@ -2592,7 +3276,11 @@
     "takeOutName": "Mackenzie Avenue Bridge",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11450"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11450",
+    "putInLatitude": 38.4364061,
+    "putInLongitude": -105.24270668,
+    "takeOutLatitude": 38.42216985,
+    "takeOutLongitude": -105.17877113
   },
   {
     "id": "381",
@@ -2607,7 +3295,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "COLORADO RIVER NEAR COLORADO-UTAH STATE LINE",
     "gaugeID": "09163500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/381"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/381",
+    "putInLatitude": 39.173321,
+    "putInLongitude": -108.807587,
+    "takeOutLatitude": 39.092035,
+    "takeOutLongitude": -109.100415
   },
   {
     "id": "10639",
@@ -2622,7 +3314,11 @@
     "takeOutName": "S. Union Ave Bridge Take Out",
     "gaugeName": "ARKANSAS RIVER ABOVE PUEBLO, CO",
     "gaugeID": "07099400",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10639"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10639",
+    "putInLatitude": 38.26707,
+    "putInLongitude": -104.622731,
+    "takeOutLatitude": 38.261499,
+    "takeOutLongitude": -104.617608
   },
   {
     "id": "11718",
@@ -2637,7 +3333,11 @@
     "takeOutName": "Florence River Park Take-Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11718"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11718",
+    "putInLatitude": 38.422149,
+    "putInLongitude": -105.178649,
+    "takeOutLatitude": 38.392065,
+    "takeOutLongitude": -105.072214
   },
   {
     "id": "11720",
@@ -2652,7 +3352,11 @@
     "takeOutName": "Pearl St. Trailhead Take-Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11720"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11720",
+    "putInLatitude": 38.271594,
+    "putInLongitude": -104.717007,
+    "takeOutLatitude": 38.267169,
+    "takeOutLongitude": -104.62276
   },
   {
     "id": "1649",
@@ -2667,7 +3371,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "ROARING FORK RIVER BLW MAROON CREEK NR ASPEN, CO",
     "gaugeID": "09076300",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/1649"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/1649",
+    "putInLatitude": 39.29812038279662,
+    "putInLongitude": -106.92193524136847,
+    "takeOutLatitude": 39.34265563853009,
+    "takeOutLongitude": -107.0064733234435
   },
   {
     "id": "2718",
@@ -2682,7 +3390,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "CRYSTAL RIVER ABV AVALANCHE CRK, NEAR REDSTONE, CO",
     "gaugeID": "09081600",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2718"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2718",
+    "putInLatitude": 39.05984358586797,
+    "putInLongitude": -107.10189531752505,
+    "takeOutLatitude": 39.06425540603118,
+    "takeOutLongitude": -107.14509567746302
   },
   {
     "id": "4105",
@@ -2697,7 +3409,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4105"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4105",
+    "putInLatitude": 39.00955839541514,
+    "putInLongitude": -107.14609192033612,
+    "takeOutLatitude": 39.03260627274693,
+    "takeOutLongitude": -107.16444667743298
   },
   {
     "id": "3098",
@@ -2712,7 +3428,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "NORTH FORK GUNNISON RIVER NEAR SOMERSET, CO.",
     "gaugeID": "09132500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3098"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3098",
+    "putInLatitude": 38.93986520104464,
+    "putInLongitude": -107.35900045527602,
+    "takeOutLatitude": 38.927420180532714,
+    "takeOutLongitude": -107.47699191585237
   },
   {
     "id": "3445",
@@ -2727,7 +3447,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "CIMARRON RIVER NEAR CIMARRON, CO",
     "gaugeID": "09126000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3445"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3445",
+    "putInLatitude": 38.433170050267194,
+    "putInLongitude": -107.54281496956746,
+    "takeOutLatitude": 38.45365807092292,
+    "takeOutLongitude": -107.54414196088905
   },
   {
     "id": "4262",
@@ -2742,7 +3466,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "SOUTH PLATTE RIVER BELOW CHEESMAN RESERVOIR",
     "gaugeID": "PLACHECO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4262"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4262",
+    "putInLatitude": 39.20868,
+    "putInLongitude": -105.272037,
+    "takeOutLatitude": 39.256938,
+    "takeOutLongitude": -105.223303
   },
   {
     "id": "2826",
@@ -2757,7 +3485,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "TENMILE CREEK BL NORTH TENMILE C, AT FRISCO, CO.",
     "gaugeID": "09050100",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2826"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2826",
+    "putInLatitude": 39.523861285178604,
+    "putInLongitude": -106.13973039621665,
+    "takeOutLatitude": 39.57957847219199,
+    "takeOutLongitude": -106.09253264694674
   },
   {
     "id": "415",
@@ -2772,7 +3504,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "RIO GRANDE AT THIRTY MILE BRIDGE NEAR CREEDE",
     "gaugeID": "RIOMILCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/415"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/415",
+    "putInLatitude": 37.72494651636446,
+    "putInLongitude": -107.25586259846236,
+    "takeOutLatitude": 37.7748345705669,
+    "takeOutLongitude": -107.14012440847154
   },
   {
     "id": "1317",
@@ -2787,7 +3523,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "CRYSTAL RIVER ABV AVALANCHE CRK, NEAR REDSTONE, CO",
     "gaugeID": "09081600",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/1317"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/1317",
+    "putInLatitude": 39.06397762864576,
+    "putInLongitude": -107.14475792532234,
+    "takeOutLatitude": 39.06875188623457,
+    "takeOutLongitude": -107.18998592931393
   },
   {
     "id": "3377",
@@ -2802,7 +3542,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "SLATE R AB BAXTER GL @HWY 135 NR CRESTED BUTTE, CO",
     "gaugeID": "385106106571000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3377"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3377",
+    "putInLatitude": 38.93137364358466,
+    "putInLongitude": -107.05146855224322,
+    "takeOutLatitude": 38.91400102667658,
+    "takeOutLongitude": -107.03298195268921
   },
   {
     "id": "406",
@@ -2817,7 +3561,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "LAKE FORK AT GATEVIEW, CO.",
     "gaugeID": "09124500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/406"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/406",
+    "putInLatitude": 38.03532460510048,
+    "putInLongitude": -107.30914764110814,
+    "takeOutLatitude": 38.08067193693617,
+    "takeOutLongitude": -107.29607234140119
   },
   {
     "id": "2740",
@@ -2832,7 +3580,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "FRYINGPAN RIVER NEAR THOMASVILLE, CO.",
     "gaugeID": "FRYTHOCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2740"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2740",
+    "putInLatitude": 39.312999310382935,
+    "putInLongitude": -106.64253105244997,
+    "takeOutLatitude": 39.36040796470767,
+    "takeOutLongitude": -106.7004872748919
   },
   {
     "id": "3453",
@@ -2847,7 +3599,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "SOUTH BOULDER CREEK NEAR ELDORADO SPRINGS, CO.",
     "gaugeID": "BOCELSCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3453"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3453",
+    "putInLatitude": 39.93082307301367,
+    "putInLongitude": -105.29593765257634,
+    "takeOutLatitude": 39.93328578148503,
+    "takeOutLongitude": -105.27399001875258
   },
   {
     "id": "1233",
@@ -2862,7 +3618,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "SAN JUAN RIVER AT SHIPROCK, NM",
     "gaugeID": "09368000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/1233"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/1233",
+    "putInLatitude": 36.806264,
+    "putInLongitude": -107.615168,
+    "takeOutLatitude": 37.0026,
+    "takeOutLongitude": -109.031861
   },
   {
     "id": "397",
@@ -2877,7 +3637,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "GORE CREEK ABV RED SANDSTONE CREEK AT VAIL, CO",
     "gaugeID": "09066325",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/397"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/397",
+    "putInLatitude": 39.640486217744105,
+    "putInLongitude": -106.30438752514475,
+    "takeOutLatitude": 39.64094363406273,
+    "takeOutLongitude": -106.37827588897309
   },
   {
     "id": "11626",
@@ -2892,7 +3656,11 @@
     "takeOutName": "Gunnison Forks Take-Out",
     "gaugeName": "NORTH FK GUNNISON RIVER ABOVE MOUTH NR LAZEAR, CO",
     "gaugeID": "09136100",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11626"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11626",
+    "putInLatitude": 38.794998,
+    "putInLongitude": -107.71216,
+    "takeOutLatitude": 38.782817,
+    "takeOutLongitude": -107.836558
   },
   {
     "id": "404",
@@ -2907,7 +3675,11 @@
     "takeOutName": "Cauldron Rapid",
     "gaugeName": "LAKE CREEK ABOVE TWIN LAKES RESERVOIR, CO.",
     "gaugeID": "LAKATLCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/404"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/404",
+    "putInLatitude": 39.08193794767038,
+    "putInLongitude": -106.54099478673402,
+    "takeOutLatitude": 39.063490503369486,
+    "takeOutLongitude": -106.40294064826821
   },
   {
     "id": "388",
@@ -2922,7 +3694,11 @@
     "takeOutName": "Gateway Take Out",
     "gaugeName": "DOLORES RIVER NEAR BEDROCK, CO.",
     "gaugeID": "09171100",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/388"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/388",
+    "putInLatitude": 38.30473358853847,
+    "putInLongitude": -108.89428456770752,
+    "takeOutLatitude": 38.681117357856856,
+    "takeOutLongitude": -108.98049914188154
   },
   {
     "id": "411",
@@ -2937,7 +3713,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "PIEDRA RIVER NEAR ARBOLES, CO.",
     "gaugeID": "09349800",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/411"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/411",
+    "putInLatitude": 37.2405867,
+    "putInLongitude": -107.34193233,
+    "takeOutLatitude": 37.06273506,
+    "takeOutLongitude": -107.41435243
   },
   {
     "id": "3369",
@@ -2952,7 +3732,11 @@
     "takeOutName": "Bridges put-in (takeout)",
     "gaugeName": "CACHE LA POUDRE AT CANYON MOUTH NEAR FORT COLLINS",
     "gaugeID": "CLAFTCCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3369"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3369",
+    "putInLatitude": 40.690234,
+    "putInLongitude": -105.324868,
+    "takeOutLatitude": 40.691119,
+    "takeOutLongitude": -105.287332
   },
   {
     "id": "3547",
@@ -2967,7 +3751,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "CIMARRON RIVER NEAR CIMARRON, CO",
     "gaugeID": "09126000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3547"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3547",
+    "putInLatitude": 38.25935173876807,
+    "putInLongitude": -107.54615634974954,
+    "takeOutLatitude": 38.38843480708016,
+    "takeOutLongitude": -107.53376681019307
   },
   {
     "id": "3370",
@@ -2982,7 +3770,11 @@
     "takeOutName": "Bridges Take-Out (BTO)",
     "gaugeName": "CACHE LA POUDRE AT CANYON MOUTH NEAR FORT COLLINS",
     "gaugeID": "CLAFTCCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3370"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3370",
+    "putInLatitude": 40.691078,
+    "putInLongitude": -105.287308,
+    "takeOutLatitude": 40.696598,
+    "takeOutLongitude": -105.263995
   },
   {
     "id": "372",
@@ -2997,7 +3789,11 @@
     "takeOutName": "Picnic Rock takeout",
     "gaugeName": "CACHE LA POUDRE AT CANYON MOUTH NEAR FORT COLLINS",
     "gaugeID": "CLAFTCCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/372"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/372",
+    "putInLatitude": 40.700138,
+    "putInLongitude": -105.243155,
+    "takeOutLatitude": 40.669388,
+    "takeOutLongitude": -105.231823
   },
   {
     "id": "11315",
@@ -3012,7 +3808,11 @@
     "takeOutName": "",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11315"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11315",
+    "putInLatitude": 40.499303,
+    "putInLongitude": -107.557648,
+    "takeOutLatitude": 40.47962,
+    "takeOutLongitude": -107.616789
   },
   {
     "id": "11311",
@@ -3027,7 +3827,11 @@
     "takeOutName": "",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11311"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11311",
+    "putInLatitude": 40.488689,
+    "putInLongitude": -107.15931,
+    "takeOutLatitude": 40.491085,
+    "takeOutLongitude": -107.304845
   },
   {
     "id": "11312",
@@ -3042,7 +3846,11 @@
     "takeOutName": "",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11312"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11312",
+    "putInLatitude": 40.490986,
+    "putInLongitude": -107.305086,
+    "takeOutLatitude": 40.517424,
+    "takeOutLongitude": -107.398843
   },
   {
     "id": "11313",
@@ -3057,7 +3865,11 @@
     "takeOutName": "",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11313"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11313",
+    "putInLatitude": 40.517426,
+    "putInLongitude": -107.398817,
+    "takeOutLatitude": 40.502221,
+    "takeOutLongitude": -107.513677
   },
   {
     "id": "11316",
@@ -3072,7 +3884,11 @@
     "takeOutName": "",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11316"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11316",
+    "putInLatitude": 40.502674,
+    "putInLongitude": -108.032854,
+    "takeOutLatitude": 40.547412,
+    "takeOutLongitude": -108.196863
   },
   {
     "id": "11317",
@@ -3087,7 +3903,11 @@
     "takeOutName": "",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11317"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11317",
+    "putInLatitude": 40.547043,
+    "putInLongitude": -108.196092,
+    "takeOutLatitude": 40.485959,
+    "takeOutLongitude": -108.324836
   },
   {
     "id": "3096",
@@ -3102,7 +3922,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "KANNAH CREEK BELOW JUNIATA ENLARGED DIVERSION",
     "gaugeID": "KANJUNCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3096"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3096",
+    "putInLatitude": 38.962234127198926,
+    "putInLongitude": -108.22865279906384,
+    "takeOutLatitude": 38.955758758391866,
+    "takeOutLongitude": -108.2603072813889
   },
   {
     "id": "3368",
@@ -3117,7 +3941,11 @@
     "takeOutName": "Poudre Park Day Use Area (takeout)",
     "gaugeName": "CACHE LA POUDRE AT CANYON MOUTH NEAR FORT COLLINS",
     "gaugeID": "CLAFTCCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3368"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3368",
+    "putInLatitude": 40.687976,
+    "putInLongitude": -105.35577,
+    "takeOutLatitude": 40.690238,
+    "takeOutLongitude": -105.324876
   },
   {
     "id": "389",
@@ -3132,7 +3960,11 @@
     "takeOutName": "Dewey Bridge Take Out",
     "gaugeName": "DOLORES RIVER NEAR CISCO, UT",
     "gaugeID": "09180000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/389"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/389",
+    "putInLatitude": 38.681222,
+    "putInLongitude": -108.980639,
+    "takeOutLatitude": 38.820531,
+    "takeOutLongitude": -109.281289
   },
   {
     "id": "4266",
@@ -3147,7 +3979,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "EAGLE RIVER NEAR MINTURN, CO",
     "gaugeID": "09064600",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4266"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4266",
+    "putInLatitude": 39.607573,
+    "putInLongitude": -106.445503,
+    "takeOutLatitude": 39.618519,
+    "takeOutLongitude": -106.462999
   },
   {
     "id": "5274",
@@ -3162,7 +3998,11 @@
     "takeOutName": "Final Dam",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/5274"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/5274",
+    "putInLatitude": 40.833354,
+    "putInLongitude": -105.187287,
+    "takeOutLatitude": 40.841722,
+    "takeOutLongitude": -105.169464
   },
   {
     "id": "371",
@@ -3177,7 +4017,11 @@
     "takeOutName": "Dead Deer Take-Out",
     "gaugeName": "CACHE LA POUDRE AT CANYON MOUTH NEAR FORT COLLINS",
     "gaugeID": "CLAFTCCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/371"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/371",
+    "putInLatitude": 40.683583,
+    "putInLongitude": -105.40815,
+    "takeOutLatitude": 40.687974,
+    "takeOutLongitude": -105.355823
   },
   {
     "id": "3379",
@@ -3192,7 +4036,11 @@
     "takeOutName": "Stupid Falls",
     "gaugeName": "EAST RIVER BELOW CEMENT CREEK NR CRESTED BUTTE, CO",
     "gaugeID": "09112200",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3379"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3379",
+    "putInLatitude": 38.95235054185567,
+    "putInLongitude": -106.98937711634356,
+    "takeOutLatitude": 38.945511206215485,
+    "takeOutLongitude": -106.98317687771436
   },
   {
     "id": "3452",
@@ -3207,7 +4055,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "VALLECITO CREEK NEAR BAYFIELD, CO.",
     "gaugeID": "09352900",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3452"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3452",
+    "putInLatitude": 37.51724,
+    "putInLongitude": -107.533893,
+    "takeOutLatitude": 37.476845,
+    "takeOutLongitude": -107.54443
   },
   {
     "id": "351",
@@ -3222,7 +4074,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "ANIMAS RIVER AT DURANGO, CO",
     "gaugeID": "09361500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/351"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/351",
+    "putInLatitude": 37.302034656269065,
+    "putInLongitude": -107.86436558683882,
+    "takeOutLatitude": 37.236821208867696,
+    "takeOutLongitude": -107.86817560967398
   },
   {
     "id": "4267",
@@ -3237,7 +4093,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4267"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4267",
+    "putInLatitude": 39.968222407588264,
+    "putInLongitude": -105.63606867250844,
+    "takeOutLatitude": 39.951295876242,
+    "takeOutLongitude": -105.59600022563266
   },
   {
     "id": "10347",
@@ -3252,7 +4112,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "BLUE RIVER AT BLUE RIVER, CO.",
     "gaugeID": "09046490",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10347"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10347",
+    "putInLatitude": 39.491895,
+    "putInLongitude": -106.046321,
+    "takeOutLatitude": 39.514171,
+    "takeOutLongitude": -106.049726
   },
   {
     "id": "362",
@@ -3267,7 +4131,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "BLUE RIVER BELOW DILLON, CO.",
     "gaugeID": "09050700",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/362"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/362",
+    "putInLatitude": 39.723462,
+    "putInLongitude": -106.126958,
+    "takeOutLatitude": 39.760161,
+    "takeOutLongitude": -106.134964
   },
   {
     "id": "4224",
@@ -3282,7 +4150,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4224"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4224",
+    "putInLatitude": 40.005819,
+    "putInLongitude": -105.427103,
+    "takeOutLatitude": 40.004796,
+    "takeOutLongitude": -105.405973
   },
   {
     "id": "4348",
@@ -3297,7 +4169,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "ARKANSAS RIVER NEAR NATHROP, CO",
     "gaugeID": "07091200",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4348"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4348",
+    "putInLatitude": 38.61188796851627,
+    "putInLongitude": -106.06287917127898,
+    "takeOutLatitude": 38.53725512943185,
+    "takeOutLongitude": -105.98979830100845
   },
   {
     "id": "11134",
@@ -3312,7 +4188,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "EAGLE RIVER NEAR MINTURN, CO",
     "gaugeID": "09064600",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11134"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11134",
+    "putInLatitude": 39.55414045,
+    "putInLongitude": -106.40217009,
+    "takeOutLatitude": 39.60568719,
+    "takeOutLongitude": -106.4422427
   },
   {
     "id": "1157",
@@ -3327,7 +4207,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "CRYSTAL RIVER ABV AVALANCHE CRK, NEAR REDSTONE, CO",
     "gaugeID": "09081600",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/1157"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/1157",
+    "putInLatitude": 39.253412,
+    "putInLongitude": -107.233962,
+    "takeOutLatitude": 39.319017,
+    "takeOutLongitude": -107.209196
   },
   {
     "id": "4301",
@@ -3342,7 +4226,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "CROSS CREEK NEAR MINTURN, CO",
     "gaugeID": "09065100",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4301"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4301",
+    "putInLatitude": 39.55322,
+    "putInLongitude": -106.420023,
+    "takeOutLatitude": 39.561246,
+    "takeOutLongitude": -106.419476
   },
   {
     "id": "11320",
@@ -3357,7 +4245,11 @@
     "takeOutName": "",
     "gaugeName": "CRYSTAL RIVER ABV AVALANCHE CRK, NEAR REDSTONE, CO",
     "gaugeID": "09081600",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11320"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11320",
+    "putInLatitude": 39.318476,
+    "putInLongitude": -107.209765,
+    "takeOutLatitude": 39.41891,
+    "takeOutLongitude": -107.236191
   },
   {
     "id": "346",
@@ -3372,7 +4264,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "ANIMAS RIVER BELOW SILVERTON, CO",
     "gaugeID": "09359020",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/346"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/346",
+    "putInLatitude": 37.80307,
+    "putInLongitude": -107.672938,
+    "takeOutLatitude": 37.524173,
+    "takeOutLongitude": -107.782424
   },
   {
     "id": "3413",
@@ -3387,7 +4283,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "MINERAL CREEK AT SILVERTON, CO",
     "gaugeID": "09359010",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3413"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3413",
+    "putInLatitude": 37.783431,
+    "putInLongitude": -107.802031,
+    "takeOutLatitude": 37.80508,
+    "takeOutLongitude": -107.776754
   },
   {
     "id": "11623",
@@ -3402,7 +4302,11 @@
     "takeOutName": "NF Gunnison Confluence",
     "gaugeName": "ANTHRACITE CREEK ABOVE MOUTH NEAR SOMERSET",
     "gaugeID": "09132095",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11623"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11623",
+    "putInLatitude": 38.95506,
+    "putInLongitude": -107.26992,
+    "takeOutLatitude": 38.939638,
+    "takeOutLongitude": -107.360597
   },
   {
     "id": "4530",
@@ -3417,7 +4321,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "ANIMAS RIVER AT TALL TIMBER RESORT ABOVE TACOMA,CO",
     "gaugeID": "09359500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4530"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4530",
+    "putInLatitude": 37.490723,
+    "putInLongitude": -107.792164,
+    "takeOutLatitude": 37.458617,
+    "takeOutLongitude": -107.799205
   },
   {
     "id": "348",
@@ -3432,7 +4340,11 @@
     "takeOutName": "Trimble Lane Access Take Out",
     "gaugeName": "ANIMAS RIVER AT DURANGO, CO",
     "gaugeID": "09361500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/348"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/348",
+    "putInLatitude": 37.458514,
+    "putInLongitude": -107.799283,
+    "takeOutLatitude": 37.384892,
+    "takeOutLongitude": -107.836852
   },
   {
     "id": "3415",
@@ -3447,7 +4359,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "HOMESTAKE CREEK AT GOLD PARK, CO.",
     "gaugeID": "09064000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3415"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3415",
+    "putInLatitude": 39.500552,
+    "putInLongitude": -106.375487,
+    "takeOutLatitude": 39.507269,
+    "takeOutLongitude": -106.378695
   },
   {
     "id": "4385",
@@ -3462,7 +4378,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4385"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4385",
+    "putInLatitude": 40.409368,
+    "putInLongitude": -105.390612,
+    "takeOutLatitude": 40.432545,
+    "takeOutLongitude": -105.336432
   },
   {
     "id": "390",
@@ -3477,7 +4397,11 @@
     "takeOutName": "Take-out",
     "gaugeName": "EAGLE RIVER NEAR MINTURN, CO",
     "gaugeID": "09064600",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/390"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/390",
+    "putInLatitude": 39.507206,
+    "putInLongitude": -106.378636,
+    "takeOutLatitude": 39.554045,
+    "takeOutLongitude": -106.4022
   },
   {
     "id": "369",
@@ -3492,7 +4416,11 @@
     "takeOutName": "Tunnel Picnic Site Take-Out",
     "gaugeName": "CACHE LA POUDRE AT CANYON MOUTH NEAR FORT COLLINS",
     "gaugeID": "CLAFTCCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/369"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/369",
+    "putInLatitude": 40.634234,
+    "putInLongitude": -105.807333,
+    "takeOutLatitude": 40.665416,
+    "takeOutLongitude": -105.808888
   },
   {
     "id": "3361",
@@ -3507,7 +4435,11 @@
     "takeOutName": "Rigor Mortis",
     "gaugeName": "CLEAR CREEK AT GOLDEN, CO",
     "gaugeID": "06719505",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3361"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3361",
+    "putInLatitude": 39.740821,
+    "putInLongitude": -105.329209,
+    "takeOutLatitude": 39.74248,
+    "takeOutLongitude": -105.295204
   },
   {
     "id": "2859",
@@ -3522,7 +4454,11 @@
     "takeOutName": "Poudre Take Out",
     "gaugeName": "JOE WRIGHT CREEK BELOW JOE WRIGHT RESERVOIR, CO",
     "gaugeID": "06746110",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2859"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/2859",
+    "putInLatitude": 40.604281,
+    "putInLongitude": -105.836057,
+    "takeOutLatitude": 40.63688,
+    "takeOutLongitude": -105.806914
   },
   {
     "id": "355",
@@ -3537,7 +4473,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "ARKANSAS RIVER BELOW GRANITE, CO",
     "gaugeID": "07087050",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/355"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/355",
+    "putInLatitude": 39.043166,
+    "putInLongitude": -106.265555,
+    "takeOutLatitude": 38.995059,
+    "takeOutLongitude": -106.219851
   },
   {
     "id": "3410",
@@ -3552,7 +4492,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3410"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3410",
+    "putInLatitude": 38.636354,
+    "putInLongitude": -108.389018,
+    "takeOutLatitude": 38.670253,
+    "takeOutLongitude": -108.324745
   },
   {
     "id": "4234",
@@ -3567,7 +4511,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "CRYSTAL RIVER ABV AVALANCHE CRK, NEAR REDSTONE, CO",
     "gaugeID": "09081600",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4234"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4234",
+    "putInLatitude": 39.049092,
+    "putInLongitude": -107.077106,
+    "takeOutLatitude": 39.057932,
+    "takeOutLongitude": -107.101445
   },
   {
     "id": "11121",
@@ -3582,7 +4530,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "NORTH SAINT VRAIN CREEK BELOW BUTTONROCK  (RALPH PRICE) RESERVOIR",
     "gaugeID": "NSVBBRCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11121"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11121",
+    "putInLatitude": 40.248037693656826,
+    "putInLongitude": -105.2901121591654,
+    "takeOutLatitude": 40.220663260006724,
+    "takeOutLongitude": -105.26361666698983
   },
   {
     "id": "3125",
@@ -3597,7 +4549,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "SOUTH BOULDER CREEK ABOVE GROSS RESERVOIR AT PINECLIFFE",
     "gaugeID": "BOCPINCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3125"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3125",
+    "putInLatitude": 39.93115438,
+    "putInLongitude": -105.4289937,
+    "takeOutLatitude": 39.94702272,
+    "takeOutLongitude": -105.37240505
   },
   {
     "id": "5769",
@@ -3612,7 +4568,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "UNCOMPAHGRE RIVER NEAR OURAY, CO",
     "gaugeID": "09146020",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/5769"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/5769",
+    "putInLatitude": 37.98839,
+    "putInLongitude": -107.654021,
+    "takeOutLatitude": 38.005717,
+    "takeOutLongitude": -107.664338
   },
   {
     "id": "10894",
@@ -3627,7 +4587,11 @@
     "takeOutName": "Take Out Naturita Town Park",
     "gaugeName": "SAN MIGUEL RIVER AT BROOKS BRIDGE NEAR NUCLA CO",
     "gaugeID": "09174600",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10894"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10894",
+    "putInLatitude": 38.266536,
+    "putInLongitude": -108.401267,
+    "takeOutLatitude": 38.221521,
+    "takeOutLongitude": -108.571444
   },
   {
     "id": "370",
@@ -3642,7 +4606,11 @@
     "takeOutName": "Stevens Gulch Picnic Area Take Out",
     "gaugeName": "CACHE LA POUDRE AT CANYON MOUTH NEAR FORT COLLINS",
     "gaugeID": "CLAFTCCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/370"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/370",
+    "putInLatitude": 40.689455,
+    "putInLongitude": -105.433359,
+    "takeOutLatitude": 40.683648,
+    "takeOutLongitude": -105.408194
   },
   {
     "id": "349",
@@ -3657,7 +4625,11 @@
     "takeOutName": "32nd Street Park Take Out",
     "gaugeName": "ANIMAS RIVER AT DURANGO, CO",
     "gaugeID": "09361500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/349"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/349",
+    "putInLatitude": 37.384892,
+    "putInLongitude": -107.836852,
+    "takeOutLatitude": 37.299965,
+    "takeOutLongitude": -107.868916
   },
   {
     "id": "367",
@@ -3672,7 +4644,11 @@
     "takeOutName": "Indian Meadows Low Bridge Take-Out",
     "gaugeName": "CACHE LA POUDRE AT CANYON MOUTH NEAR FORT COLLINS",
     "gaugeID": "CLAFTCCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/367"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/367",
+    "putInLatitude": 40.66551,
+    "putInLongitude": -105.808851,
+    "takeOutLatitude": 40.699831,
+    "takeOutLongitude": -105.544545
   },
   {
     "id": "4299",
@@ -3687,7 +4663,11 @@
     "takeOutName": "Take-out",
     "gaugeName": "EAGLE RIVER AT RED CLIFF, CO.",
     "gaugeID": "09063000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4299"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4299",
+    "putInLatitude": 39.467075,
+    "putInLongitude": -106.339213,
+    "takeOutLatitude": 39.507498,
+    "takeOutLongitude": -106.378315
   },
   {
     "id": "11440",
@@ -3702,7 +4682,11 @@
     "takeOutName": "Saint Elizabeth Catholic Mission Take-Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11440"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11440",
+    "putInLatitude": 39.406898,
+    "putInLongitude": -105.347132,
+    "takeOutLatitude": 39.392891,
+    "takeOutLongitude": -105.27718
   },
   {
     "id": "426",
@@ -3717,7 +4701,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "NORTH FORK SOUTH PLATTE RIVER AT BAILEY",
     "gaugeID": "PLABAICO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/426"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/426",
+    "putInLatitude": 39.393,
+    "putInLongitude": -105.277322,
+    "takeOutLatitude": 39.408477,
+    "takeOutLongitude": -105.170169
   },
   {
     "id": "10348",
@@ -3732,7 +4720,11 @@
     "takeOutName": "Rest Area Access",
     "gaugeName": "COLORADO RIVER BELOW GLENWOOD SPRINGS, CO",
     "gaugeID": "09085100",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10348"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10348",
+    "putInLatitude": 39.564911,
+    "putInLongitude": -107.417054,
+    "takeOutLatitude": 39.56941,
+    "takeOutLongitude": -107.526041
   },
   {
     "id": "376",
@@ -3747,7 +4739,11 @@
     "takeOutName": "",
     "gaugeName": "CLEAR CREEK AT GOLDEN, CO",
     "gaugeID": "06719505",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/376"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/376",
+    "putInLatitude": 39.74334,
+    "putInLongitude": -105.29705,
+    "takeOutLatitude": 39.742111,
+    "takeOutLongitude": -105.25353
   },
   {
     "id": "10349",
@@ -3762,7 +4758,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "COLORADO RIVER BELOW GLENWOOD SPRINGS, CO",
     "gaugeID": "09085100",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10349"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10349",
+    "putInLatitude": 39.548944,
+    "putInLongitude": -107.330415,
+    "takeOutLatitude": 39.564628,
+    "takeOutLongitude": -107.416048
   },
   {
     "id": "1666",
@@ -3777,7 +4777,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "ROARING FORK RIVER BLW MAROON CREEK NR ASPEN, CO",
     "gaugeID": "09076300",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/1666"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/1666",
+    "putInLatitude": 39.178118885043425,
+    "putInLongitude": -106.83989876851926,
+    "takeOutLatitude": 39.21102811998474,
+    "takeOutLongitude": -106.8401368500933
   },
   {
     "id": "11055",
@@ -3792,7 +4796,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "EAST RIVER BELOW CEMENT CREEK NR CRESTED BUTTE, CO",
     "gaugeID": "09112200",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11055"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11055",
+    "putInLatitude": 38.80593213338969,
+    "putInLongitude": -106.88558407205132,
+    "takeOutLatitude": 38.66326297258541,
+    "takeOutLongitude": -106.8474299449236
   },
   {
     "id": "3376",
@@ -3807,7 +4815,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "KANNAH CREEK BELOW JUNIATA ENLARGED DIVERSION",
     "gaugeID": "KANJUNCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3376"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3376",
+    "putInLatitude": 38.93500979276161,
+    "putInLongitude": -108.39409659307331,
+    "takeOutLatitude": 38.98367453253889,
+    "takeOutLongitude": -108.45108825780318
   },
   {
     "id": "3342",
@@ -3822,7 +4834,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "SAN MIGUEL RIVER NEAR PLACERVILLE, CO",
     "gaugeID": "09172500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3342"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/3342",
+    "putInLatitude": 37.96643671878446,
+    "putInLongitude": -107.96999808379056,
+    "takeOutLatitude": 38.0308657891666,
+    "takeOutLongitude": -108.1129646479458
   },
   {
     "id": "422",
@@ -3837,7 +4853,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "SAN MIGUEL RIVER AT BROOKS BRIDGE NEAR NUCLA CO",
     "gaugeID": "09174600",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/422"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/422",
+    "putInLatitude": 38.1255706784117,
+    "putInLongitude": -108.20797768363198,
+    "takeOutLatitude": 38.25840638193131,
+    "takeOutLongitude": -108.39499019175607
   },
   {
     "id": "428",
@@ -3852,7 +4872,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "TAYLOR RIVER BELOW TAYLOR PARK RESERVOIR, CO.",
     "gaugeID": "09109000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/428"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/428",
+    "putInLatitude": 38.751335,
+    "putInLongitude": -106.695672,
+    "takeOutLatitude": 38.663233,
+    "takeOutLongitude": -106.847446
   },
   {
     "id": "360",
@@ -3867,7 +4891,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "ARKANSAS RIVER AT PARKDALE, CO.",
     "gaugeID": "07094500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/360"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/360",
+    "putInLatitude": 38.486729,
+    "putInLongitude": -105.389963,
+    "takeOutLatitude": 38.436085,
+    "takeOutLongitude": -105.243458
   },
   {
     "id": "11719",
@@ -3882,7 +4910,11 @@
     "takeOutName": "Swallows Road Pueblo Reservoir Take-Out",
     "gaugeName": "",
     "gaugeID": "",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11719"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11719",
+    "putInLatitude": 38.392071,
+    "putInLongitude": -105.072248,
+    "takeOutLatitude": 38.300228,
+    "takeOutLongitude": -104.85134
   },
   {
     "id": "4238",
@@ -3897,7 +4929,11 @@
     "takeOutName": "Takeout",
     "gaugeName": "SOUTH BOULDER CREEK ABOVE GROSS RESERVOIR AT PINECLIFFE",
     "gaugeID": "BOCPINCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4238"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4238",
+    "putInLatitude": 39.915619,
+    "putInLongitude": -105.504153,
+    "takeOutLatitude": 39.931143,
+    "takeOutLongitude": -105.425665
   },
   {
     "id": "4223",
@@ -3912,7 +4948,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "MIDDLE BOULDER CREEK AT NEDERLAND, CO.",
     "gaugeID": "BOCMIDCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4223"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4223",
+    "putInLatitude": 39.987963,
+    "putInLongitude": -105.4289,
+    "takeOutLatitude": 40.005355,
+    "takeOutLongitude": -105.349209
   },
   {
     "id": "4008",
@@ -3927,7 +4967,11 @@
     "takeOutName": "1in5",
     "gaugeName": "SOUTH SAINT VRAIN NEAR WARD",
     "gaugeID": "SSVWARCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4008"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/4008",
+    "putInLatitude": 40.167277404319066,
+    "putInLongitude": -105.39408748018093,
+    "takeOutLatitude": 40.203793147061134,
+    "takeOutLongitude": -105.30817310203349
   },
   {
     "id": "10691",
@@ -3942,7 +4986,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "GUNNISON RIVER NEAR GUNNISON, CO.",
     "gaugeID": "09114500",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10691"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/10691",
+    "putInLatitude": 38.533092067409285,
+    "putInLongitude": -106.9493364684341,
+    "takeOutLatitude": 38.530730437523786,
+    "takeOutLongitude": -106.9509038757983
   },
   {
     "id": "11114",
@@ -3957,7 +5005,11 @@
     "takeOutName": "Take Out",
     "gaugeName": "RIO GRANDE AT WAGON WHEEL GAP",
     "gaugeID": "RIOWAGCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11114"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/11114",
+    "putInLatitude": 37.81679845892172,
+    "putInLongitude": -106.91524001456362,
+    "takeOutLatitude": 37.768468074709176,
+    "takeOutLongitude": -106.79727901133624
   },
   {
     "id": "368",
@@ -3972,7 +5024,11 @@
     "takeOutName": "Lower Narrows Campground Take-Out",
     "gaugeName": "CACHE LA POUDRE AT CANYON MOUTH NEAR FORT COLLINS",
     "gaugeID": "CLAFTCCO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/368"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/368",
+    "putInLatitude": 40.699875,
+    "putInLongitude": -105.54434,
+    "takeOutLatitude": 40.689455,
+    "takeOutLongitude": -105.43336
   },
   {
     "id": "427",
@@ -3987,7 +5043,11 @@
     "takeOutName": "Takeout",
     "gaugeName": "NORTH FORK SOUTH PLATTE RIVER AT BAILEY",
     "gaugeID": "PLABAICO",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/427"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/427",
+    "putInLatitude": 39.40472,
+    "putInLongitude": -105.474021,
+    "takeOutLatitude": 39.408717,
+    "takeOutLongitude": -105.348124
   },
   {
     "id": "6559",
@@ -4002,6 +5062,10 @@
     "takeOutName": "Take Out",
     "gaugeName": "ANIMAS RIVER AT SILVERTON, CO.",
     "gaugeID": "09358000",
-    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/6559"
+    "awURL": "https://www.americanwhitewater.org/content/River/detail/id/6559",
+    "putInLatitude": 37.87967793,
+    "putInLongitude": -107.56586158,
+    "takeOutLatitude": 37.83519385,
+    "takeOutLongitude": -107.59862742
   }
 ]
